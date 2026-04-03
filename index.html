@@ -1,1356 +1,2281 @@
 <!DOCTYPE html>
-<html lang="zh-Hant" data-theme="light">
+<html lang="zh-HK">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jupiter's Design Limited 木星設計有限公司 — 香港優質SPC地板安裝</title>
-<meta name="description" content="木星設計有限公司提供香港優質SPC、實木及複合木地板安裝、自流平地台處理、戶外地板圍欄及全面室內翻新服務，專業施工，品質保證。">
+  <!--
+    ==========================================
+    Editable Config Section
+    ==========================================
+    Company English Name: Jupiter's Design Limited
+    Company Chinese Name: 木星設計有限公司
+    Phone: +852 95715155
+    WhatsApp: +852 95715155
+    Email: info@jupiterdesign.com
+    Address: 香港（可於此處補上實際營業地址／陳列室地址）
+    Domain: https://www.jupiterdesign.com/
+    Facebook: #
+    Instagram: #
+    YouTube: #
+    WhatsApp Link: https://wa.me/85295715155
+    Phone Link: tel:+85295715155
+    Email Link: mailto:info@jupiterdesign.com
 
-<!-- Fonts: Noto Serif TC (display, Chinese character support) + Noto Sans TC (body) -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+    Deployment Notes:
+    1. Save this file as: index.html
+    2. Upload directly to Cloudflare Pages as a static HTML site [web:22]
+    3. No build tools required for a plain static HTML deployment [web:22]
+    4. Replace placeholder project images with real photos later
+    5. Inquiry form currently uses mailto; can be connected to Cloudflare Worker or third-party form service later
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jupiter's Design Limited 木星設計有限公司｜香港地板工程・SPC 地板・實木地板・自流平工程</title>
+  <meta name="description" content="Jupiter's Design Limited 木星設計有限公司專注香港地板工程，提供 SPC 地板、實木地板、複合木地板、戶外木地板及圍欄安裝、自流平工程與地台處理，為住宅及裝修客戶提供清晰報價、專業施工與一站式安排。" />
+  <link rel="canonical" href="https://www.jupiterdesign.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1d1b19" />
 
-<style>
-/* Jupiter's Design Limited — Professional Flooring & Renovation */
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="zh_HK" />
+  <meta property="og:site_name" content="Jupiter's Design Limited 木星設計有限公司" />
+  <meta property="og:title" content="Jupiter's Design Limited 木星設計有限公司｜香港地板工程與安裝" />
+  <meta property="og:description" content="專注香港地板工程、SPC 地板、實木地板、複合木地板、戶外木地板及圍欄安裝、自流平工程與地台處理。" />
+  <meta property="og:url" content="https://www.jupiterdesign.com/" />
 
-:root, [data-theme="light"] {
-  /* Type Scale */
-  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-  --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-  --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-  --text-3xl:  clamp(2.5rem, 1rem + 4vw, 5rem);
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jupiter's Design Limited 木星設計有限公司" />
+  <meta name="twitter:description" content="香港地板工程、SPC 地板、實木地板、複合木地板、戶外木地板、自流平工程與安裝服務。" />
 
-  /* Spacing */
-  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
-  --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
-  --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
-  --space-16: 4rem;   --space-20: 5rem;   --space-24: 6rem;
-
-  /* Palette */
-  --color-bg:              #f5f2ed;
-  --color-surface:         #faf8f4;
-  --color-surface-2:       #fdfcfa;
-  --color-surface-offset:  #ede9e3;
-  --color-divider:         #ddd8d0;
-  --color-border:          #d4cfc6;
-
-  /* Charcoal text */
-  --color-text:            #2a2520;
-  --color-text-muted:      #7a736a;
-  --color-text-faint:      #b8b0a6;
-  --color-text-inverse:    #faf8f4;
-
-  /* Wood-brown accent (primary) */
-  --color-primary:         #8b6448;
-  --color-primary-hover:   #6e4f38;
-  --color-primary-active:  #533b2a;
-  --color-primary-highlight: #e8ddd4;
-
-  /* Soft sage secondary */
-  --color-sage:            #7a8c72;
-  --color-sage-hover:      #5f6e58;
-
-  /* Radius */
-  --radius-sm: 0.25rem; --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;  --radius-xl: 0.75rem; --radius-full: 9999px;
-
-  /* Transitions */
-  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
-
-  /* Shadows */
-  --shadow-sm: 0 1px 3px oklch(0.2 0.02 50 / 0.06);
-  --shadow-md: 0 4px 16px oklch(0.2 0.02 50 / 0.09);
-  --shadow-lg: 0 12px 40px oklch(0.2 0.02 50 / 0.13);
-
-  /* Fonts */
-  --font-display: 'Noto Serif TC', 'Georgia', serif;
-  --font-body:    'Noto Sans TC', 'Helvetica Neue', sans-serif;
-
-  /* Content widths */
-  --content-narrow: 640px;
-  --content-default: 960px;
-  --content-wide: 1200px;
-}
-
-/* ---- DARK MODE ---- */
-[data-theme="dark"] {
-  --color-bg:              #1a1814;
-  --color-surface:         #201d19;
-  --color-surface-2:       #252219;
-  --color-surface-offset:  #2a2620;
-  --color-divider:         #38332c;
-  --color-border:          #42392f;
-  --color-text:            #d8d2c8;
-  --color-text-muted:      #9a9088;
-  --color-text-faint:      #5a5450;
-  --color-text-inverse:    #1a1814;
-  --color-primary:         #c89e80;
-  --color-primary-hover:   #d4ae94;
-  --color-primary-active:  #dfc0ac;
-  --color-primary-highlight: #3a2e26;
-  --color-sage:            #9fb396;
-  --color-sage-hover:      #b3c4ab;
-  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2);
-  --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
-  --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.4);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme]) {
-    --color-bg: #1a1814; --color-surface: #201d19; --color-surface-2: #252219;
-    --color-surface-offset: #2a2620; --color-divider: #38332c; --color-border: #42392f;
-    --color-text: #d8d2c8; --color-text-muted: #9a9088; --color-text-faint: #5a5450;
-    --color-text-inverse: #1a1814; --color-primary: #c89e80; --color-primary-hover: #d4ae94;
-    --color-primary-active: #dfc0ac; --color-primary-highlight: #3a2e26;
-    --color-sage: #9fb396; --color-sage-hover: #b3c4ab;
-    --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
-    --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.4);
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Jupiter's Design Limited 木星設計有限公司",
+    "alternateName": "木星設計有限公司",
+    "url": "https://www.jupiterdesign.com/",
+    "telephone": "+85295715155",
+    "email": "info@jupiterdesign.com",
+    "areaServed": "Hong Kong",
+    "availableLanguage": ["zh-HK", "en"],
+    "description": "香港地板工程公司，提供 SPC 地板、實木地板、複合木地板、戶外木地板及圍欄安裝、自流平工程及地台處理。",
+    "serviceType": [
+      "SPC 地板",
+      "實木地板",
+      "複合木地板",
+      "戶外木地板及圍欄",
+      "自流平工程",
+      "地台處理"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+85295715155",
+      "contactType": "customer service",
+      "areaServed": "HK",
+      "availableLanguage": ["Traditional Chinese", "English"]
+    }
   }
-}
+  </script>
 
-/* ---- BASE ---- */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html {
-  -webkit-text-size-adjust: none; text-size-adjust: none;
-  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility; scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-body {
-  min-height: 100dvh; line-height: 1.7;
-  font-family: var(--font-body); font-size: var(--text-base);
-  color: var(--color-text); background-color: var(--color-bg);
-}
-img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
-ul[role="list"] { list-style: none; }
-input, button, textarea, select { font: inherit; color: inherit; }
-h1, h2, h3, h4 { text-wrap: balance; line-height: 1.2; font-family: var(--font-display); }
-p, li { text-wrap: pretty; }
+  <style>
+    :root {
+      --bg: #f6f1ea;
+      --bg-soft: #fbf8f4;
+      --card: rgba(255,255,255,0.78);
+      --card-solid: #ffffff;
+      --text: #1f1c19;
+      --muted: #645a50;
+      --line: rgba(42, 34, 28, 0.12);
+      --line-strong: rgba(42, 34, 28, 0.22);
+      --accent: #8b6845;
+      --accent-deep: #6f5033;
+      --accent-soft: #d9c1a3;
+      --gold: #b38a57;
+      --dark: #191714;
+      --dark-2: #25211d;
+      --success: #1f7a53;
+      --shadow: 0 12px 40px rgba(30, 25, 20, 0.10);
+      --shadow-lg: 0 24px 60px rgba(30, 25, 20, 0.16);
+      --radius-sm: 12px;
+      --radius: 20px;
+      --radius-lg: 28px;
+      --container: min(1180px, calc(100% - 32px));
+      --header-h: 78px;
+    }
 
-::selection { background: color-mix(in oklch, var(--color-primary) 20%, transparent); color: var(--color-text); }
-:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(179,138,87,0.10), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(111,80,51,0.08), transparent 18%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+      text-rendering: optimizeLegibility;
+    }
 
-a, button, [role="button"] {
-  transition: color var(--transition), background var(--transition),
-              border-color var(--transition), box-shadow var(--transition), opacity var(--transition);
-}
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important; scroll-behavior: auto !important;
-  }
-}
+    .container { width: var(--container); margin: 0 auto; }
+    .section { padding: 88px 0; position: relative; }
+    .section-tight { padding: 64px 0; }
+    .section-dark {
+      background:
+        linear-gradient(180deg, rgba(25,23,20,0.98), rgba(31,28,25,0.98)),
+        var(--dark);
+      color: #f7f0e6;
+    }
 
-.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.86rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
 
-/* =========================================
-   LAYOUT UTILITIES
-   ========================================= */
-.container {
-  max-width: var(--content-wide);
-  margin-inline: auto;
-  padding-inline: clamp(var(--space-6), 5vw, var(--space-16));
-}
-.container--narrow { max-width: var(--content-default); margin-inline: auto; padding-inline: clamp(var(--space-6), 5vw, var(--space-16)); }
-section { padding-block: clamp(var(--space-16), 8vw, var(--space-24)); }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.6;
+    }
 
-/* =========================================
-   HEADER / NAV
-   ========================================= */
-#header {
-  position: sticky; top: 0; z-index: 100;
-  background: color-mix(in oklch, var(--color-surface) 92%, transparent);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
-  border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.07);
-  transition: box-shadow var(--transition), background var(--transition);
-}
-#header.scrolled { box-shadow: var(--shadow-md); }
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
 
-.nav-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  height: 72px; gap: var(--space-8);
-}
+    .section-head h2,
+    .hero-copy h1 {
+      margin: 0 0 16px;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
 
-/* Logo */
-.logo-link {
-  display: flex; align-items: center; gap: var(--space-3);
-  text-decoration: none; color: var(--color-text);
-  flex-shrink: 0;
-}
-.logo-mark {
-  width: 38px; height: 38px; flex-shrink: 0;
-  border-radius: var(--radius-sm);
-  object-fit: contain;
-  background: transparent;
-}
-.logo-text-wrap { display: flex; flex-direction: column; line-height: 1.1; }
-.logo-en {
-  font-family: var(--font-display);
-  font-size: var(--text-sm); font-weight: 500;
-  letter-spacing: 0.08em; color: var(--color-text);
-}
-.logo-zh {
-  font-family: var(--font-body);
-  font-size: var(--text-xs); color: var(--color-text-muted);
-  letter-spacing: 0.12em;
-}
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
 
-/* Nav links */
-.nav-links {
-  display: flex; align-items: center; gap: clamp(var(--space-6), 3vw, var(--space-10));
-  list-style: none;
-}
-.nav-links a {
-  font-size: var(--text-sm); font-weight: 400;
-  color: var(--color-text-muted); text-decoration: none;
-  letter-spacing: 0.04em; padding: var(--space-2) 0;
-  border-bottom: 1.5px solid transparent;
-}
-.nav-links a:hover { color: var(--color-text); border-bottom-color: var(--color-primary); }
+    .section-head p,
+    .hero-copy p,
+    .about-copy p,
+    .cta-panel p,
+    .contact-intro p,
+    .footer-brand p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1rem;
+    }
 
-/* Nav CTA */
-.nav-cta {
-  font-size: var(--text-sm); font-weight: 500;
-  padding: var(--space-2) var(--space-5);
-  background: var(--color-primary); color: var(--color-text-inverse);
-  border: none; border-radius: var(--radius-full); cursor: pointer;
-  text-decoration: none; white-space: nowrap;
-  letter-spacing: 0.04em;
-}
-.nav-cta:hover { background: var(--color-primary-hover); box-shadow: var(--shadow-sm); }
+    .subtitle-en {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: rgba(100,90,80,0.86);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
-/* Dark mode toggle */
-.theme-toggle {
-  display: flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px; border-radius: var(--radius-full);
-  border: 1px solid oklch(from var(--color-text) l c h / 0.12);
-  background: none; cursor: pointer; color: var(--color-text-muted);
-  flex-shrink: 0;
-}
-.theme-toggle:hover { color: var(--color-text); background: var(--color-surface-offset); }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
 
-/* Hamburger */
-.hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  width: 44px; height: 44px; padding: var(--space-3);
-  background: none; border: none; cursor: pointer;
-  align-items: center; justify-content: center;
-}
-.hamburger span {
-  display: block; width: 22px; height: 1.5px;
-  background: var(--color-text); border-radius: var(--radius-full);
-  transition: transform var(--transition), opacity var(--transition);
-  transform-origin: center;
-}
-.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.hamburger.open span:nth-child(2) { opacity: 0; }
-.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 20px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
 
-/* Mobile nav */
-.mobile-nav {
-  display: none; flex-direction: column; gap: 0;
-  border-top: 1px solid var(--color-divider);
-  background: var(--color-surface); padding: var(--space-4) 0;
-}
-.mobile-nav.open { display: flex; }
-.mobile-nav a {
-  padding: var(--space-4) clamp(var(--space-6), 5vw, var(--space-16));
-  font-size: var(--text-base); color: var(--color-text-muted);
-  text-decoration: none; border-bottom: 1px solid var(--color-divider);
-  letter-spacing: 0.04em;
-}
-.mobile-nav a:last-child { border-bottom: none; }
-.mobile-nav a:hover { color: var(--color-primary); background: var(--color-surface-offset); }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible,
+    .nav-toggle:focus-visible,
+    .faq summary:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 2px solid rgba(179,138,87,0.5);
+      outline-offset: 2px;
+    }
 
-@media (max-width: 767px) {
-  .nav-links, .nav-cta { display: none; }
-  .hamburger { display: flex; }
-}
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff8f0;
+      box-shadow: 0 12px 28px rgba(111,80,51,0.28);
+    }
 
-/* =========================================
-   HERO
-   ========================================= */
-#hero {
-  position: relative; overflow: hidden;
-  min-height: 90dvh; display: flex; align-items: center;
-  background: var(--color-bg);
-  padding-block: clamp(var(--space-16), 10vw, var(--space-24));
-}
+    .btn-primary:hover {
+      box-shadow: 0 18px 34px rgba(111,80,51,0.34);
+    }
 
-/* Subtle grain texture overlay */
-#hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none; z-index: 0; opacity: 0.4;
-}
+    .btn-secondary {
+      background: rgba(255,255,255,0.68);
+      border-color: rgba(111,80,51,0.16);
+      color: var(--text);
+      backdrop-filter: blur(8px);
+    }
 
-/* Warm radial glow */
-#hero::after {
-  content: '';
-  position: absolute;
-  top: -20%; right: -10%;
-  width: 60vw; height: 60vw;
-  background: radial-gradient(circle, color-mix(in oklch, var(--color-primary) 10%, transparent) 0%, transparent 70%);
-  pointer-events: none; z-index: 0;
-}
+    .btn-dark {
+      background: #1d1a17;
+      color: #f8f2ea;
+    }
 
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  position: relative; z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(var(--space-10), 6vw, var(--space-20));
-  align-items: center;
-}
+    .btn-outline {
+      border-color: rgba(255,255,255,0.24);
+      color: #f7f0e6;
+      background: transparent;
+    }
 
-.hero-content { max-width: 560px; }
+    .btn-full { width: 100%; }
 
-.hero-tag {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  font-size: var(--text-xs); letter-spacing: 0.12em;
-  color: var(--color-primary); text-transform: uppercase;
-  padding: var(--space-1) var(--space-3);
-  background: var(--color-primary-highlight);
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-6);
-}
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -60px;
+      background: var(--dark);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      z-index: 9999;
+    }
 
-.hero-title {
-  font-size: var(--text-3xl);
-  font-weight: 300; color: var(--color-text);
-  letter-spacing: -0.01em;
-  margin-bottom: var(--space-6);
-  line-height: 1.15;
-}
-.hero-title strong {
-  font-weight: 600; color: var(--color-primary);
-  display: block;
-}
+    .skip-link:focus {
+      top: 16px;
+    }
 
-.hero-sub {
-  font-size: var(--text-base);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-10);
-  max-width: 44ch;
-  line-height: 1.8;
-}
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1200;
+      backdrop-filter: blur(14px);
+      background: rgba(246,241,234,0.84);
+      border-bottom: 1px solid rgba(42,34,28,0.08);
+    }
 
-.btn-primary {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  padding: var(--space-4) var(--space-8);
-  background: var(--color-primary); color: var(--color-text-inverse);
-  font-size: var(--text-base); font-weight: 500; font-family: var(--font-body);
-  border: none; border-radius: var(--radius-full); cursor: pointer;
-  text-decoration: none; letter-spacing: 0.04em;
-  box-shadow: var(--shadow-sm);
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-.btn-primary:hover {
-  background: var(--color-primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px oklch(from var(--color-primary) l c h / 0.28);
-}
-.btn-primary:active { transform: translateY(0); }
+    .header-inner {
+      min-height: var(--header-h);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
 
-.btn-secondary {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  padding: var(--space-4) var(--space-8);
-  background: transparent; color: var(--color-text);
-  font-size: var(--text-base); font-weight: 400; font-family: var(--font-body);
-  border: 1px solid var(--color-border); border-radius: var(--radius-full); cursor: pointer;
-  text-decoration: none; letter-spacing: 0.04em;
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
-}
-.btn-secondary:hover {
-  background: var(--color-surface-offset); border-color: var(--color-primary);
-  color: var(--color-primary); transform: translateY(-1px);
-}
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.15;
+      min-width: 0;
+    }
 
-.hero-btns { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+    .brand strong {
+      font-size: 1.04rem;
+      letter-spacing: 0.04em;
+    }
 
-/* Hero visual */
-.hero-visual {
-  position: relative;
-  aspect-ratio: 4/5;
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-}
-.hero-img {
-  width: 100%; height: 100%; object-fit: cover;
-  border-radius: var(--radius-xl);
-}
+    .brand span {
+      font-size: 0.86rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
-.hero-badge {
-  position: absolute; bottom: var(--space-6); left: var(--space-6);
-  background: color-mix(in oklch, var(--color-surface) 92%, transparent);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  border: 1px solid oklch(from var(--color-text) l c h / 0.08);
-  border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5);
-  box-shadow: var(--shadow-md);
-}
-.hero-badge-title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 500; }
-.hero-badge-sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1); }
-.hero-badge-dots { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
-.hero-badge-dot { width: 24px; height: 24px; border-radius: 50%; }
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-@media (max-width: 767px) {
-  .hero-inner { grid-template-columns: 1fr; gap: var(--space-10); }
-  .hero-visual { aspect-ratio: 16/10; order: -1; }
-  .hero-content { max-width: 100%; }
-  .hero-sub { max-width: 100%; }
-}
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin: 0;
+      padding: 0;
+    }
 
-/* =========================================
-   SERVICES
-   ========================================= */
-#services { background: var(--color-surface); }
+    .site-nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 14px;
+      color: var(--muted);
+      border-radius: 999px;
+      transition: background .2s ease, color .2s ease;
+      font-size: 0.95rem;
+    }
 
-.section-header {
-  text-align: center;
-  margin-bottom: clamp(var(--space-12), 6vw, var(--space-16));
-}
-.section-tag {
-  display: inline-block; font-size: var(--text-xs);
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--color-primary); margin-bottom: var(--space-4);
-}
-.section-title {
-  font-size: var(--text-2xl); font-weight: 300;
-  color: var(--color-text); letter-spacing: -0.01em;
-  margin-bottom: var(--space-5);
-}
-.section-title strong { font-weight: 600; }
-.section-desc {
-  font-size: var(--text-base); color: var(--color-text-muted);
-  max-width: 52ch; margin-inline: auto; line-height: 1.8;
-}
+    .site-nav a:hover {
+      color: var(--text);
+      background: rgba(111,80,51,0.07);
+    }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
-}
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-.service-card {
-  background: var(--color-bg);
-  border: 1px solid oklch(from var(--color-text) l c h / 0.07);
-  border-radius: var(--radius-xl); overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .contact-mini {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
 
-.service-img-wrap {
-  aspect-ratio: 4/3; overflow: hidden; position: relative;
-  background: var(--color-surface-offset);
-}
-.service-img-wrap img {
-  width: 100%; height: 100%; object-fit: cover;
-  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-.service-card:hover .service-img-wrap img { transform: scale(1.04); }
+    .nav-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 1px solid rgba(42,34,28,0.12);
+      background: rgba(255,255,255,0.75);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+    }
 
-.service-icon-wrap {
-  position: absolute; top: var(--space-4); left: var(--space-4);
-  width: 44px; height: 44px; border-radius: var(--radius-lg);
-  background: color-mix(in oklch, var(--color-surface) 88%, transparent);
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border: 1px solid oklch(from var(--color-text) l c h / 0.08);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--color-primary);
-}
+    .nav-toggle span,
+    .nav-toggle::before,
+    .nav-toggle::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 999px;
+      transition: transform .25s ease, opacity .2s ease;
+    }
 
-.service-body { padding: var(--space-6); }
-.service-title {
-  font-size: var(--text-lg); font-weight: 500; font-family: var(--font-display);
-  margin-bottom: var(--space-3);
-}
-.service-desc {
-  font-size: var(--text-sm); color: var(--color-text-muted);
-  line-height: 1.75;
-}
-.service-more {
-  display: inline-flex; align-items: center; gap: var(--space-2);
-  font-size: var(--text-sm); color: var(--color-primary);
-  text-decoration: none; margin-top: var(--space-4); font-weight: 500;
-  border: none; background: none; cursor: pointer; padding: 0;
-}
-.service-more svg { transition: transform var(--transition); }
-.service-card:hover .service-more svg { transform: translateX(4px); }
+    .nav-toggle::before { transform: translateY(-6px); }
+    .nav-toggle::after { transform: translateY(6px); }
+    .nav-open .nav-toggle span { opacity: 0; }
+    .nav-open .nav-toggle::before { transform: rotate(45deg); }
+    .nav-open .nav-toggle::after { transform: rotate(-45deg); }
 
-@media (max-width: 1100px) { .services-grid { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+    .hero {
+      padding: 64px 0 56px;
+      overflow: hidden;
+    }
 
-/* =========================================
-   WHY US
-   ========================================= */
-#why-us { background: var(--color-bg); }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr 0.96fr;
+      gap: 44px;
+      align-items: center;
+    }
 
-.whyus-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(var(--space-12), 8vw, var(--space-20));
-  align-items: center;
-}
+    .hero-copy h1 {
+      font-size: clamp(2.35rem, 5vw, 5rem);
+      max-width: 13ch;
+    }
 
-.whyus-visual {
-  position: relative;
-  border-radius: var(--radius-xl); overflow: hidden;
-}
-.whyus-img {
-  width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-xl);
-  display: block;
-}
+    .hero-copy p {
+      max-width: 63ch;
+      font-size: 1.06rem;
+    }
 
-/* decorative line accent */
-.whyus-visual::before {
-  content: '';
-  position: absolute;
-  top: -var(--space-4); left: -var(--space-4);
-  right: var(--space-8); bottom: var(--space-8);
-  border: 1px solid var(--color-primary);
-  border-radius: var(--radius-xl); z-index: -1;
-  transform: translate(-12px, 12px);
-}
+    .trust-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
 
-.whyus-content .section-header { text-align: left; margin-bottom: var(--space-10); }
-.whyus-content .section-desc { margin-inline: 0; }
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(111,80,51,0.12);
+      color: var(--text);
+      font-size: 0.94rem;
+      box-shadow: 0 8px 18px rgba(32, 27, 23, 0.05);
+    }
 
-.features-list { display: flex; flex-direction: column; gap: var(--space-6); margin-top: var(--space-8); }
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      isolation: isolate;
+    }
 
-.feature-item {
-  display: flex; gap: var(--space-5); align-items: flex-start;
-}
-.feature-num {
-  flex-shrink: 0; width: 36px; height: 36px;
-  border-radius: var(--radius-full); background: var(--color-primary-highlight);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600;
-  color: var(--color-primary);
-}
-.feature-body {}
-.feature-title {
-  font-family: var(--font-display); font-size: var(--text-base); font-weight: 500;
-  margin-bottom: var(--space-1);
-}
-.feature-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; }
+    .hero-panel {
+      position: absolute;
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.45);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.92), rgba(244,235,224,0.72));
+    }
 
-.stats-row {
-  display: flex; gap: var(--space-8); margin-top: var(--space-10);
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--color-divider);
-}
-.stat {}
-.stat-num {
-  font-family: var(--font-display); font-size: var(--text-xl);
-  font-weight: 600; color: var(--color-primary); line-height: 1;
-}
-.stat-label { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1); letter-spacing: 0.06em; }
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(145deg, rgba(111,80,51,0.18), transparent 35%),
+        repeating-linear-gradient(90deg, rgba(101,72,44,0.08) 0 18px, rgba(255,255,255,0.16) 18px 36px);
+      mix-blend-mode: multiply;
+      opacity: 0.9;
+    }
 
-@media (max-width: 767px) {
-  .whyus-layout { grid-template-columns: 1fr; }
-  .whyus-visual { order: -1; }
-  .whyus-img { aspect-ratio: 16/10; }
-  .stats-row { gap: var(--space-6); }
-}
+    .hero-panel.main {
+      inset: 38px 0 42px 72px;
+    }
 
-/* =========================================
-   CONTACT SECTION
-   ========================================= */
-#contact { background: var(--color-surface); }
+    .hero-panel.side-top {
+      width: 48%;
+      height: 34%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(145deg, rgba(59,47,36,0.96), rgba(105,79,57,0.84));
+    }
 
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: clamp(var(--space-12), 8vw, var(--space-20));
-  align-items: start;
-}
+    .hero-panel.side-top::before {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.14), transparent),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 14px, rgba(0,0,0,0.08) 14px 28px);
+      opacity: 1;
+    }
 
-.contact-info {}
-.contact-info .section-header { text-align: left; margin-bottom: var(--space-8); }
-.contact-info .section-desc { margin-inline: 0; }
+    .hero-panel.side-bottom {
+      width: 54%;
+      height: 34%;
+      right: 20px;
+      bottom: 0;
+      background: linear-gradient(145deg, rgba(247,240,232,0.98), rgba(224,206,182,0.92));
+    }
 
-.contact-details { margin-top: var(--space-8); display: flex; flex-direction: column; gap: var(--space-6); }
-.contact-detail {
-  display: flex; gap: var(--space-4); align-items: flex-start;
-}
-.contact-detail-icon {
-  flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-lg);
-  background: var(--color-primary-highlight);
-  display: flex; align-items: center; justify-content: center;
-  color: var(--color-primary);
-}
-.contact-detail-text {}
-.contact-detail-label { font-size: var(--text-xs); color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-1); }
-.contact-detail-val { font-size: var(--text-base); font-weight: 500; }
+    .hero-badge,
+    .hero-note {
+      position: absolute;
+      z-index: 2;
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(111,80,51,0.12);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
 
-/* Form */
-.contact-form-wrap {
-  background: var(--color-bg);
-  border: 1px solid oklch(from var(--color-text) l c h / 0.07);
-  border-radius: var(--radius-xl);
-  padding: clamp(var(--space-8), 4vw, var(--space-12));
-  box-shadow: var(--shadow-sm);
-}
-.form-title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 500; margin-bottom: var(--space-8); }
+    .hero-badge {
+      top: 18px;
+      right: 26px;
+      padding: 16px 18px;
+      min-width: 190px;
+    }
 
-.form-grid {
-  display: flex; flex-direction: column; gap: var(--space-5);
-}
+    .hero-badge strong,
+    .hero-note strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
 
-.form-group { display: flex; flex-direction: column; gap: var(--space-2); }
-.form-label {
-  font-size: var(--text-sm); font-weight: 500;
-  color: var(--color-text-muted); letter-spacing: 0.04em;
-}
-.form-input, .form-select, .form-textarea {
-  width: 100%; padding: var(--space-3) var(--space-4);
-  background: var(--color-surface);
-  border: 1px solid oklch(from var(--color-text) l c h / 0.12);
-  border-radius: var(--radius-md); font-size: var(--text-base);
-  color: var(--color-text); font-family: var(--font-body);
-  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
-  -webkit-appearance: none; appearance: none;
-}
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-  outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-primary) 16%, transparent);
-  background: var(--color-surface-2);
-}
-.form-input::placeholder, .form-textarea::placeholder { color: var(--color-text-faint); }
-.form-textarea { resize: vertical; min-height: 110px; line-height: 1.7; }
+    .hero-badge span,
+    .hero-note span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
 
-.select-wrap { position: relative; }
-.select-wrap::after {
-  content: '';
-  position: absolute; right: var(--space-4); top: 50%;
-  transform: translateY(-50%);
-  width: 0; height: 0;
-  border-left: 5px solid transparent; border-right: 5px solid transparent;
-  border-top: 5px solid var(--color-text-muted);
-  pointer-events: none;
-}
-.form-select { cursor: pointer; padding-right: var(--space-10); }
+    .hero-note {
+      left: 18px;
+      bottom: 30px;
+      padding: 16px 18px;
+      max-width: 250px;
+    }
 
-.form-submit {
-  width: 100%; padding: var(--space-4);
-  background: var(--color-primary); color: var(--color-text-inverse);
-  font-size: var(--text-base); font-weight: 500; font-family: var(--font-body);
-  border: none; border-radius: var(--radius-full); cursor: pointer;
-  letter-spacing: 0.06em; margin-top: var(--space-2);
-  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-}
-.form-submit:hover {
-  background: var(--color-primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px oklch(from var(--color-primary) l c h / 0.3);
-}
-.form-submit:active { transform: translateY(0); }
+    .hero-gridline {
+      position: absolute;
+      inset: 18% -6% auto auto;
+      width: 74%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(139,104,69,0.22), transparent);
+      z-index: 0;
+      transform: rotate(-12deg);
+    }
 
-.form-success {
-  display: none; text-align: center; padding: var(--space-8);
-  color: var(--color-sage); font-size: var(--text-base);
-}
-.form-success svg { margin-inline: auto; margin-bottom: var(--space-3); }
+    .hero-circle {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      right: -30px;
+      top: 130px;
+      background: radial-gradient(circle, rgba(179,138,87,0.26), transparent 68%);
+      filter: blur(2px);
+      z-index: -1;
+    }
 
-@media (max-width: 767px) {
-  .contact-layout { grid-template-columns: 1fr; }
-}
+    .credibility-bar {
+      padding: 0 0 24px;
+    }
 
-/* =========================================
-   FOOTER
-   ========================================= */
-footer {
-  background: var(--color-surface-offset);
-  border-top: 1px solid var(--color-divider);
-  padding-block: var(--space-10);
-}
-.footer-inner {
-  display: flex; flex-direction: column;
-  align-items: center; gap: var(--space-6);
-  text-align: center;
-}
-.footer-logo { display: flex; align-items: center; gap: var(--space-3); }
-.footer-logo-text { font-family: var(--font-display); font-size: var(--text-base); font-weight: 500; letter-spacing: 0.06em; }
-.footer-tagline { font-size: var(--text-sm); color: var(--color-text-muted); letter-spacing: 0.04em; }
-.footer-links {
-  display: flex; gap: var(--space-6); flex-wrap: wrap; justify-content: center;
-}
-.footer-links a {
-  font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none;
-}
-.footer-links a:hover { color: var(--color-primary); }
-.footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); }
+    .credibility-box {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      padding: 18px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(31,28,25,0.98), rgba(44,39,34,0.98));
+      color: #f8f2ea;
+      box-shadow: var(--shadow-lg);
+    }
 
-/* =========================================
-   WHATSAPP FLOAT
-   ========================================= */
-.whatsapp-float {
-  position: fixed; bottom: var(--space-8); right: var(--space-6);
-  z-index: 200; text-decoration: none;
-}
-.whatsapp-btn {
-  display: flex; align-items: center; justify-content: center;
-  width: 58px; height: 58px; border-radius: var(--radius-full);
-  background: #25D366;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4), 0 2px 8px rgba(37,211,102,0.3);
-  transition: transform var(--transition), box-shadow var(--transition);
-  animation: wa-bounce 2.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
-}
-.whatsapp-float:hover .whatsapp-btn {
-  transform: scale(1.1);
-  box-shadow: 0 8px 28px rgba(37,211,102,0.55), 0 4px 12px rgba(37,211,102,0.4);
-  animation: none;
-}
-.whatsapp-tooltip {
-  position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
-  background: var(--color-text); color: var(--color-bg);
-  font-size: var(--text-xs); font-family: var(--font-body);
-  padding: var(--space-2) var(--space-3); border-radius: var(--radius-md);
-  white-space: nowrap; pointer-events: none;
-  opacity: 0; transition: opacity var(--transition);
-}
-.whatsapp-tooltip::after {
-  content: '';
-  position: absolute; left: 100%; top: 50%; transform: translateY(-50%);
-  border: 5px solid transparent;
-  border-left-color: var(--color-text);
-}
-.whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+    .credibility-item {
+      padding: 18px 18px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
 
-@keyframes wa-bounce {
-  0%, 100% { transform: translateY(0); }
-  15%       { transform: translateY(-8px); }
-  30%       { transform: translateY(-2px); }
-  45%       { transform: translateY(-5px); }
-  60%       { transform: translateY(0); }
-}
+    .credibility-item strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
 
-/* =========================================
-   SCROLL REVEAL
-   ========================================= */
-.fade-in {
-  opacity: 1;
-}
-@supports (animation-timeline: scroll()) {
-  .fade-in {
-    opacity: 0;
-    animation: reveal-fade linear both;
-    animation-timeline: view();
-    animation-range: entry 0% entry 80%;
-  }
-  @keyframes reveal-fade { to { opacity: 1; } }
-}
+    .credibility-item span {
+      color: rgba(247,240,230,0.74);
+      font-size: 0.94rem;
+    }
 
-/* =========================================
-   DECORATIVE DIVIDER
-   ========================================= */
-.section-divider {
-  width: 48px; height: 1px;
-  background: var(--color-primary);
-  margin: var(--space-6) auto;
-  display: block;
-}
-</style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .about-panel,
+    .about-copy {
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+    }
+
+    .about-panel {
+      padding: 26px;
+      display: grid;
+      gap: 16px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.88), rgba(246,238,229,0.80));
+    }
+
+    .material-stack {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      min-height: 300px;
+    }
+
+    .material-card {
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(111,80,51,0.10);
+      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(241,232,221,0.72));
+    }
+
+    .material-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(90deg, rgba(111,80,51,0.08) 0 14px, rgba(255,255,255,0.02) 14px 28px),
+        linear-gradient(180deg, rgba(255,255,255,0.22), transparent 45%);
+    }
+
+    .material-card:nth-child(2) {
+      background: linear-gradient(180deg, rgba(77,60,46,0.94), rgba(123,93,67,0.88));
+    }
+
+    .material-card:nth-child(3) {
+      background: linear-gradient(180deg, rgba(232,221,206,0.98), rgba(204,180,149,0.90));
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .stat-box {
+      border-radius: 18px;
+      padding: 16px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(111,80,51,0.10);
+    }
+
+    .stat-box strong {
+      display: block;
+      font-size: 1.06rem;
+      margin-bottom: 6px;
+    }
+
+    .stat-box span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .about-copy {
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 14px;
+      margin-top: 4px;
+    }
+
+    .about-point {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .about-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(139,104,69,0.10);
+      color: var(--accent-deep);
+      font-weight: 800;
+      border: 1px solid rgba(111,80,51,0.10);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      border-radius: 24px;
+      padding: 24px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+      transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+      min-height: 100%;
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 52px rgba(31,28,25,0.14);
+      border-color: rgba(111,80,51,0.20);
+    }
+
+    .service-top {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .service-number {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(139,104,69,0.15), rgba(179,138,87,0.22));
+      color: var(--accent-deep);
+      font-weight: 800;
+      border: 1px solid rgba(111,80,51,0.08);
+      flex-shrink: 0;
+    }
+
+    .service-card h3 {
+      margin: 0 0 6px;
+      font-size: 1.24rem;
+      line-height: 1.25;
+    }
+
+    .service-card h3 small {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .service-points {
+      list-style: none;
+      margin: 0 0 18px;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .service-points li {
+      padding-left: 18px;
+      position: relative;
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .service-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 5px rgba(179,138,87,0.12);
+    }
+
+    .service-card .btn { margin-top: auto; }
+
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .reason-card {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+    }
+
+    .reason-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+    }
+
+    .reason-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 50px rgba(31,28,25,0.14);
+    }
+
+    .project-media {
+      aspect-ratio: 16 / 11;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(250,245,238,0.9), rgba(229,214,193,0.9));
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .project-body {
+      padding: 20px;
+    }
+
+    .project-kicker {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(139,104,69,0.10);
+      color: var(--accent-deep);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .project-body h3 {
+      margin: 0 0 8px;
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+
+    .project-body p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tags span {
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(111,80,51,0.12);
+      background: rgba(255,255,255,0.72);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+
+    .process-card {
+      position: relative;
+      padding: 24px 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+      min-height: 220px;
+    }
+
+    .process-step {
+      display: inline-grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
+      color: #fff;
+      font-weight: 800;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 18px rgba(111,80,51,0.24);
+    }
+
+    .process-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .process-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      border-radius: 24px;
+      padding: 26px;
+      background: rgba(255,255,255,0.74);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+    }
+
+    .quote-mark {
+      font-size: 2.4rem;
+      line-height: 1;
+      color: rgba(179,138,87,0.42);
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .testimonial-card p {
+      margin: 0 0 18px;
+      color: var(--text);
+      font-size: 0.98rem;
+    }
+
+    .testimonial-meta strong {
+      display: block;
+      font-size: 0.98rem;
+      margin-bottom: 4px;
+    }
+
+    .testimonial-meta span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq {
+      border-radius: 20px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      position: relative;
+      padding: 20px 56px 20px 22px;
+      font-weight: 700;
+    }
+
+    .faq summary::-webkit-details-marker { display: none; }
+
+    .faq summary::after {
+      content: "+";
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.35rem;
+      color: var(--accent-deep);
+      transition: transform .2s ease;
+    }
+
+    .faq[open] summary::after {
+      content: "–";
+    }
+
+    .faq-content {
+      padding: 0 22px 20px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .cta-panel {
+      border-radius: 32px;
+      padding: 38px;
+      background:
+        linear-gradient(135deg, rgba(26,23,20,0.98), rgba(48,42,36,0.98)),
+        var(--dark);
+      color: #f7f0e6;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-panel::before,
+    .cta-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(179,138,87,0.28), transparent 65%);
+      pointer-events: none;
+    }
+
+    .cta-panel::before {
+      width: 260px;
+      height: 260px;
+      top: -120px;
+      right: -40px;
+    }
+
+    .cta-panel::after {
+      width: 220px;
+      height: 220px;
+      bottom: -120px;
+      left: -60px;
+    }
+
+    .cta-panel h2,
+    .cta-panel p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-panel h2 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .cta-panel p {
+      color: rgba(247,240,230,0.74);
+      max-width: 760px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+    }
+
+    .contact-card,
+    .form-card {
+      border-radius: 28px;
+      background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+      padding: 28px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .contact-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(139,104,69,0.10);
+      color: var(--accent-deep);
+      border: 1px solid rgba(111,80,51,0.10);
+      font-weight: 800;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: var(--muted);
+      font-size: 0.96rem;
+      word-break: break-word;
+    }
+
+    .contact-inline-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .form-note {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(111,80,51,0.14);
+      background: rgba(255,255,255,0.84);
+      color: var(--text);
+      border-radius: 14px;
+      padding: 14px 16px;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    textarea { resize: vertical; min-height: 140px; }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: rgba(139,104,69,0.40);
+      box-shadow: 0 0 0 4px rgba(179,138,87,0.10);
+      background: #fff;
+      outline: none;
+    }
+
+    .form-legal {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .site-footer {
+      padding: 56px 0 120px;
+      background: #161411;
+      color: #f5ede3;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.7fr 0.9fr 1fr;
+      gap: 24px;
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      color: rgba(245,237,227,0.68);
+      max-width: 38ch;
+    }
+
+    .footer-title {
+      font-size: 0.9rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245,237,227,0.56);
+      margin: 0 0 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .footer-links a,
+    .footer-links span {
+      color: rgba(245,237,227,0.84);
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(245,237,227,0.58);
+      font-size: 0.9rem;
+    }
+
+    .floating-wa {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 1200;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #27c06b, #1b8d4f);
+      color: #fff;
+      box-shadow: 0 18px 34px rgba(28,129,78,0.35);
+      border: 1px solid rgba(255,255,255,0.28);
+      font-size: 1.5rem;
+    }
+
+    .floating-wa:hover { transform: translateY(-3px); }
+
+    .mobile-quickbar {
+      display: none;
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 1100;
+      padding: 10px;
+      border-radius: 18px;
+      background: rgba(25,23,20,0.92);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 16px 38px rgba(15,12,10,0.24);
+      gap: 10px;
+    }
+
+    .mobile-quickbar .btn {
+      flex: 1;
+      min-height: 50px;
+      padding: 0 14px;
+      font-size: 0.95rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1120px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-grid,
+      .project-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .reasons-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-grid { grid-template-columns: repeat(3, 1fr); }
+      .credibility-box { grid-template-columns: repeat(2, 1fr); }
+      .hero-visual { min-height: 480px; }
+    }
+
+    @media (max-width: 860px) {
+      :root { --header-h: 72px; }
+
+      .site-nav {
+        position: absolute;
+        left: 16px;
+        right: 16px;
+        top: calc(100% + 10px);
+        background: rgba(255,255,255,0.95);
+        border: 1px solid rgba(42,34,28,0.08);
+        border-radius: 20px;
+        padding: 10px;
+        box-shadow: var(--shadow);
+        display: none;
+      }
+
+      .nav-open .site-nav { display: block; }
+
+      .site-nav ul {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .site-nav a {
+        border-radius: 14px;
+        min-height: 46px;
+      }
+
+      .nav-toggle { display: inline-flex; }
+      .contact-mini { display: none; }
+      .header-actions .btn-primary { display: none; }
+
+      .hero { padding-top: 34px; }
+      .hero-grid { gap: 28px; }
+      .hero-visual { min-height: 410px; }
+      .hero-panel.main { inset: 36px 0 28px 32px; }
+      .hero-panel.side-top { width: 52%; }
+      .hero-panel.side-bottom { width: 58%; right: 0; }
+      .about-stats,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { gap: 20px; }
+    }
+
+    @media (max-width: 640px) {
+      .section { padding: 68px 0; }
+      .section-tight { padding: 54px 0; }
+
+      .service-grid,
+      .project-grid,
+      .testimonial-grid,
+      .reasons-grid,
+      .process-grid,
+      .credibility-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy h1 { max-width: none; }
+      .hero-copy p { font-size: 1rem; }
+      .hero-visual { min-height: 360px; }
+
+      .hero-badge,
+      .hero-note {
+        padding: 14px 16px;
+      }
+
+      .about-copy,
+      .contact-card,
+      .form-card,
+      .cta-panel,
+      .service-card,
+      .reason-card,
+      .project-body,
+      .testimonial-card,
+      .process-card {
+        padding: 22px;
+      }
+
+      .material-stack {
+        min-height: 220px;
+      }
+
+      .mobile-quickbar {
+        display: flex;
+      }
+
+      .floating-wa {
+        bottom: 86px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<!-- Skip link -->
-<a class="sr-only" href="#main">跳到主要內容</a>
+  <a href="#main-content" class="skip-link">跳至主要內容</a>
 
-<!-- =========================================
-     HEADER
-     ========================================= -->
-<header id="header" role="banner">
-  <div class="container">
-    <nav class="nav-inner" aria-label="主要導覽">
-      <!-- Logo -->
-      <a href="#hero" class="logo-link" aria-label="Jupiter's Design Limited 木星設計有限公司 首頁">
-        <img
-          src="https://i.ibb.co/wNJdsw71/IMG-5454.png"
-          alt="Jupiter's Design Limited 木星設計有限公司 Logo"
-          class="logo-mark"
-          width="38" height="38"
-          loading="eager"
-          style="border-radius: var(--radius-sm); object-fit: contain;"
-        >
-        <div class="logo-text-wrap">
-          <span class="logo-en">Jupiter's Design</span>
-          <span class="logo-zh">木星設計有限公司</span>
-        </div>
+  <!-- Sticky Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="返回頁首">
+        <strong>Jupiter's Design Limited</strong>
+        <span>木星設計有限公司・香港地板工程與安裝</span>
       </a>
 
-      <!-- Desktop nav -->
-      <ul class="nav-links" role="list">
-        <li><a href="#hero">首頁</a></li>
-        <li><a href="#services">服務</a></li>
-        <li><a href="#why-us">關於我們</a></li>
-        <li><a href="#contact">聯絡我們</a></li>
-      </ul>
+      <div class="nav-wrap">
+        <nav class="site-nav" id="siteNav" aria-label="主要導覽">
+          <ul>
+            <li><a href="#about">關於我們</a></li>
+            <li><a href="#services">服務</a></li>
+            <li><a href="#projects">工程案例</a></li>
+            <li><a href="#process">施工流程</a></li>
+            <li><a href="#faq">常見問題</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+          </ul>
+        </nav>
 
-      <!-- Theme toggle + CTA -->
-      <div style="display:flex;align-items:center;gap:var(--space-3);">
-        <button class="theme-toggle" data-theme-toggle aria-label="切換深色模式">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <a href="#contact" class="nav-cta">免費報價</a>
-        <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-nav">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </nav>
-  </div>
-  <!-- Mobile nav -->
-  <nav id="mobile-nav" class="mobile-nav" aria-label="手機導覽">
-    <a href="#hero">首頁</a>
-    <a href="#services">服務</a>
-    <a href="#why-us">關於我們</a>
-    <a href="#contact">聯絡我們 · 免費報價</a>
-  </nav>
-</header>
-
-<!-- =========================================
-     MAIN
-     ========================================= -->
-<main id="main">
-
-<!-- =========================================
-     HERO
-     ========================================= -->
-<section id="hero" aria-labelledby="hero-title">
-  <div class="container">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-tag">
-          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="5"/></svg>
-          香港專業地板及翻新工程
-        </div>
-        <h1 class="hero-title" id="hero-title">
-          為您的家<br>
-          <strong>打造高品質生活空間</strong>
-        </h1>
-        <p class="hero-sub">
-          木星設計有限公司專注於 SPC、實木及複合木地板安裝、自流平地台處理、戶外地板圍欄及全面室內翻新，以精湛工藝及優質材料，為香港家居打造理想生活空間。
-        </p>
-        <div class="hero-btns">
-          <a href="#contact" class="btn-primary">
-            免費報價
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <div class="header-actions">
+          <a class="contact-mini" href="tel:+85295715155" aria-label="致電 +852 95715155">
+            <span>+852 9571 5155</span>
           </a>
-          <a href="#services" class="btn-secondary">了解服務</a>
-        </div>
-      </div>
-
-      <!-- Hero visual: warm flooring mockup using gradient placeholder -->
-      <div class="hero-visual">
-        <img
-          class="hero-img"
-          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/a4a5d848eee639a143d00c95566178335e189fbc.jpg"
-          alt="現代客廳設計，配以優質SPC地板"
-          width="700" height="875" loading="eager"
-          onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
-        >
-        <!-- Color swatches badge -->
-        <div class="hero-badge">
-          <div class="hero-badge-title">精選地板色系</div>
-          <div class="hero-badge-sub">超過 40 款木紋色板可選</div>
-          <div class="hero-badge-dots">
-            <div class="hero-badge-dot" style="background:#c8a882;" title="暖木"></div>
-            <div class="hero-badge-dot" style="background:#a8956a;" title="橡木"></div>
-            <div class="hero-badge-dot" style="background:#7a6551;" title="深胡桃"></div>
-            <div class="hero-badge-dot" style="background:#e8ddd0;" title="白蠟木"></div>
-            <div class="hero-badge-dot" style="background:#5a4a3a;" title="黑胡桃"></div>
-          </div>
+          <a class="btn btn-primary" href="#contact">立即查詢</a>
+          <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false" aria-controls="siteNav">
+            <span></span>
+          </button>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- =========================================
-     SERVICES
-     ========================================= -->
-<section id="services" aria-labelledby="services-title">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">我們的服務</span>
-      <h2 class="section-title" id="services-title">專業工程 <strong>一站式服務</strong></h2>
-      <span class="section-divider" role="presentation"></span>
-      <p class="section-desc">從自流平地台處理到室內外地板安裝，再到圍欄及全室翻新，木星設計有限公司提供一站式工程解決方案。</p>
-    </div>
+  <main id="main-content">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Premium Flooring Solutions</span>
+          <h1>為香港住宅打造更穩妥、更耐看、更講究的地板工程</h1>
+          <p>
+            木星設計有限公司專注香港地板工程與安裝，提供 <strong>SPC 地板</strong>、實木地板、複合木地板、戶外木地板及圍欄安裝，以及自流平工程與地台處理，
+            由前期了解、選材建議到施工安排，一步到位，讓客戶更容易作出合適而安心的決定。
+          </p>
 
-    <div class="services-grid">
-      <!-- Service 1 -->
-      <article class="service-card fade-in">
-        <div class="service-img-wrap">
-          <img
-            src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/4bb1adb6-7e9d-430a-8a3a-13626ef6b751.png"
-            alt="SPC防刮防水地板安裝示範"
-            width="600" height="450" loading="lazy"
-            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
-          >
-          <div class="service-icon-wrap" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/></svg>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B%E5%8F%8A%E5%A0%B1%E5%83%B9" target="_blank" rel="noopener">WhatsApp 咨詢</a>
+            <a class="btn btn-secondary" href="#contact">免費報價</a>
+          </div>
+
+          <div class="trust-strip" aria-label="信任訊息">
+            <span class="trust-pill">專注地板工程</span>
+            <span class="trust-pill">香港客戶服務</span>
+            <span class="trust-pill">專業安裝與地台處理</span>
+            <span class="trust-pill">溝通清晰・報價清楚</span>
           </div>
         </div>
-        <div class="service-body">
-          <h3 class="service-title">SPC 防刮防水地板安裝</h3>
-          <p class="service-desc">採用優質石塑複合材料（SPC），具有超強抗刮、100% 防水特性，適合香港潮濕氣候，安裝快捷，無需黏貼劑。</p>
-          <a href="#contact" class="service-more">
-            查詢報價
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
 
-      <!-- Service 2 -->
-      <article class="service-card fade-in">
-        <div class="service-img-wrap">
-          <img
-            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b0a7cdb59ed24457b35be31b76a7f24ebb1c52c2.jpg"
-            alt="底層地台處理及水平工程"
-            width="600" height="450" loading="lazy"
-            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
-          >
-          <div class="service-icon-wrap" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M4 21V8l8-5 8 5v13"/><path d="M9 21v-8h6v8"/></svg>
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="hero-gridline"></div>
+          <div class="hero-circle"></div>
+          <div class="hero-panel side-top"></div>
+          <div class="hero-panel main"></div>
+          <div class="hero-panel side-bottom"></div>
+
+          <div class="hero-badge">
+            <strong>室內外工程整合安排</strong>
+            <span>由地台處理、選材建議到面層鋪裝，流程更順、配合更省時。</span>
           </div>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">底層地台處理</h3>
-          <p class="service-desc">安裝前進行專業地台水平評估及修補，確保地面平整，防止地板日後翹起或發聲，令地板壽命更長久。</p>
-          <a href="#contact" class="service-more">
-            查詢報價
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
 
-      <!-- Service 3 -->
-      <article class="service-card fade-in">
-        <div class="service-img-wrap">
-          <img
-            src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/63eb230e-e0a7-465f-94cb-cf52bc3ff924.png"
-            alt="客廳睡房大翻新設計"
-            width="600" height="450" loading="lazy"
-            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
-          >
-          <div class="service-icon-wrap" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          </div>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">客廳與睡房大翻新</h3>
-          <p class="service-desc">由設計規劃到施工完成，提供全面室內翻新服務，包括牆身粉刷、天花板工程及傢俬擺設優化，全面提升居住品質。</p>
-          <a href="#contact" class="service-more">
-            查詢報價
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Service 4: 實木及複合木地板 -->
-      <article class="service-card fade-in">
-        <div class="service-img-wrap">
-          <img
-            src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/c69f6ed8-ebab-4bb8-9dda-13abdab0acb4.png"
-            alt="實木複合地板安裝細節"
-            width="600" height="450" loading="lazy"
-            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
-          >
-          <div class="service-icon-wrap" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">實木及複合木地板</h3>
-          <p class="service-desc">優質實木地板及複合木地板安裝，天然紋理質感細膩，表面可打磨翻新，防水防潮，適合香港高濕度環境。</p>
-          <a href="#contact" class="service-more">
-            查詢報價
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Service 5: 自流平地台 -->
-      <article class="service-card fade-in">
-        <div class="service-img-wrap">
-          <img
-            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b0a7cdb59ed24457b35be31b76a7f24ebb1c52c2.jpg"
-            alt="自流平地台完成效果"
-            width="600" height="450" loading="lazy"
-            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
-          >
-          <div class="service-icon-wrap" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-8 4 4 4-6 4 10"/><path d="M3 21h18"/></svg>
-          </div>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">自流平地台處理</h3>
-          <p class="service-desc">採用專業自流平砂漿整平地台，厚度 20–40mm，適合舊樓凹凸地面，大幅提升地板安裝精準度及使用壽命。</p>
-          <a href="#contact" class="service-more">
-            查詢報價
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
-
-      <!-- Service 6: 戶外地板與圍欄 -->
-      <article class="service-card fade-in">
-        <div class="service-img-wrap">
-          <img
-            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e8374e477a0bfa85650e09e46f245bac6a108dc8.jpg"
-            alt="戶外WPC地板及圍欄完成效果"
-            width="600" height="450" loading="lazy"
-            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
-          >
-          <div class="service-icon-wrap" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
-          </div>
-        </div>
-        <div class="service-body">
-          <h3 class="service-title">戶外地板與圍欄安裝</h3>
-          <p class="service-desc">採用 WPC 環保複合木，防滑耐候防腐，適用於露台、天台及花園，配套圍欄一站式安裝，美觀耐用。</p>
-          <a href="#contact" class="service-more">
-            查詢報價
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- =========================================
-     WHY US
-     ========================================= -->
-<section id="why-us" aria-labelledby="whyus-title">
-  <div class="container">
-    <div class="whyus-layout">
-      <div class="whyus-visual fade-in">
-        <img
-          class="whyus-img"
-          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/7d099c6af2e97b66c99a7fa2856e8dbe4b39af48.jpg"
-          alt="明亮現代室內空間，展示優質地板完成效果"
-          width="700" height="933" loading="lazy"
-          onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
-        >
-      </div>
-
-      <div class="whyus-content">
-        <div class="section-header">
-          <span class="section-tag">為何選擇我們</span>
-          <h2 class="section-title" id="whyus-title">用心施工<br><strong>成就美好家居</strong></h2>
-          <span class="section-divider" style="margin-left:0;" role="presentation"></span>
-          <p class="section-desc">木星設計紮根香港，深明本地居住需求，以高效安裝、優質材料及真誠服務，贏得客戶信賴。</p>
-        </div>
-
-        <ul class="features-list" role="list">
-          <li class="feature-item fade-in">
-            <div class="feature-num" aria-hidden="true">01</div>
-            <div class="feature-body">
-              <div class="feature-title">快速高效安裝</div>
-              <p class="feature-desc">SPC 地板採用卡扣式安裝系統，一般家居面積可在 1–2 天完工，對客戶生活影響降至最低。</p>
-            </div>
-          </li>
-          <li class="feature-item fade-in">
-            <div class="feature-num" aria-hidden="true">02</div>
-            <div class="feature-body">
-              <div class="feature-title">頂級耐用材料</div>
-              <p class="feature-desc">精選符合歐洲 EN 標準的 SPC 地板，表層採用 0.5mm 耐磨層，耐刮耐壓，抵禦日常磨損。</p>
-            </div>
-          </li>
-          <li class="feature-item fade-in">
-            <div class="feature-num" aria-hidden="true">03</div>
-            <div class="feature-body">
-              <div class="feature-title">香港本地專業</div>
-              <p class="feature-desc">團隊深明香港舊樓地台特性，具備豐富舊屋翻新及不平地台處理經驗，因地制宜。</p>
-            </div>
-          </li>
-        </ul>
-
-        <div class="stats-row">
-          <div class="stat">
-            <div class="stat-num">500+</div>
-            <div class="stat-label">完成工程</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">10+</div>
-            <div class="stat-label">年業界經驗</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">98%</div>
-            <div class="stat-label">客戶滿意度</div>
+          <div class="hero-note">
+            <strong>適合香港常見空間需求</strong>
+            <span>住宅、單位翻新、露台平台、家居改善與投資物業更新。</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- =========================================
-     CONTACT
-     ========================================= -->
-<section id="contact" aria-labelledby="contact-title">
-  <div class="container">
-    <div class="contact-layout">
-      <div class="contact-info">
-        <div class="section-header">
-          <span class="section-tag">聯絡我們</span>
-          <h2 class="section-title" id="contact-title">立即查詢<br><strong>免費上門報價</strong></h2>
-          <span class="section-divider" style="margin-left:0;" role="presentation"></span>
-          <p class="section-desc">填寫表格或致電我們，專業顧問將盡快與您聯絡，為您提供度身訂造方案。</p>
-        </div>
-
-        <div class="contact-details">
-          <div class="contact-detail">
-            <div class="contact-detail-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.58a16 16 0 0 0 6.29 6.29l.94-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </div>
-            <div class="contact-detail-text">
-              <div class="contact-detail-label">電話 / WhatsApp</div>
-              <div class="contact-detail-val">+852 9571 5155</div>
-            </div>
+    <!-- Trust / Credibility Bar -->
+    <section class="credibility-bar section-tight">
+      <div class="container">
+        <div class="credibility-box reveal">
+          <div class="credibility-item">
+            <strong>專業施工流程</strong>
+            <span>由現場了解到完成驗收，步驟清晰，減少不必要的不確定。</span>
           </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div class="contact-detail-text">
-              <div class="contact-detail-label">電郵</div>
-              <div class="contact-detail-val">info@jupiterdesign.hk</div>
-            </div>
+          <div class="credibility-item">
+            <strong>用料講究</strong>
+            <span>根據預算、使用頻率與空間條件，提供實際而到位的選材建議。</span>
           </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div class="contact-detail-text">
-              <div class="contact-detail-label">服務範圍</div>
-              <div class="contact-detail-val">全港三區上門服務</div>
-            </div>
+          <div class="credibility-item">
+            <strong>方案清晰</strong>
+            <span>不只談效果，也重視耐用度、穩定性、日後打理與施工配合。</span>
+          </div>
+          <div class="credibility-item">
+            <strong>支援上門了解</strong>
+            <span>可先作初步溝通，再按需要安排了解空間與施工方向。</span>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Form -->
-      <div class="contact-form-wrap fade-in">
-        <h3 class="form-title">填寫報價申請</h3>
-        <form id="quote-form" class="form-grid" novalidate>
-          <div class="form-group">
-            <label class="form-label" for="name">姓名 <span aria-hidden="true" style="color:var(--color-primary)">*</span></label>
-            <input
-              class="form-input" type="text" id="name" name="name"
-              placeholder="請輸入您的姓名" required autocomplete="name"
-            >
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-panel reveal">
+          <div class="material-stack" aria-hidden="true">
+            <div class="material-card"></div>
+            <div class="material-card"></div>
+            <div class="material-card"></div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="phone">聯絡電話 <span aria-hidden="true" style="color:var(--color-primary)">*</span></label>
-            <input
-              class="form-input" type="tel" id="phone" name="phone"
-              placeholder="例：+852 9571 5155" required autocomplete="tel"
-            >
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="district">地區 <span aria-hidden="true" style="color:var(--color-primary)">*</span></label>
-            <div class="select-wrap">
-              <select class="form-select" id="district" name="district" required>
-                <option value="" disabled selected>請選擇您的地區</option>
-                <option value="hk-island">香港島</option>
-                <option value="kowloon">九龍</option>
-                <option value="new-territories">新界</option>
-              </select>
+          <div class="about-stats">
+            <div class="stat-box">
+              <strong>一站式安排</strong>
+              <span>地台處理與面層鋪裝可整合跟進，減少工序斷層。</span>
+            </div>
+            <div class="stat-box">
+              <strong>重視完成度</strong>
+              <span>施工整潔、收口俐落、交接清楚，效果更見分別。</span>
+            </div>
+            <div class="stat-box">
+              <strong>實用建議</strong>
+              <span>不盲目追款式，先考慮空間用途與日常生活需要。</span>
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="service">服務類型</label>
-            <div class="select-wrap">
-              <select class="form-select" id="service" name="service">
-                <option value="" disabled selected>請選擇服務</option>
-                <option value="spc">SPC 防刮防水地板安裝</option>
-                <option value="solid-wood">實木地板安裝</option>
-                <option value="composite">複合木地板安裝</option>
-                <option value="self-leveling">自流平地台處理</option>
-                <option value="outdoor">戶外地板與圍欄安裝</option>
-                <option value="renovation">客廳與睡房大翻新</option>
-                <option value="other">其他查詢</option>
-              </select>
+        </div>
+
+        <div class="about-copy reveal">
+          <div class="section-head" style="margin-bottom: 0;">
+            <span class="eyebrow">About Jupiter's Design</span>
+            <h2>不是單純賣地板，而是為空間提供更合適的落地方案</h2>
+            <p>
+              Jupiter's Design Limited 木星設計有限公司專注香港地板工程、地台處理與安裝服務，
+              為客戶處理由物料選擇、施工前準備、鋪裝安排到完成效果的整體問題。
+            </p>
+          </div>
+
+          <div class="about-points">
+            <div class="about-point">
+              <div class="about-icon">01</div>
+              <div>
+                <strong>先理解需要，再建議做法</strong><br />
+                我們會按家庭成員、空間用途、打理難度、預算與外觀要求，提出更實際的地板方案。
+              </div>
+            </div>
+            <div class="about-point">
+              <div class="about-icon">02</div>
+              <div>
+                <strong>注重基礎處理與施工細節</strong><br />
+                地板好看與否，不只在面層，地台平整度、穩定性、收口位置與安裝方法同樣關鍵。
+              </div>
+            </div>
+            <div class="about-point">
+              <div class="about-icon">03</div>
+              <div>
+                <strong>讓客戶更容易安心決定</strong><br />
+                報價與流程盡量簡潔清楚，減少模糊位，讓查詢、比較與安排施工更順暢。
+              </div>
             </div>
           </div>
-          <div class="form-group">
-            <label class="form-label" for="message">備註（可選）</label>
-            <textarea
-              class="form-textarea" id="message" name="message"
-              placeholder="請描述您的需求，例如面積、翻新類型等…"
-            ></textarea>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%85%88%E4%BA%86%E8%A7%A3%E5%90%88%E9%81%A9%E7%9A%84%E5%9C%B0%E6%9D%BF%E6%96%B9%E6%A1%88" target="_blank" rel="noopener">先了解合適方案</a>
+            <a class="btn btn-secondary" href="#services">查看服務</a>
           </div>
-          <button type="submit" class="form-submit">立即提交申請</button>
-        </form>
-        <div class="form-success" id="form-success" role="alert">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <p style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;margin-bottom:var(--space-2);">已成功提交！</p>
-          <p style="color:var(--color-text-muted);font-size:var(--text-sm);">我們的顧問將於一個工作天內與您聯絡。</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-</main>
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our Services</span>
+          <h2>香港地板工程與安裝服務</h2>
+          <p>
+            無論你正在翻新住宅、改善出租單位、整理露台空間，或需要先處理地台不平問題，
+            我們都會以效果、耐用度、舒適度與施工配合為前提，提供更貼近實際使用的建議。
+          </p>
+        </div>
 
-<!-- =========================================
-     FOOTER
-     ========================================= -->
-<footer role="contentinfo">
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <img
-          src="https://i.ibb.co/wNJdsw71/IMG-5454.png"
-          alt="Jupiter's Design Limited Logo"
-          width="32" height="32"
-          loading="lazy"
-          style="border-radius: var(--radius-sm); object-fit: contain;"
-        >
-        <span class="footer-logo-text">Jupiter's Design Limited 木星設計有限公司</span>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="service-top">
+              <div>
+                <h3>SPC 地板<small>SPC Flooring</small></h3>
+              </div>
+              <div class="service-number">01</div>
+            </div>
+            <p>適合追求外觀俐落、日常較易打理、並重視安裝效率與穩定感的香港家居空間。</p>
+            <ul class="service-points">
+              <li>耐磨實用，適合常用生活區域。</li>
+              <li>木紋觀感自然，整體風格更整齊。</li>
+              <li>配合合適地台處理，鋪裝效果更平順。</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%20SPC%20%E5%9C%B0%E6%9D%BF" target="_blank" rel="noopener">查詢此服務</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-top">
+              <div>
+                <h3>實木地板<small>Solid Wood Flooring</small></h3>
+              </div>
+              <div class="service-number">02</div>
+            </div>
+            <p>著重天然紋理、腳感與質感層次的客戶，適合希望空間更有溫度與細節的住宅環境。</p>
+            <ul class="service-points">
+              <li>天然木材質感，視覺更高級耐看。</li>
+              <li>踏感舒適，營造溫暖居住氣氛。</li>
+              <li>按空間條件建議更合適的木種與做法。</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%AF%A6%E6%9C%A8%E5%9C%B0%E6%9D%BF" target="_blank" rel="noopener">查詢此服務</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-top">
+              <div>
+                <h3>複合木地板<small>Engineered Wood Flooring</small></h3>
+              </div>
+              <div class="service-number">03</div>
+            </div>
+            <p>兼顧美感與結構穩定度，適合想保留木地板質感，同時希望日常使用更輕鬆的空間。</p>
+            <ul class="service-points">
+              <li>兼具木紋質感與較佳穩定性。</li>
+              <li>更容易配合香港住宅常見環境需求。</li>
+              <li>外觀、耐用與預算之間更易取得平衡。</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E8%A4%87%E5%90%88%E6%9C%A8%E5%9C%B0%E6%9D%BF" target="_blank" rel="noopener">查詢此服務</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-top">
+              <div>
+                <h3>戶外木地板及圍欄<small>Decking & Fencing</small></h3>
+              </div>
+              <div class="service-number">04</div>
+            </div>
+            <p>適合露台、平台、花園、村屋戶外範圍，兼顧美觀、耐候性與空間分隔的實用安排。</p>
+            <ul class="service-points">
+              <li>提升戶外空間完整度與使用感。</li>
+              <li>配合天氣與日照條件考慮物料耐候性。</li>
+              <li>圍欄與地台可一併規劃，整體更協調。</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E6%88%B6%E5%A4%96%E6%9C%A8%E5%9C%B0%E6%9D%BF%E5%8F%8A%E5%9C%8D%E6%AC%84" target="_blank" rel="noopener">查詢此服務</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-top">
+              <div>
+                <h3>地台自流平工程<small>Self-Leveling Works</small></h3>
+              </div>
+              <div class="service-number">05</div>
+            </div>
+            <p>當地面存在高低差、老化或不平問題，自流平工程能為後續鋪裝建立更穩妥的基礎。</p>
+            <ul class="service-points">
+              <li>改善地台平整度，減少鋪裝後不適感。</li>
+              <li>適合作為木地板與其他面層前期準備。</li>
+              <li>尤其適合需要改善舊樓地台的情況。</li>
+            </ul>
+            <a class="btn btn-secondary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E8%87%AA%E6%B5%81%E5%B9%B3%E5%B7%A5%E7%A8%8B" target="_blank" rel="noopener">查詢此服務</a>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-top">
+              <div>
+                <h3>地台處理與鋪裝建議<small>Floor Base Consultation</small></h3>
+              </div>
+              <div class="service-number">06</div>
+            </div>
+            <p>適合未決定物料、擔心完成效果、或希望先了解施工方向與預算分配的客戶。</p>
+            <ul class="service-points">
+              <li>先分析空間用途，再選擇合適地板類型。</li>
+              <li>避免只看表面款式而忽略基礎條件。</li>
+              <li>縮短摸索時間，更快進入可執行方案。</li>
+            </ul>
+            <a class="btn btn-secondary" href="#contact">免費初步了解</a>
+          </article>
+        </div>
       </div>
-      <p class="footer-tagline">香港專業地板安裝 · 戶外工程 · 室內翻新</p>
-      <nav class="footer-links" aria-label="頁腳導覽">
-        <a href="#hero">首頁</a>
-        <a href="#services">服務</a>
-        <a href="#why-us">關於我們</a>
-        <a href="#contact">聯絡我們</a>
-      </nav>
-      <p class="footer-copy">© 2026 Jupiter's Design Limited 木星設計有限公司 · 香港新界 · 版權所有</p>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section" id="why-us">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why Choose Us</span>
+          <h2>讓客戶更容易信任與落實的原因</h2>
+          <p>
+            真正高質的香港地板工程，不只在於款式是否漂亮，更在於建議是否貼地、地台是否處理到位、
+            施工是否整潔、以及整個查詢至完成的過程是否清楚安心。
+          </p>
+        </div>
+
+        <div class="reasons-grid">
+          <div class="reason-card reveal">
+            <strong>根據空間用途提供建議</strong>
+            <p>會先考慮家庭生活模式、是否有小朋友、日常清潔習慣、使用頻率與預算，再提出較合適的物料方向。</p>
+          </div>
+          <div class="reason-card reveal">
+            <strong>注重施工細節與完成度</strong>
+            <p>由收口、平整度、接駁位置到整體觀感都會一併考慮，讓地板工程不止完成，而是做得整齊俐落。</p>
+          </div>
+          <div class="reason-card reveal">
+            <strong>室內外工程可整合處理</strong>
+            <p>室內木地板、戶外木地板、平台與圍欄可按實際情況作統一安排，減少來回協調成本。</p>
+          </div>
+          <div class="reason-card reveal">
+            <strong>地台處理與面層鋪裝一站式安排</strong>
+            <p>自流平工程與面層鋪設可配合規劃，減少基礎處理和最終效果之間的落差。</p>
+          </div>
+          <div class="reason-card reveal">
+            <strong>溝通清晰、報價清楚</strong>
+            <p>查詢時可先從需求出發，不必一開始就懂所有物料差異，也能逐步了解較適合自己的方案。</p>
+          </div>
+          <div class="reason-card reveal">
+            <strong>貼近香港住宅常見需求</strong>
+            <p>無論是單位翻新、舊樓地台處理、露台改善或投資物業更新，都會以香港常見空間條件作實際考量。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Showcase / Works Gallery -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Selected Works</span>
+          <h2>工程案例與空間方向參考</h2>
+          <p>
+            以下為示意式案例展示，網站即使未放入完整實拍相片，亦能先讓客戶理解不同工程類型、
+            常見需求與完成感覺；日後可直接把每張示意圖更換為真實工程照片。
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f5efe6'/><stop offset='1' stop-color='%23c9ac85'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='80' y='80' width='1040' height='660' rx='34' fill='none' stroke='%23584435' stroke-opacity='.25' stroke-width='5'/><path d='M0 560C180 520 310 450 470 470C660 493 760 610 1200 450V820H0Z' fill='%233e2c1e' fill-opacity='.08'/><g opacity='.35'><rect x='170' y='170' width='860' height='110' rx='18' fill='%23ffffff'/><rect x='170' y='320' width='660' height='34' rx='10' fill='%23ffffff'/><rect x='170' y='378' width='430' height='34' rx='10' fill='%23ffffff'/></g></svg>"
+                alt="住宅 SPC 地板翻新示意圖片"
+              />
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Residential</span>
+              <h3>住宅 SPC 地板翻新</h3>
+              <p>以較易打理與視覺整齊為方向，改善舊有地面觀感，讓整體空間更明亮俐落。</p>
+              <div class="tags">
+                <span>SPC 地板</span>
+                <span>家居翻新</span>
+                <span>易於打理</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23efe3d3'/><stop offset='1' stop-color='%23836345'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='90' y='90' width='1020' height='640' rx='30' fill='none' stroke='%23fff' stroke-opacity='.28' stroke-width='4'/><path d='M0 650C180 560 290 520 470 560C690 611 860 470 1200 430V820H0Z' fill='%23181411' fill-opacity='.1'/><g opacity='.25'><circle cx='930' cy='210' r='86' fill='%23ffffff'/><rect x='160' y='470' width='450' height='34' rx='10' fill='%23ffffff'/><rect x='160' y='528' width='300' height='34' rx='10' fill='%23ffffff'/></g></svg>"
+                alt="客廳實木地板鋪設示意圖片"
+              />
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Living Room</span>
+              <h3>客廳實木地板鋪設</h3>
+              <p>突出天然木紋與溫暖質感，讓主要生活區更具層次，同時兼顧空間整體感。</p>
+              <div class="tags">
+                <span>實木地板</span>
+                <span>客廳</span>
+                <span>質感提升</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f7f2ea'/><stop offset='1' stop-color='%23b8956f'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='100' y='100' width='1000' height='620' rx='26' fill='none' stroke='%23594536' stroke-opacity='.22' stroke-width='5'/><path d='M0 520C220 550 370 380 560 420C760 462 920 570 1200 500V820H0Z' fill='%23392618' fill-opacity='.08'/><g opacity='.24'><rect x='150' y='150' width='900' height='220' rx='22' fill='%23ffffff'/><rect x='150' y='420' width='520' height='34' rx='10' fill='%23ffffff'/></g></svg>"
+                alt="戶外平台及圍欄工程示意圖片"
+              />
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Outdoor</span>
+              <h3>戶外平台及圍欄工程</h3>
+              <p>透過戶外木地板與圍欄整合安排，整理露台或平台空間，提升日常使用舒適度。</p>
+              <div class="tags">
+                <span>戶外木地板</span>
+                <span>圍欄安裝</span>
+                <span>露台空間</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23eee3d4'/><stop offset='1' stop-color='%2399754d'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='80' y='80' width='1040' height='660' rx='30' fill='none' stroke='%23594536' stroke-opacity='.22' stroke-width='5'/><path d='M0 600C190 540 340 490 550 540C770 593 940 520 1200 460V820H0Z' fill='%23201209' fill-opacity='.09'/><g opacity='.22'><rect x='170' y='180' width='860' height='120' rx='20' fill='%23ffffff'/><rect x='170' y='360' width='620' height='34' rx='10' fill='%23ffffff'/><rect x='170' y='416' width='460' height='34' rx='10' fill='%23ffffff'/></g></svg>"
+                alt="舊樓地台自流平處理示意圖片"
+              />
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Base Work</span>
+              <h3>舊樓地台自流平處理</h3>
+              <p>先改善地台高低差與平整度，再為後續地板鋪裝建立更穩定的基礎條件。</p>
+              <div class="tags">
+                <span>自流平工程</span>
+                <span>地台處理</span>
+                <span>舊樓改善</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23faf5ee'/><stop offset='1' stop-color='%23c7a37e'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='100' y='90' width='1000' height='640' rx='28' fill='none' stroke='%23574537' stroke-opacity='.2' stroke-width='4'/><path d='M0 560C180 460 340 470 510 535C700 608 900 520 1200 430V820H0Z' fill='%23301d10' fill-opacity='.08'/><g opacity='.23'><circle cx='260' cy='230' r='90' fill='%23ffffff'/><rect x='420' y='220' width='480' height='36' rx='10' fill='%23ffffff'/><rect x='420' y='278' width='320' height='36' rx='10' fill='%23ffffff'/></g></svg>"
+                alt="複合木地板住宅工程示意圖片"
+              />
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Apartment</span>
+              <h3>複合木地板住宅工程</h3>
+              <p>在木地板觀感與日常穩定度之間取得平衡，適合重視實用與美感兼備的客戶。</p>
+              <div class="tags">
+                <span>複合木地板</span>
+                <span>住宅單位</span>
+                <span>穩定實用</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-media">
+              <img
+                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f1e6d8'/><stop offset='1' stop-color='%238f6a46'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='85' y='85' width='1030' height='650' rx='30' fill='none' stroke='%23ffffff' stroke-opacity='.18' stroke-width='4'/><path d='M0 630C160 520 360 540 520 590C720 650 900 550 1200 470V820H0Z' fill='%2315100d' fill-opacity='.1'/><g opacity='.22'><rect x='170' y='170' width='420' height='210' rx='18' fill='%23ffffff'/><rect x='650' y='190' width='360' height='36' rx='10' fill='%23ffffff'/><rect x='650' y='248' width='280' height='36' rx='10' fill='%23ffffff'/></g></svg>"
+                alt="出租單位地板更新示意圖片"
+              />
+            </div>
+            <div class="project-body">
+              <span class="project-kicker">Investment</span>
+              <h3>出租單位地板更新</h3>
+              <p>以提升整潔度、耐用度與交樓觀感為目標，讓物業更新更有效率，亦更易安排後續使用。</p>
+              <div class="tags">
+                <span>地板更新</span>
+                <span>投資物業</span>
+                <span>提升觀感</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Process Section -->
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Work Process</span>
+          <h2>清楚的施工流程，讓查詢更容易開始</h2>
+          <p>
+            很多客戶不是不想做，而是擔心流程不清、預算難掌握、效果與現場條件不一致。
+            因此我們把查詢與工程安排盡量簡化，讓你更快知道下一步應怎樣走。
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card reveal">
+            <div class="process-step">1</div>
+            <h3>了解需求</h3>
+            <p>先透過 WhatsApp、電話或電郵，了解空間類型、想做的效果、預算方向與時間安排。</p>
+          </div>
+          <div class="process-card reveal">
+            <div class="process-step">2</div>
+            <h3>現場評估 / 圖則溝通</h3>
+            <p>按需要了解現場條件、地台情況、面積及細節位置，令建議更貼近實際施工。</p>
+          </div>
+          <div class="process-card reveal">
+            <div class="process-step">3</div>
+            <h3>建議物料及方案</h3>
+            <p>根據空間用途與地台狀況，建議 SPC 地板、實木地板、複合木地板或先做自流平工程。</p>
+          </div>
+          <div class="process-card reveal">
+            <div class="process-step">4</div>
+            <h3>安排施工</h3>
+            <p>確認方案後協調施工時間與工序，盡量令地台處理、安裝與收口安排更順暢。</p>
+          </div>
+          <div class="process-card reveal">
+            <div class="process-step">5</div>
+            <h3>完成驗收</h3>
+            <p>完成後檢視整體觀感、接駁位置與基本細節，讓客戶更安心投入日常使用。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Client Feedback</span>
+          <h2>客戶重視的不只是效果，還有過程是否安心</h2>
+          <p>
+            對很多住宅客戶來說，真正令人放心的，通常是溝通清楚、時間安排穩妥、施工整潔，
+            以及完成後整體效果是否與預期接近。
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card reveal">
+            <div class="quote-mark">“</div>
+            <p>原本只打算換地板，後來發現地台有些高低差，對方先講清楚處理方式，再建議做法，整個過程比較安心。最後鋪出來很平順，客廳觀感提升好多。</p>
+            <div class="testimonial-meta">
+              <strong>住宅客戶</strong>
+              <span>SPC 地板及地台處理</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="quote-mark">“</div>
+            <p>想要木地板感覺，但又擔心日後難打理，他們解釋得幾清楚，沒有硬推最貴方案。施工時間配合得不錯，完成後細節位都處理得整齊。</p>
+            <div class="testimonial-meta">
+              <strong>家居翻新客戶</strong>
+              <span>複合木地板工程</span>
+            </div>
+          </article>
+
+          <article class="testimonial-card reveal">
+            <div class="quote-mark">“</div>
+            <p>露台工程最擔心戶外物料唔耐用，同埋效果做出來會唔會好雜亂。最後平台同圍欄整體感幾好，線條簡潔，實用之餘亦比之前企理好多。</p>
+            <div class="testimonial-meta">
+              <strong>露台工程客戶</strong>
+              <span>戶外木地板及圍欄</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FAQ</span>
+          <h2>常見問題</h2>
+          <p>
+            以下是客戶在查詢香港地板工程、SPC 地板、實木地板、戶外木地板與自流平工程時，
+            最常提出的幾個重點問題。
+          </p>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq reveal">
+            <summary>SPC 地板適合香港家居嗎？</summary>
+            <div class="faq-content">
+              適合不少香港住宅使用，尤其是重視耐用、外觀整齊與較易打理的客戶。不過實際上仍需視乎空間用途、地台狀況與想要的腳感，再決定是否最合適。
+            </div>
+          </details>
+
+          <details class="faq reveal">
+            <summary>實木地板與複合木地板有什麼分別？</summary>
+            <div class="faq-content">
+              實木地板更著重天然質感與木材層次；複合木地板則較容易在外觀、穩定性與日常使用之間取得平衡。選擇時通常要看預算、保養習慣與空間條件。
+            </div>
+          </details>
+
+          <details class="faq reveal">
+            <summary>戶外地板和圍欄適合哪些空間？</summary>
+            <div class="faq-content">
+              常見於露台、平台、花園、天台或村屋戶外位置。規劃時除了外觀，也要考慮日照、排水、耐候性及日後打理方式。
+            </div>
+          </details>
+
+          <details class="faq reveal">
+            <summary>自流平工程是否適合舊樓地台？</summary>
+            <div class="faq-content">
+              若舊樓地台存在不平、高低差或需要為地板鋪裝作前期準備，自流平工程通常很有幫助。但是否需要做，仍建議先了解現場情況再判斷。
+            </div>
+          </details>
+
+          <details class="faq reveal">
+            <summary>如何查詢報價與施工時間？</summary>
+            <div class="faq-content">
+              可直接透過 WhatsApp、電話或電郵聯絡我們，提供單位類型、面積概念、想做的服務與相片資料，會較快進入初步了解與報價安排。
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Capture / CTA Section -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-panel reveal">
+          <span class="eyebrow">Free Initial Consultation</span>
+          <h2>想先了解合適做法與大概報價，現在就可以開始</h2>
+          <p>
+            無論你正準備更換 SPC 地板、選擇實木地板或複合木地板、整理戶外木地板與圍欄，
+            或想先處理地台不平問題，都可以先作免費初步了解與免費報價諮詢。
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E7%B4%A2%E5%8F%96%E5%85%8D%E8%B2%BB%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3%E5%8F%8A%E5%A0%B1%E5%83%B9" target="_blank" rel="noopener">WhatsApp 即時查詢</a>
+            <a class="btn btn-outline" href="tel:+85295715155">致電了解</a>
+            <a class="btn btn-outline" href="mailto:info@jupiterdesign.com">電郵查詢</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card reveal">
+          <div class="contact-intro">
+            <span class="eyebrow">Contact Us</span>
+            <h2 style="margin: 0 0 14px; line-height: 1.15; font-size: clamp(2rem, 4vw, 3rem);">聯絡木星設計有限公司</h2>
+            <p>
+              如你正在查詢香港地板工程、SPC 地板、實木地板、複合木地板、戶外木地板、圍欄安裝、
+              自流平工程或地台處理，歡迎直接聯絡，我們會先協助你釐清方向。
+            </p>
+          </div>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-badge">公</div>
+              <div>
+                <strong>公司名稱</strong>
+                <span>Jupiter's Design Limited<br />木星設計有限公司</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-badge">電</div>
+              <div>
+                <strong>電話</strong>
+                <a href="tel:+85295715155">+852 9571 5155</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-badge">W</div>
+              <div>
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B" target="_blank" rel="noopener">+852 9571 5155</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-badge">郵</div>
+              <div>
+                <strong>電郵</strong>
+                <a href="mailto:info@jupiterdesign.com">info@jupiterdesign.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-badge">區</div>
+              <div>
+                <strong>服務地區</strong>
+                <span>香港住宅、家居翻新、單位更新、露台平台、戶外木地板及圍欄安裝、地台處理與自流平工程</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-inline-actions">
+            <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E7%9B%B4%E6%8E%A5%E6%9F%A5%E8%A9%A2%E5%B7%A5%E7%A8%8B%E5%8F%8A%E5%A0%B1%E5%83%B9" target="_blank" rel="noopener">WhatsApp 查詢</a>
+            <a class="btn btn-secondary" href="tel:+85295715155">立即致電</a>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <span class="eyebrow">Quotation Request</span>
+          <h3 style="margin: 0 0 12px; font-size: 1.6rem;">報價查詢表格</h3>
+          <p class="form-note">
+            此頁為靜態 HTML 網站版本，現時表格會以你的電郵程式開啟查詢內容。
+            之後可接駁 Cloudflare Worker、Formspree 或其他表單系統。
+          </p>
+
+          <!--
+            Future integration options:
+            1. Replace form action with your Cloudflare Worker endpoint
+            2. Or use a third-party form service such as Formspree
+            3. Current JS converts form data into a mailto link for static deployment compatibility
+          -->
+          <form id="quoteForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name">稱呼</label>
+                <input id="name" name="name" type="text" placeholder="請輸入你的稱呼" required />
+              </div>
+
+              <div class="field">
+                <label for="phone">聯絡電話</label>
+                <input id="phone" name="phone" type="tel" placeholder="例如：9123 4567" required />
+              </div>
+
+              <div class="field">
+                <label for="service">查詢服務</label>
+                <select id="service" name="service" required>
+                  <option value="">請選擇服務</option>
+                  <option>SPC 地板</option>
+                  <option>實木地板</option>
+                  <option>複合木地板</option>
+                  <option>戶外木地板及圍欄</option>
+                  <option>地台自流平工程</option>
+                  <option>地台處理與鋪裝建議</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="area">單位 / 空間類型</label>
+                <input id="area" name="area" type="text" placeholder="例如：住宅、客廳、露台、出租單位" />
+              </div>
+
+              <div class="field full">
+                <label for="message">查詢內容</label>
+                <textarea id="message" name="message" placeholder="可填寫大概面積、現場情況、想做的效果、預算方向或施工時間"></textarea>
+              </div>
+
+              <div class="field full">
+                <button class="btn btn-dark btn-full" type="submit">以電郵送出查詢</button>
+              </div>
+            </div>
+          </form>
+
+          <p class="form-legal">可接駁表單系統，現階段適合直接部署為靜態 HTML 首頁。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <strong>Jupiter's Design Limited<br />木星設計有限公司</strong>
+          <p>
+            專注香港地板工程、SPC 地板、實木地板、複合木地板、戶外木地板及圍欄安裝、
+            自流平工程與地台處理，為住宅與翻新客戶提供更清晰、實用及講究的施工方案。
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B" target="_blank" rel="noopener">立即查詢</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-title">Quick Links</p>
+          <ul class="footer-links">
+            <li><a href="#about">關於我們</a></li>
+            <li><a href="#services">服務</a></li>
+            <li><a href="#projects">工程案例</a></li>
+            <li><a href="#process">施工流程</a></li>
+            <li><a href="#faq">常見問題</a></li>
+            <li><a href="#contact">聯絡我們</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-title">Services</p>
+          <ul class="footer-links">
+            <li><span>SPC 地板</span></li>
+            <li><span>實木地板</span></li>
+            <li><span>複合木地板</span></li>
+            <li><span>戶外木地板</span></li>
+            <li><span>圍欄安裝</span></li>
+            <li><span>自流平工程</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer-title">Contact</p>
+          <ul class="footer-links">
+            <li><a href="tel:+85295715155">+852 9571 5155</a></li>
+            <li><a href="https://wa.me/85295715155" target="_blank" rel="noopener">WhatsApp 查詢</a></li>
+            <li><a href="mailto:info@jupiterdesign.com">info@jupiterdesign.com</a></li>
+            <li><span>服務香港客戶</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Jupiter's Design Limited 木星設計有限公司. All rights reserved.</span>
+        <span>Premium Flooring & Installation Website</span>
+      </div>
     </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a
+    class="floating-wa"
+    href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B%E5%8F%8A%E5%A0%B1%E5%83%B9"
+    target="_blank"
+    rel="noopener"
+    aria-label="WhatsApp 即時查詢"
+    title="WhatsApp 即時查詢"
+  >✆</a>
+
+  <!-- Mobile Quick CTA Bar -->
+  <div class="mobile-quickbar" aria-label="快速聯絡">
+    <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B" target="_blank" rel="noopener">WhatsApp</a>
+    <a class="btn btn-secondary" href="tel:+85295715155">致電</a>
   </div>
-</footer>
 
-<!-- =========================================
-     WHATSAPP FLOAT
-     ========================================= -->
-<a
-  href="https://wa.me/85295715155"
-  class="whatsapp-float"
-  target="_blank" rel="noopener noreferrer"
-  aria-label="透過 WhatsApp 聯絡我們"
->
-  <div class="whatsapp-btn" role="presentation">
-    <svg width="30" height="30" viewBox="0 0 24 24" fill="white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
-    </svg>
-  </div>
-  <div class="whatsapp-tooltip" aria-hidden="true">WhatsApp 即時查詢</div>
-</a>
+  <script>
+    // Mobile navigation toggle
+    const navToggle = document.getElementById('navToggle');
+    const body = document.body;
+    const navLinks = document.querySelectorAll('.site-nav a');
 
-<!-- =========================================
-     JAVASCRIPT
-     ========================================= -->
-<script>
-// --- Dark Mode Toggle ---
-(function(){
-  const t = document.querySelector('[data-theme-toggle]');
-  const r = document.documentElement;
-  let d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  r.setAttribute('data-theme', d);
-
-  function setIcon(mode){
-    if(!t) return;
-    t.innerHTML = mode === 'dark'
-      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
-      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
-    t.setAttribute('aria-label', mode === 'dark' ? '切換至淺色模式' : '切換至深色模式');
-  }
-  setIcon(d);
-
-  if(t) t.addEventListener('click', () => {
-    d = d === 'dark' ? 'light' : 'dark';
-    r.setAttribute('data-theme', d);
-    setIcon(d);
-  });
-})();
-
-// --- Sticky Header ---
-(function(){
-  const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 20);
-  }, { passive: true });
-})();
-
-// --- Hamburger Menu ---
-(function(){
-  const btn = document.getElementById('hamburger');
-  const nav = document.getElementById('mobile-nav');
-  if(!btn || !nav) return;
-
-  btn.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    btn.classList.toggle('open', isOpen);
-    btn.setAttribute('aria-expanded', String(isOpen));
-    btn.setAttribute('aria-label', isOpen ? '關閉選單' : '開啟選單');
-  });
-
-  // Close on link click
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      btn.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-      btn.setAttribute('aria-label', '開啟選單');
+    navToggle.addEventListener('click', () => {
+      const isOpen = body.classList.toggle('nav-open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', isOpen ? '關閉選單' : '開啟選單');
     });
-  });
-})();
 
-// --- Smooth scroll for nav links ---
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if(target){ e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-  });
-});
-
-// --- Contact Form ---
-(function(){
-  const form = document.getElementById('quote-form');
-  const success = document.getElementById('form-success');
-  if(!form || !success) return;
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const name = form.querySelector('#name').value.trim();
-    const phone = form.querySelector('#phone').value.trim();
-    const district = form.querySelector('#district').value;
-
-    // Simple validation
-    let valid = true;
-    [form.querySelector('#name'), form.querySelector('#phone'), form.querySelector('#district')].forEach(el => {
-      const hasValue = el.value.trim().length > 0;
-      el.style.borderColor = hasValue ? '' : 'var(--color-primary)';
-      if(!hasValue) valid = false;
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        body.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', '開啟選單');
+      });
     });
-    if(!valid) return;
 
-    // Simulate submission
-    form.style.display = 'none';
-    success.style.display = 'flex';
-    success.style.flexDirection = 'column';
-    success.style.alignItems = 'center';
-  });
+    // Reveal on scroll
+    const revealItems = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
 
-  // Reset border color on input
-  form.querySelectorAll('input, select').forEach(el => {
-    el.addEventListener('input', () => { el.style.borderColor = ''; });
-  });
-})();
-</script>
+    revealItems.forEach(item => revealObserver.observe(item));
+
+    // Static form mailto handler
+    const quoteForm = document.getElementById('quoteForm');
+    quoteForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value.trim();
+      const area = document.getElementById('area').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      const subject = encodeURIComponent('網站報價查詢 - ' + (service || '地板工程'));
+      const bodyText =
+`稱呼：${name}
+聯絡電話：${phone}
+查詢服務：${service}
+單位 / 空間類型：${area}
+
+查詢內容：
+${message}
+
+— 來自 Jupiter's Design Limited 網站表格`;
+      const bodyEncoded = encodeURIComponent(bodyText);
+
+      window.location.href = `mailto:info@jupiterdesign.com?subject=${subject}&body=${bodyEncoded}`;
+    });
+  </script>
 </body>
 </html>
