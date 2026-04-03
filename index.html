@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jupiter's Design Limited 木星設計有限公司 — 香港優質SPC地板安裝</title>
+<meta name="description" content="木星設計有限公司提供香港優質SPC、實木及複合木地板安裝、自流平地台處理、戶外地板圍欄及全面室內翻新服務，專業施工，品質保證。">
+
+<!-- Fonts: Noto Serif TC (display, Chinese character support) + Noto Sans TC (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+/* Jupiter's Design Limited — Professional Flooring & Renovation */
+
+:root, [data-theme="light"] {
+  /* Type Scale */
+  --text-xs:   clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+  --text-3xl:  clamp(2.5rem, 1rem + 4vw, 5rem);
+
+  /* Spacing */
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+  --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
+  --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
+  --space-16: 4rem;   --space-20: 5rem;   --space-24: 6rem;
+
+  /* Palette */
+  --color-bg:              #f5f2ed;
+  --color-surface:         #faf8f4;
+  --color-surface-2:       #fdfcfa;
+  --color-surface-offset:  #ede9e3;
+  --color-divider:         #ddd8d0;
+  --color-border:          #d4cfc6;
+
+  /* Charcoal text */
+  --color-text:            #2a2520;
+  --color-text-muted:      #7a736a;
+  --color-text-faint:      #b8b0a6;
+  --color-text-inverse:    #faf8f4;
+
+  /* Wood-brown accent (primary) */
+  --color-primary:         #8b6448;
+  --color-primary-hover:   #6e4f38;
+  --color-primary-active:  #533b2a;
+  --color-primary-highlight: #e8ddd4;
+
+  /* Soft sage secondary */
+  --color-sage:            #7a8c72;
+  --color-sage-hover:      #5f6e58;
+
+  /* Radius */
+  --radius-sm: 0.25rem; --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;  --radius-xl: 0.75rem; --radius-full: 9999px;
+
+  /* Transitions */
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px oklch(0.2 0.02 50 / 0.06);
+  --shadow-md: 0 4px 16px oklch(0.2 0.02 50 / 0.09);
+  --shadow-lg: 0 12px 40px oklch(0.2 0.02 50 / 0.13);
+
+  /* Fonts */
+  --font-display: 'Noto Serif TC', 'Georgia', serif;
+  --font-body:    'Noto Sans TC', 'Helvetica Neue', sans-serif;
+
+  /* Content widths */
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+}
+
+/* ---- DARK MODE ---- */
+[data-theme="dark"] {
+  --color-bg:              #1a1814;
+  --color-surface:         #201d19;
+  --color-surface-2:       #252219;
+  --color-surface-offset:  #2a2620;
+  --color-divider:         #38332c;
+  --color-border:          #42392f;
+  --color-text:            #d8d2c8;
+  --color-text-muted:      #9a9088;
+  --color-text-faint:      #5a5450;
+  --color-text-inverse:    #1a1814;
+  --color-primary:         #c89e80;
+  --color-primary-hover:   #d4ae94;
+  --color-primary-active:  #dfc0ac;
+  --color-primary-highlight: #3a2e26;
+  --color-sage:            #9fb396;
+  --color-sage-hover:      #b3c4ab;
+  --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2);
+  --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
+  --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.4);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg: #1a1814; --color-surface: #201d19; --color-surface-2: #252219;
+    --color-surface-offset: #2a2620; --color-divider: #38332c; --color-border: #42392f;
+    --color-text: #d8d2c8; --color-text-muted: #9a9088; --color-text-faint: #5a5450;
+    --color-text-inverse: #1a1814; --color-primary: #c89e80; --color-primary-hover: #d4ae94;
+    --color-primary-active: #dfc0ac; --color-primary-highlight: #3a2e26;
+    --color-sage: #9fb396; --color-sage-hover: #b3c4ab;
+    --shadow-sm: 0 1px 3px oklch(0 0 0 / 0.2); --shadow-md: 0 4px 16px oklch(0 0 0 / 0.3);
+    --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.4);
+  }
+}
+
+/* ---- BASE ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  -webkit-text-size-adjust: none; text-size-adjust: none;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility; scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+body {
+  min-height: 100dvh; line-height: 1.7;
+  font-family: var(--font-body); font-size: var(--text-base);
+  color: var(--color-text); background-color: var(--color-bg);
+}
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+ul[role="list"] { list-style: none; }
+input, button, textarea, select { font: inherit; color: inherit; }
+h1, h2, h3, h4 { text-wrap: balance; line-height: 1.2; font-family: var(--font-display); }
+p, li { text-wrap: pretty; }
+
+::selection { background: color-mix(in oklch, var(--color-primary) 20%, transparent); color: var(--color-text); }
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+a, button, [role="button"] {
+  transition: color var(--transition), background var(--transition),
+              border-color var(--transition), box-shadow var(--transition), opacity var(--transition);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+  }
+}
+
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
+
+/* =========================================
+   LAYOUT UTILITIES
+   ========================================= */
+.container {
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: clamp(var(--space-6), 5vw, var(--space-16));
+}
+.container--narrow { max-width: var(--content-default); margin-inline: auto; padding-inline: clamp(var(--space-6), 5vw, var(--space-16)); }
+section { padding-block: clamp(var(--space-16), 8vw, var(--space-24)); }
+
+/* =========================================
+   HEADER / NAV
+   ========================================= */
+#header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in oklch, var(--color-surface) 92%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.07);
+  transition: box-shadow var(--transition), background var(--transition);
+}
+#header.scrolled { box-shadow: var(--shadow-md); }
+
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px; gap: var(--space-8);
+}
+
+/* Logo */
+.logo-link {
+  display: flex; align-items: center; gap: var(--space-3);
+  text-decoration: none; color: var(--color-text);
+  flex-shrink: 0;
+}
+.logo-mark {
+  width: 38px; height: 38px; flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  object-fit: contain;
+  background: transparent;
+}
+.logo-text-wrap { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-en {
+  font-family: var(--font-display);
+  font-size: var(--text-sm); font-weight: 500;
+  letter-spacing: 0.08em; color: var(--color-text);
+}
+.logo-zh {
+  font-family: var(--font-body);
+  font-size: var(--text-xs); color: var(--color-text-muted);
+  letter-spacing: 0.12em;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex; align-items: center; gap: clamp(var(--space-6), 3vw, var(--space-10));
+  list-style: none;
+}
+.nav-links a {
+  font-size: var(--text-sm); font-weight: 400;
+  color: var(--color-text-muted); text-decoration: none;
+  letter-spacing: 0.04em; padding: var(--space-2) 0;
+  border-bottom: 1.5px solid transparent;
+}
+.nav-links a:hover { color: var(--color-text); border-bottom-color: var(--color-primary); }
+
+/* Nav CTA */
+.nav-cta {
+  font-size: var(--text-sm); font-weight: 500;
+  padding: var(--space-2) var(--space-5);
+  background: var(--color-primary); color: var(--color-text-inverse);
+  border: none; border-radius: var(--radius-full); cursor: pointer;
+  text-decoration: none; white-space: nowrap;
+  letter-spacing: 0.04em;
+}
+.nav-cta:hover { background: var(--color-primary-hover); box-shadow: var(--shadow-sm); }
+
+/* Dark mode toggle */
+.theme-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: var(--radius-full);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.12);
+  background: none; cursor: pointer; color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+.theme-toggle:hover { color: var(--color-text); background: var(--color-surface-offset); }
+
+/* Hamburger */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  width: 44px; height: 44px; padding: var(--space-3);
+  background: none; border: none; cursor: pointer;
+  align-items: center; justify-content: center;
+}
+.hamburger span {
+  display: block; width: 22px; height: 1.5px;
+  background: var(--color-text); border-radius: var(--radius-full);
+  transition: transform var(--transition), opacity var(--transition);
+  transform-origin: center;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile nav */
+.mobile-nav {
+  display: none; flex-direction: column; gap: 0;
+  border-top: 1px solid var(--color-divider);
+  background: var(--color-surface); padding: var(--space-4) 0;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  padding: var(--space-4) clamp(var(--space-6), 5vw, var(--space-16));
+  font-size: var(--text-base); color: var(--color-text-muted);
+  text-decoration: none; border-bottom: 1px solid var(--color-divider);
+  letter-spacing: 0.04em;
+}
+.mobile-nav a:last-child { border-bottom: none; }
+.mobile-nav a:hover { color: var(--color-primary); background: var(--color-surface-offset); }
+
+@media (max-width: 767px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+#hero {
+  position: relative; overflow: hidden;
+  min-height: 90dvh; display: flex; align-items: center;
+  background: var(--color-bg);
+  padding-block: clamp(var(--space-16), 10vw, var(--space-24));
+}
+
+/* Subtle grain texture overlay */
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0; opacity: 0.4;
+}
+
+/* Warm radial glow */
+#hero::after {
+  content: '';
+  position: absolute;
+  top: -20%; right: -10%;
+  width: 60vw; height: 60vw;
+  background: radial-gradient(circle, color-mix(in oklch, var(--color-primary) 10%, transparent) 0%, transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  position: relative; z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-10), 6vw, var(--space-20));
+  align-items: center;
+}
+
+.hero-content { max-width: 560px; }
+
+.hero-tag {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-size: var(--text-xs); letter-spacing: 0.12em;
+  color: var(--color-primary); text-transform: uppercase;
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-primary-highlight);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-6);
+}
+
+.hero-title {
+  font-size: var(--text-3xl);
+  font-weight: 300; color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-6);
+  line-height: 1.15;
+}
+.hero-title strong {
+  font-weight: 600; color: var(--color-primary);
+  display: block;
+}
+
+.hero-sub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-10);
+  max-width: 44ch;
+  line-height: 1.8;
+}
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-primary); color: var(--color-text-inverse);
+  font-size: var(--text-base); font-weight: 500; font-family: var(--font-body);
+  border: none; border-radius: var(--radius-full); cursor: pointer;
+  text-decoration: none; letter-spacing: 0.04em;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px oklch(from var(--color-primary) l c h / 0.28);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  padding: var(--space-4) var(--space-8);
+  background: transparent; color: var(--color-text);
+  font-size: var(--text-base); font-weight: 400; font-family: var(--font-body);
+  border: 1px solid var(--color-border); border-radius: var(--radius-full); cursor: pointer;
+  text-decoration: none; letter-spacing: 0.04em;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+.btn-secondary:hover {
+  background: var(--color-surface-offset); border-color: var(--color-primary);
+  color: var(--color-primary); transform: translateY(-1px);
+}
+
+.hero-btns { display: flex; gap: var(--space-4); flex-wrap: wrap; align-items: center; }
+
+/* Hero visual */
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+.hero-img {
+  width: 100%; height: 100%; object-fit: cover;
+  border-radius: var(--radius-xl);
+}
+
+.hero-badge {
+  position: absolute; bottom: var(--space-6); left: var(--space-6);
+  background: color-mix(in oklch, var(--color-surface) 92%, transparent);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+  border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5);
+  box-shadow: var(--shadow-md);
+}
+.hero-badge-title { font-family: var(--font-display); font-size: var(--text-base); font-weight: 500; }
+.hero-badge-sub { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1); }
+.hero-badge-dots { display: flex; gap: var(--space-2); margin-top: var(--space-3); }
+.hero-badge-dot { width: 24px; height: 24px; border-radius: 50%; }
+
+@media (max-width: 767px) {
+  .hero-inner { grid-template-columns: 1fr; gap: var(--space-10); }
+  .hero-visual { aspect-ratio: 16/10; order: -1; }
+  .hero-content { max-width: 100%; }
+  .hero-sub { max-width: 100%; }
+}
+
+/* =========================================
+   SERVICES
+   ========================================= */
+#services { background: var(--color-surface); }
+
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(var(--space-12), 6vw, var(--space-16));
+}
+.section-tag {
+  display: inline-block; font-size: var(--text-xs);
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--color-primary); margin-bottom: var(--space-4);
+}
+.section-title {
+  font-size: var(--text-2xl); font-weight: 300;
+  color: var(--color-text); letter-spacing: -0.01em;
+  margin-bottom: var(--space-5);
+}
+.section-title strong { font-weight: 600; }
+.section-desc {
+  font-size: var(--text-base); color: var(--color-text-muted);
+  max-width: 52ch; margin-inline: auto; line-height: 1.8;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.service-card {
+  background: var(--color-bg);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.07);
+  border-radius: var(--radius-xl); overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+
+.service-img-wrap {
+  aspect-ratio: 4/3; overflow: hidden; position: relative;
+  background: var(--color-surface-offset);
+}
+.service-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-card:hover .service-img-wrap img { transform: scale(1.04); }
+
+.service-icon-wrap {
+  position: absolute; top: var(--space-4); left: var(--space-4);
+  width: 44px; height: 44px; border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--color-surface) 88%, transparent);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+
+.service-body { padding: var(--space-6); }
+.service-title {
+  font-size: var(--text-lg); font-weight: 500; font-family: var(--font-display);
+  margin-bottom: var(--space-3);
+}
+.service-desc {
+  font-size: var(--text-sm); color: var(--color-text-muted);
+  line-height: 1.75;
+}
+.service-more {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  font-size: var(--text-sm); color: var(--color-primary);
+  text-decoration: none; margin-top: var(--space-4); font-weight: 500;
+  border: none; background: none; cursor: pointer; padding: 0;
+}
+.service-more svg { transition: transform var(--transition); }
+.service-card:hover .service-more svg { transform: translateX(4px); }
+
+@media (max-width: 1100px) { .services-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .services-grid { grid-template-columns: 1fr; } }
+
+/* =========================================
+   WHY US
+   ========================================= */
+#why-us { background: var(--color-bg); }
+
+.whyus-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-12), 8vw, var(--space-20));
+  align-items: center;
+}
+
+.whyus-visual {
+  position: relative;
+  border-radius: var(--radius-xl); overflow: hidden;
+}
+.whyus-img {
+  width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: var(--radius-xl);
+  display: block;
+}
+
+/* decorative line accent */
+.whyus-visual::before {
+  content: '';
+  position: absolute;
+  top: -var(--space-4); left: -var(--space-4);
+  right: var(--space-8); bottom: var(--space-8);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-xl); z-index: -1;
+  transform: translate(-12px, 12px);
+}
+
+.whyus-content .section-header { text-align: left; margin-bottom: var(--space-10); }
+.whyus-content .section-desc { margin-inline: 0; }
+
+.features-list { display: flex; flex-direction: column; gap: var(--space-6); margin-top: var(--space-8); }
+
+.feature-item {
+  display: flex; gap: var(--space-5); align-items: flex-start;
+}
+.feature-num {
+  flex-shrink: 0; width: 36px; height: 36px;
+  border-radius: var(--radius-full); background: var(--color-primary-highlight);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600;
+  color: var(--color-primary);
+}
+.feature-body {}
+.feature-title {
+  font-family: var(--font-display); font-size: var(--text-base); font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+.feature-desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.75; }
+
+.stats-row {
+  display: flex; gap: var(--space-8); margin-top: var(--space-10);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-divider);
+}
+.stat {}
+.stat-num {
+  font-family: var(--font-display); font-size: var(--text-xl);
+  font-weight: 600; color: var(--color-primary); line-height: 1;
+}
+.stat-label { font-size: var(--text-xs); color: var(--color-text-muted); margin-top: var(--space-1); letter-spacing: 0.06em; }
+
+@media (max-width: 767px) {
+  .whyus-layout { grid-template-columns: 1fr; }
+  .whyus-visual { order: -1; }
+  .whyus-img { aspect-ratio: 16/10; }
+  .stats-row { gap: var(--space-6); }
+}
+
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
+#contact { background: var(--color-surface); }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: clamp(var(--space-12), 8vw, var(--space-20));
+  align-items: start;
+}
+
+.contact-info {}
+.contact-info .section-header { text-align: left; margin-bottom: var(--space-8); }
+.contact-info .section-desc { margin-inline: 0; }
+
+.contact-details { margin-top: var(--space-8); display: flex; flex-direction: column; gap: var(--space-6); }
+.contact-detail {
+  display: flex; gap: var(--space-4); align-items: flex-start;
+}
+.contact-detail-icon {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-lg);
+  background: var(--color-primary-highlight);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary);
+}
+.contact-detail-text {}
+.contact-detail-label { font-size: var(--text-xs); color: var(--color-text-muted); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: var(--space-1); }
+.contact-detail-val { font-size: var(--text-base); font-weight: 500; }
+
+/* Form */
+.contact-form-wrap {
+  background: var(--color-bg);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.07);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-8), 4vw, var(--space-12));
+  box-shadow: var(--shadow-sm);
+}
+.form-title { font-family: var(--font-display); font-size: var(--text-lg); font-weight: 500; margin-bottom: var(--space-8); }
+
+.form-grid {
+  display: flex; flex-direction: column; gap: var(--space-5);
+}
+
+.form-group { display: flex; flex-direction: column; gap: var(--space-2); }
+.form-label {
+  font-size: var(--text-sm); font-weight: 500;
+  color: var(--color-text-muted); letter-spacing: 0.04em;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%; padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid oklch(from var(--color-text) l c h / 0.12);
+  border-radius: var(--radius-md); font-size: var(--text-base);
+  color: var(--color-text); font-family: var(--font-body);
+  transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+  -webkit-appearance: none; appearance: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-primary) 16%, transparent);
+  background: var(--color-surface-2);
+}
+.form-input::placeholder, .form-textarea::placeholder { color: var(--color-text-faint); }
+.form-textarea { resize: vertical; min-height: 110px; line-height: 1.7; }
+
+.select-wrap { position: relative; }
+.select-wrap::after {
+  content: '';
+  position: absolute; right: var(--space-4); top: 50%;
+  transform: translateY(-50%);
+  width: 0; height: 0;
+  border-left: 5px solid transparent; border-right: 5px solid transparent;
+  border-top: 5px solid var(--color-text-muted);
+  pointer-events: none;
+}
+.form-select { cursor: pointer; padding-right: var(--space-10); }
+
+.form-submit {
+  width: 100%; padding: var(--space-4);
+  background: var(--color-primary); color: var(--color-text-inverse);
+  font-size: var(--text-base); font-weight: 500; font-family: var(--font-body);
+  border: none; border-radius: var(--radius-full); cursor: pointer;
+  letter-spacing: 0.06em; margin-top: var(--space-2);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.form-submit:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px oklch(from var(--color-primary) l c h / 0.3);
+}
+.form-submit:active { transform: translateY(0); }
+
+.form-success {
+  display: none; text-align: center; padding: var(--space-8);
+  color: var(--color-sage); font-size: var(--text-base);
+}
+.form-success svg { margin-inline: auto; margin-bottom: var(--space-3); }
+
+@media (max-width: 767px) {
+  .contact-layout { grid-template-columns: 1fr; }
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+  background: var(--color-surface-offset);
+  border-top: 1px solid var(--color-divider);
+  padding-block: var(--space-10);
+}
+.footer-inner {
+  display: flex; flex-direction: column;
+  align-items: center; gap: var(--space-6);
+  text-align: center;
+}
+.footer-logo { display: flex; align-items: center; gap: var(--space-3); }
+.footer-logo-text { font-family: var(--font-display); font-size: var(--text-base); font-weight: 500; letter-spacing: 0.06em; }
+.footer-tagline { font-size: var(--text-sm); color: var(--color-text-muted); letter-spacing: 0.04em; }
+.footer-links {
+  display: flex; gap: var(--space-6); flex-wrap: wrap; justify-content: center;
+}
+.footer-links a {
+  font-size: var(--text-sm); color: var(--color-text-muted); text-decoration: none;
+}
+.footer-links a:hover { color: var(--color-primary); }
+.footer-copy { font-size: var(--text-xs); color: var(--color-text-faint); }
+
+/* =========================================
+   WHATSAPP FLOAT
+   ========================================= */
+.whatsapp-float {
+  position: fixed; bottom: var(--space-8); right: var(--space-6);
+  z-index: 200; text-decoration: none;
+}
+.whatsapp-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 58px; height: 58px; border-radius: var(--radius-full);
+  background: #25D366;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4), 0 2px 8px rgba(37,211,102,0.3);
+  transition: transform var(--transition), box-shadow var(--transition);
+  animation: wa-bounce 2.2s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;
+}
+.whatsapp-float:hover .whatsapp-btn {
+  transform: scale(1.1);
+  box-shadow: 0 8px 28px rgba(37,211,102,0.55), 0 4px 12px rgba(37,211,102,0.4);
+  animation: none;
+}
+.whatsapp-tooltip {
+  position: absolute; right: 70px; top: 50%; transform: translateY(-50%);
+  background: var(--color-text); color: var(--color-bg);
+  font-size: var(--text-xs); font-family: var(--font-body);
+  padding: var(--space-2) var(--space-3); border-radius: var(--radius-md);
+  white-space: nowrap; pointer-events: none;
+  opacity: 0; transition: opacity var(--transition);
+}
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute; left: 100%; top: 50%; transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: var(--color-text);
+}
+.whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
+
+@keyframes wa-bounce {
+  0%, 100% { transform: translateY(0); }
+  15%       { transform: translateY(-8px); }
+  30%       { transform: translateY(-2px); }
+  45%       { transform: translateY(-5px); }
+  60%       { transform: translateY(0); }
+}
+
+/* =========================================
+   SCROLL REVEAL
+   ========================================= */
+.fade-in {
+  opacity: 1;
+}
+@supports (animation-timeline: scroll()) {
+  .fade-in {
+    opacity: 0;
+    animation: reveal-fade linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 80%;
+  }
+  @keyframes reveal-fade { to { opacity: 1; } }
+}
+
+/* =========================================
+   DECORATIVE DIVIDER
+   ========================================= */
+.section-divider {
+  width: 48px; height: 1px;
+  background: var(--color-primary);
+  margin: var(--space-6) auto;
+  display: block;
+}
+</style>
+</head>
+
+<body>
+<!-- Skip link -->
+<a class="sr-only" href="#main">跳到主要內容</a>
+
+<!-- =========================================
+     HEADER
+     ========================================= -->
+<header id="header" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="主要導覽">
+      <!-- Logo -->
+      <a href="#hero" class="logo-link" aria-label="Jupiter's Design Limited 木星設計有限公司 首頁">
+        <img
+          src="https://i.ibb.co/wNJdsw71/IMG-5454.png"
+          alt="Jupiter's Design Limited 木星設計有限公司 Logo"
+          class="logo-mark"
+          width="38" height="38"
+          loading="eager"
+          style="border-radius: var(--radius-sm); object-fit: contain;"
+        >
+        <div class="logo-text-wrap">
+          <span class="logo-en">Jupiter's Design</span>
+          <span class="logo-zh">木星設計有限公司</span>
+        </div>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="nav-links" role="list">
+        <li><a href="#hero">首頁</a></li>
+        <li><a href="#services">服務</a></li>
+        <li><a href="#why-us">關於我們</a></li>
+        <li><a href="#contact">聯絡我們</a></li>
+      </ul>
+
+      <!-- Theme toggle + CTA -->
+      <div style="display:flex;align-items:center;gap:var(--space-3);">
+        <button class="theme-toggle" data-theme-toggle aria-label="切換深色模式">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a href="#contact" class="nav-cta">免費報價</a>
+        <button class="hamburger" id="hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <!-- Mobile nav -->
+  <nav id="mobile-nav" class="mobile-nav" aria-label="手機導覽">
+    <a href="#hero">首頁</a>
+    <a href="#services">服務</a>
+    <a href="#why-us">關於我們</a>
+    <a href="#contact">聯絡我們 · 免費報價</a>
+  </nav>
+</header>
+
+<!-- =========================================
+     MAIN
+     ========================================= -->
+<main id="main">
+
+<!-- =========================================
+     HERO
+     ========================================= -->
+<section id="hero" aria-labelledby="hero-title">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><circle cx="5" cy="5" r="5"/></svg>
+          香港專業地板及翻新工程
+        </div>
+        <h1 class="hero-title" id="hero-title">
+          為您的家<br>
+          <strong>打造高品質生活空間</strong>
+        </h1>
+        <p class="hero-sub">
+          木星設計有限公司專注於 SPC、實木及複合木地板安裝、自流平地台處理、戶外地板圍欄及全面室內翻新，以精湛工藝及優質材料，為香港家居打造理想生活空間。
+        </p>
+        <div class="hero-btns">
+          <a href="#contact" class="btn-primary">
+            免費報價
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#services" class="btn-secondary">了解服務</a>
+        </div>
+      </div>
+
+      <!-- Hero visual: warm flooring mockup using gradient placeholder -->
+      <div class="hero-visual">
+        <img
+          class="hero-img"
+          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/a4a5d848eee639a143d00c95566178335e189fbc.jpg"
+          alt="現代客廳設計，配以優質SPC地板"
+          width="700" height="875" loading="eager"
+          onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
+        >
+        <!-- Color swatches badge -->
+        <div class="hero-badge">
+          <div class="hero-badge-title">精選地板色系</div>
+          <div class="hero-badge-sub">超過 40 款木紋色板可選</div>
+          <div class="hero-badge-dots">
+            <div class="hero-badge-dot" style="background:#c8a882;" title="暖木"></div>
+            <div class="hero-badge-dot" style="background:#a8956a;" title="橡木"></div>
+            <div class="hero-badge-dot" style="background:#7a6551;" title="深胡桃"></div>
+            <div class="hero-badge-dot" style="background:#e8ddd0;" title="白蠟木"></div>
+            <div class="hero-badge-dot" style="background:#5a4a3a;" title="黑胡桃"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     SERVICES
+     ========================================= -->
+<section id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">我們的服務</span>
+      <h2 class="section-title" id="services-title">專業工程 <strong>一站式服務</strong></h2>
+      <span class="section-divider" role="presentation"></span>
+      <p class="section-desc">從自流平地台處理到室內外地板安裝，再到圍欄及全室翻新，木星設計有限公司提供一站式工程解決方案。</p>
+    </div>
+
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <article class="service-card fade-in">
+        <div class="service-img-wrap">
+          <img
+            src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/4bb1adb6-7e9d-430a-8a3a-13626ef6b751.png"
+            alt="SPC防刮防水地板安裝示範"
+            width="600" height="450" loading="lazy"
+            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
+          >
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="4" rx="1"/><rect x="2" y="10" width="20" height="4" rx="1"/><rect x="2" y="17" width="20" height="4" rx="1"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">SPC 防刮防水地板安裝</h3>
+          <p class="service-desc">採用優質石塑複合材料（SPC），具有超強抗刮、100% 防水特性，適合香港潮濕氣候，安裝快捷，無需黏貼劑。</p>
+          <a href="#contact" class="service-more">
+            查詢報價
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Service 2 -->
+      <article class="service-card fade-in">
+        <div class="service-img-wrap">
+          <img
+            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b0a7cdb59ed24457b35be31b76a7f24ebb1c52c2.jpg"
+            alt="底層地台處理及水平工程"
+            width="600" height="450" loading="lazy"
+            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
+          >
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M4 21V8l8-5 8 5v13"/><path d="M9 21v-8h6v8"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">底層地台處理</h3>
+          <p class="service-desc">安裝前進行專業地台水平評估及修補，確保地面平整，防止地板日後翹起或發聲，令地板壽命更長久。</p>
+          <a href="#contact" class="service-more">
+            查詢報價
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Service 3 -->
+      <article class="service-card fade-in">
+        <div class="service-img-wrap">
+          <img
+            src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/63eb230e-e0a7-465f-94cb-cf52bc3ff924.png"
+            alt="客廳睡房大翻新設計"
+            width="600" height="450" loading="lazy"
+            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
+          >
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">客廳與睡房大翻新</h3>
+          <p class="service-desc">由設計規劃到施工完成，提供全面室內翻新服務，包括牆身粉刷、天花板工程及傢俬擺設優化，全面提升居住品質。</p>
+          <a href="#contact" class="service-more">
+            查詢報價
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Service 4: 實木及複合木地板 -->
+      <article class="service-card fade-in">
+        <div class="service-img-wrap">
+          <img
+            src="https://user-gen-media-assets.s3.amazonaws.com/gemini_images/c69f6ed8-ebab-4bb8-9dda-13abdab0acb4.png"
+            alt="實木複合地板安裝細節"
+            width="600" height="450" loading="lazy"
+            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
+          >
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">實木及複合木地板</h3>
+          <p class="service-desc">優質實木地板及複合木地板安裝，天然紋理質感細膩，表面可打磨翻新，防水防潮，適合香港高濕度環境。</p>
+          <a href="#contact" class="service-more">
+            查詢報價
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Service 5: 自流平地台 -->
+      <article class="service-card fade-in">
+        <div class="service-img-wrap">
+          <img
+            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/b0a7cdb59ed24457b35be31b76a7f24ebb1c52c2.jpg"
+            alt="自流平地台完成效果"
+            width="600" height="450" loading="lazy"
+            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
+          >
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 17l4-8 4 4 4-6 4 10"/><path d="M3 21h18"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">自流平地台處理</h3>
+          <p class="service-desc">採用專業自流平砂漿整平地台，厚度 20–40mm，適合舊樓凹凸地面，大幅提升地板安裝精準度及使用壽命。</p>
+          <a href="#contact" class="service-more">
+            查詢報價
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+
+      <!-- Service 6: 戶外地板與圍欄 -->
+      <article class="service-card fade-in">
+        <div class="service-img-wrap">
+          <img
+            src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/e8374e477a0bfa85650e09e46f245bac6a108dc8.jpg"
+            alt="戶外WPC地板及圍欄完成效果"
+            width="600" height="450" loading="lazy"
+            onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
+          >
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+        </div>
+        <div class="service-body">
+          <h3 class="service-title">戶外地板與圍欄安裝</h3>
+          <p class="service-desc">採用 WPC 環保複合木，防滑耐候防腐，適用於露台、天台及花園，配套圍欄一站式安裝，美觀耐用。</p>
+          <a href="#contact" class="service-more">
+            查詢報價
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     WHY US
+     ========================================= -->
+<section id="why-us" aria-labelledby="whyus-title">
+  <div class="container">
+    <div class="whyus-layout">
+      <div class="whyus-visual fade-in">
+        <img
+          class="whyus-img"
+          src="https://pplx-res.cloudinary.com/image/upload/pplx_search_images/7d099c6af2e97b66c99a7fa2856e8dbe4b39af48.jpg"
+          alt="明亮現代室內空間，展示優質地板完成效果"
+          width="700" height="933" loading="lazy"
+          onerror="this.style.background='var(--color-surface-offset)';this.removeAttribute('src')"
+        >
+      </div>
+
+      <div class="whyus-content">
+        <div class="section-header">
+          <span class="section-tag">為何選擇我們</span>
+          <h2 class="section-title" id="whyus-title">用心施工<br><strong>成就美好家居</strong></h2>
+          <span class="section-divider" style="margin-left:0;" role="presentation"></span>
+          <p class="section-desc">木星設計紮根香港，深明本地居住需求，以高效安裝、優質材料及真誠服務，贏得客戶信賴。</p>
+        </div>
+
+        <ul class="features-list" role="list">
+          <li class="feature-item fade-in">
+            <div class="feature-num" aria-hidden="true">01</div>
+            <div class="feature-body">
+              <div class="feature-title">快速高效安裝</div>
+              <p class="feature-desc">SPC 地板採用卡扣式安裝系統，一般家居面積可在 1–2 天完工，對客戶生活影響降至最低。</p>
+            </div>
+          </li>
+          <li class="feature-item fade-in">
+            <div class="feature-num" aria-hidden="true">02</div>
+            <div class="feature-body">
+              <div class="feature-title">頂級耐用材料</div>
+              <p class="feature-desc">精選符合歐洲 EN 標準的 SPC 地板，表層採用 0.5mm 耐磨層，耐刮耐壓，抵禦日常磨損。</p>
+            </div>
+          </li>
+          <li class="feature-item fade-in">
+            <div class="feature-num" aria-hidden="true">03</div>
+            <div class="feature-body">
+              <div class="feature-title">香港本地專業</div>
+              <p class="feature-desc">團隊深明香港舊樓地台特性，具備豐富舊屋翻新及不平地台處理經驗，因地制宜。</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-num">500+</div>
+            <div class="stat-label">完成工程</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">年業界經驗</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">98%</div>
+            <div class="stat-label">客戶滿意度</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================
+     CONTACT
+     ========================================= -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <div class="section-header">
+          <span class="section-tag">聯絡我們</span>
+          <h2 class="section-title" id="contact-title">立即查詢<br><strong>免費上門報價</strong></h2>
+          <span class="section-divider" style="margin-left:0;" role="presentation"></span>
+          <p class="section-desc">填寫表格或致電我們，專業顧問將盡快與您聯絡，為您提供度身訂造方案。</p>
+        </div>
+
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.58a16 16 0 0 0 6.29 6.29l.94-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label">電話 / WhatsApp</div>
+              <div class="contact-detail-val">+852 9571 5155</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label">電郵</div>
+              <div class="contact-detail-val">info@jupiterdesign.hk</div>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-detail-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail-text">
+              <div class="contact-detail-label">服務範圍</div>
+              <div class="contact-detail-val">全港三區上門服務</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="contact-form-wrap fade-in">
+        <h3 class="form-title">填寫報價申請</h3>
+        <form id="quote-form" class="form-grid" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="name">姓名 <span aria-hidden="true" style="color:var(--color-primary)">*</span></label>
+            <input
+              class="form-input" type="text" id="name" name="name"
+              placeholder="請輸入您的姓名" required autocomplete="name"
+            >
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">聯絡電話 <span aria-hidden="true" style="color:var(--color-primary)">*</span></label>
+            <input
+              class="form-input" type="tel" id="phone" name="phone"
+              placeholder="例：+852 9571 5155" required autocomplete="tel"
+            >
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="district">地區 <span aria-hidden="true" style="color:var(--color-primary)">*</span></label>
+            <div class="select-wrap">
+              <select class="form-select" id="district" name="district" required>
+                <option value="" disabled selected>請選擇您的地區</option>
+                <option value="hk-island">香港島</option>
+                <option value="kowloon">九龍</option>
+                <option value="new-territories">新界</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="service">服務類型</label>
+            <div class="select-wrap">
+              <select class="form-select" id="service" name="service">
+                <option value="" disabled selected>請選擇服務</option>
+                <option value="spc">SPC 防刮防水地板安裝</option>
+                <option value="solid-wood">實木地板安裝</option>
+                <option value="composite">複合木地板安裝</option>
+                <option value="self-leveling">自流平地台處理</option>
+                <option value="outdoor">戶外地板與圍欄安裝</option>
+                <option value="renovation">客廳與睡房大翻新</option>
+                <option value="other">其他查詢</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">備註（可選）</label>
+            <textarea
+              class="form-textarea" id="message" name="message"
+              placeholder="請描述您的需求，例如面積、翻新類型等…"
+            ></textarea>
+          </div>
+          <button type="submit" class="form-submit">立即提交申請</button>
+        </form>
+        <div class="form-success" id="form-success" role="alert">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <p style="font-family:var(--font-display);font-size:var(--text-lg);font-weight:500;margin-bottom:var(--space-2);">已成功提交！</p>
+          <p style="color:var(--color-text-muted);font-size:var(--text-sm);">我們的顧問將於一個工作天內與您聯絡。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- =========================================
+     FOOTER
+     ========================================= -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img
+          src="https://i.ibb.co/wNJdsw71/IMG-5454.png"
+          alt="Jupiter's Design Limited Logo"
+          width="32" height="32"
+          loading="lazy"
+          style="border-radius: var(--radius-sm); object-fit: contain;"
+        >
+        <span class="footer-logo-text">Jupiter's Design Limited 木星設計有限公司</span>
+      </div>
+      <p class="footer-tagline">香港專業地板安裝 · 戶外工程 · 室內翻新</p>
+      <nav class="footer-links" aria-label="頁腳導覽">
+        <a href="#hero">首頁</a>
+        <a href="#services">服務</a>
+        <a href="#why-us">關於我們</a>
+        <a href="#contact">聯絡我們</a>
+      </nav>
+      <p class="footer-copy">© 2026 Jupiter's Design Limited 木星設計有限公司 · 香港新界 · 版權所有</p>
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================
+     WHATSAPP FLOAT
+     ========================================= -->
+<a
+  href="https://wa.me/85295715155"
+  class="whatsapp-float"
+  target="_blank" rel="noopener noreferrer"
+  aria-label="透過 WhatsApp 聯絡我們"
+>
+  <div class="whatsapp-btn" role="presentation">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+    </svg>
+  </div>
+  <div class="whatsapp-tooltip" aria-hidden="true">WhatsApp 即時查詢</div>
+</a>
+
+<!-- =========================================
+     JAVASCRIPT
+     ========================================= -->
+<script>
+// --- Dark Mode Toggle ---
+(function(){
+  const t = document.querySelector('[data-theme-toggle]');
+  const r = document.documentElement;
+  let d = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  r.setAttribute('data-theme', d);
+
+  function setIcon(mode){
+    if(!t) return;
+    t.innerHTML = mode === 'dark'
+      ? '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+      : '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    t.setAttribute('aria-label', mode === 'dark' ? '切換至淺色模式' : '切換至深色模式');
+  }
+  setIcon(d);
+
+  if(t) t.addEventListener('click', () => {
+    d = d === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', d);
+    setIcon(d);
+  });
+})();
+
+// --- Sticky Header ---
+(function(){
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+})();
+
+// --- Hamburger Menu ---
+(function(){
+  const btn = document.getElementById('hamburger');
+  const nav = document.getElementById('mobile-nav');
+  if(!btn || !nav) return;
+
+  btn.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+    btn.setAttribute('aria-label', isOpen ? '關閉選單' : '開啟選單');
+  });
+
+  // Close on link click
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', '開啟選單');
+    });
+  });
+})();
+
+// --- Smooth scroll for nav links ---
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){ e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// --- Contact Form ---
+(function(){
+  const form = document.getElementById('quote-form');
+  const success = document.getElementById('form-success');
+  if(!form || !success) return;
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.querySelector('#name').value.trim();
+    const phone = form.querySelector('#phone').value.trim();
+    const district = form.querySelector('#district').value;
+
+    // Simple validation
+    let valid = true;
+    [form.querySelector('#name'), form.querySelector('#phone'), form.querySelector('#district')].forEach(el => {
+      const hasValue = el.value.trim().length > 0;
+      el.style.borderColor = hasValue ? '' : 'var(--color-primary)';
+      if(!hasValue) valid = false;
+    });
+    if(!valid) return;
+
+    // Simulate submission
+    form.style.display = 'none';
+    success.style.display = 'flex';
+    success.style.flexDirection = 'column';
+    success.style.alignItems = 'center';
+  });
+
+  // Reset border color on input
+  form.querySelectorAll('input, select').forEach(el => {
+    el.addEventListener('input', () => { el.style.borderColor = ''; });
+  });
+})();
+</script>
+</body>
+</html>
