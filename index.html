@@ -19,12 +19,12 @@
     Phone Link: tel:+85295715155
     Email Link: mailto:info@jupiterdesign.com
 
-    Deployment Notes:
-    1. Save this file as: index.html
-    2. Upload directly to Cloudflare Pages as a static HTML site [web:22]
-    3. No build tools required for a plain static HTML deployment [web:22]
-    4. Replace placeholder project images with real photos later
-    5. Inquiry form currently uses mailto; can be connected to Cloudflare Worker or third-party form service later
+    Photo replacement guide:
+    - Hero image: Replace URL in .hero-panel.main background-image
+    - About panels: Replace 3 .material-photo img src attributes
+    - Project cards: Replace each .project-media img src attribute
+    - All images use Unsplash CDN (free for commercial use, no attribution required)
+    - When replacing with real project photos, use 1200x820px for best display quality
   -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -60,14 +60,7 @@
     "areaServed": "Hong Kong",
     "availableLanguage": ["zh-HK", "en"],
     "description": "香港地板工程公司，提供 SPC 地板、實木地板、複合木地板、戶外木地板及圍欄安裝、自流平工程及地台處理。",
-    "serviceType": [
-      "SPC 地板",
-      "實木地板",
-      "複合木地板",
-      "戶外木地板及圍欄",
-      "自流平工程",
-      "地台處理"
-    ],
+    "serviceType": ["SPC 地板","實木地板","複合木地板","戶外木地板及圍欄","自流平工程","地台處理"],
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+85295715155",
@@ -86,18 +79,13 @@
       --card-solid: #ffffff;
       --text: #1f1c19;
       --muted: #645a50;
-      --line: rgba(42, 34, 28, 0.12);
-      --line-strong: rgba(42, 34, 28, 0.22);
+      --line: rgba(42,34,28,0.12);
       --accent: #8b6845;
       --accent-deep: #6f5033;
-      --accent-soft: #d9c1a3;
       --gold: #b38a57;
       --dark: #191714;
-      --dark-2: #25211d;
-      --success: #1f7a53;
-      --shadow: 0 12px 40px rgba(30, 25, 20, 0.10);
-      --shadow-lg: 0 24px 60px rgba(30, 25, 20, 0.16);
-      --radius-sm: 12px;
+      --shadow: 0 12px 40px rgba(30,25,20,0.10);
+      --shadow-lg: 0 24px 60px rgba(30,25,20,0.16);
       --radius: 20px;
       --radius-lg: 28px;
       --container: min(1180px, calc(100% - 32px));
@@ -106,6 +94,7 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
@@ -126,12 +115,6 @@
     .container { width: var(--container); margin: 0 auto; }
     .section { padding: 88px 0; position: relative; }
     .section-tight { padding: 64px 0; }
-    .section-dark {
-      background:
-        linear-gradient(180deg, rgba(25,23,20,0.98), rgba(31,28,25,0.98)),
-        var(--dark);
-      color: #f7f0e6;
-    }
 
     .eyebrow {
       display: inline-flex;
@@ -143,82 +126,31 @@
       color: var(--gold);
       margin-bottom: 14px;
     }
-
     .eyebrow::before {
       content: "";
-      width: 34px;
-      height: 1px;
+      width: 34px; height: 1px;
       background: currentColor;
       opacity: 0.6;
     }
 
-    .section-head {
-      max-width: 760px;
-      margin-bottom: 34px;
+    .section-head { max-width: 760px; margin-bottom: 34px; }
+    .section-head h2 { margin: 0 0 16px; font-size: clamp(2rem,4vw,3.2rem); line-height: 1.12; letter-spacing: -0.02em; }
+    .section-head p, .hero-copy p, .about-copy p, .cta-panel p, .contact-intro p, .footer-brand p {
+      color: var(--muted); margin: 0; font-size: 1rem;
     }
 
-    .section-head h2,
-    .hero-copy h1 {
-      margin: 0 0 16px;
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-    }
-
-    .section-head h2 {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-    }
-
-    .section-head p,
-    .hero-copy p,
-    .about-copy p,
-    .cta-panel p,
-    .contact-intro p,
-    .footer-brand p {
-      color: var(--muted);
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    .subtitle-en {
-      display: block;
-      margin-top: 10px;
-      font-size: 0.95rem;
-      color: rgba(100,90,80,0.86);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
+    .btn-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 52px;
-      padding: 0 20px;
-      border-radius: 999px;
-      border: 1px solid transparent;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 52px; padding: 0 22px; border-radius: 999px; border: 1px solid transparent;
       font-weight: 700;
       transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease, color .25s ease;
-      cursor: pointer;
-      white-space: nowrap;
+      cursor: pointer; white-space: nowrap;
     }
-
     .btn:hover { transform: translateY(-2px); }
-    .btn:focus-visible,
-    .nav-toggle:focus-visible,
-    .faq summary:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible,
-    select:focus-visible {
-      outline: 2px solid rgba(179,138,87,0.5);
-      outline-offset: 2px;
+    .btn:focus-visible, .nav-toggle:focus-visible, .faq summary:focus-visible,
+    input:focus-visible, textarea:focus-visible, select:focus-visible {
+      outline: 2px solid rgba(179,138,87,0.5); outline-offset: 2px;
     }
 
     .btn-primary {
@@ -226,10 +158,7 @@
       color: #fff8f0;
       box-shadow: 0 12px 28px rgba(111,80,51,0.28);
     }
-
-    .btn-primary:hover {
-      box-shadow: 0 18px 34px rgba(111,80,51,0.34);
-    }
+    .btn-primary:hover { box-shadow: 0 18px 34px rgba(111,80,51,0.34); }
 
     .btn-secondary {
       background: rgba(255,255,255,0.68);
@@ -237,1185 +166,448 @@
       color: var(--text);
       backdrop-filter: blur(8px);
     }
-
-    .btn-dark {
-      background: #1d1a17;
-      color: #f8f2ea;
-    }
-
-    .btn-outline {
-      border-color: rgba(255,255,255,0.24);
-      color: #f7f0e6;
-      background: transparent;
-    }
-
+    .btn-dark { background: #1d1a17; color: #f8f2ea; }
+    .btn-outline { border-color: rgba(255,255,255,0.28); color: #f7f0e6; background: transparent; }
     .btn-full { width: 100%; }
 
     .skip-link {
-      position: absolute;
-      left: 16px;
-      top: -60px;
-      background: var(--dark);
-      color: #fff;
-      padding: 10px 14px;
-      border-radius: 10px;
-      z-index: 9999;
+      position: absolute; left: 16px; top: -60px;
+      background: var(--dark); color: #fff;
+      padding: 10px 14px; border-radius: 10px; z-index: 9999;
     }
+    .skip-link:focus { top: 16px; }
 
-    .skip-link:focus {
-      top: 16px;
-    }
-
+    /* ── HEADER ── */
     .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1200;
+      position: sticky; top: 0; z-index: 1200;
       backdrop-filter: blur(14px);
-      background: rgba(246,241,234,0.84);
+      background: rgba(246,241,234,0.88);
       border-bottom: 1px solid rgba(42,34,28,0.08);
     }
-
     .header-inner {
       min-height: var(--header-h);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px;
     }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.15;
-      min-width: 0;
-    }
-
-    .brand strong {
-      font-size: 1.04rem;
-      letter-spacing: 0.04em;
-    }
-
-    .brand span {
-      font-size: 0.86rem;
-      color: var(--muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .nav-wrap {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    .brand { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+    .brand strong { font-size: 1.04rem; letter-spacing: 0.04em; }
+    .brand span { font-size: 0.86rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .nav-wrap { display: flex; align-items: center; gap: 16px; }
 
     .site-nav ul {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin: 0;
-      padding: 0;
+      list-style: none; display: flex; align-items: center; gap: 6px; margin: 0; padding: 0;
     }
-
     .site-nav a {
-      display: inline-flex;
-      align-items: center;
-      min-height: 42px;
-      padding: 0 14px;
-      color: var(--muted);
-      border-radius: 999px;
-      transition: background .2s ease, color .2s ease;
-      font-size: 0.95rem;
+      display: inline-flex; align-items: center; min-height: 42px; padding: 0 14px;
+      color: var(--muted); border-radius: 999px;
+      transition: background .2s ease, color .2s ease; font-size: 0.95rem;
     }
+    .site-nav a:hover { color: var(--text); background: rgba(111,80,51,0.07); }
 
-    .site-nav a:hover {
-      color: var(--text);
-      background: rgba(111,80,51,0.07);
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .contact-mini {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .contact-mini { display: inline-flex; align-items: center; color: var(--muted); font-size: 0.92rem; }
 
     .nav-toggle {
-      display: none;
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      border: 1px solid rgba(42,34,28,0.12);
-      background: rgba(255,255,255,0.75);
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: relative;
+      display: none; width: 48px; height: 48px; border-radius: 14px;
+      border: 1px solid rgba(42,34,28,0.12); background: rgba(255,255,255,0.75);
+      align-items: center; justify-content: center; cursor: pointer; position: relative;
     }
-
-    .nav-toggle span,
-    .nav-toggle::before,
-    .nav-toggle::after {
-      content: "";
-      position: absolute;
-      width: 20px;
-      height: 2px;
-      background: var(--text);
-      border-radius: 999px;
-      transition: transform .25s ease, opacity .2s ease;
+    .nav-toggle span, .nav-toggle::before, .nav-toggle::after {
+      content: ""; position: absolute;
+      width: 20px; height: 2px; background: var(--text);
+      border-radius: 999px; transition: transform .25s ease, opacity .2s ease;
     }
-
     .nav-toggle::before { transform: translateY(-6px); }
     .nav-toggle::after { transform: translateY(6px); }
     .nav-open .nav-toggle span { opacity: 0; }
     .nav-open .nav-toggle::before { transform: rotate(45deg); }
     .nav-open .nav-toggle::after { transform: rotate(-45deg); }
 
-    .hero {
-      padding: 64px 0 56px;
-      overflow: hidden;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.04fr 0.96fr;
-      gap: 44px;
-      align-items: center;
-    }
-
+    /* ── HERO ── */
+    .hero { padding: 64px 0 56px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.04fr 0.96fr; gap: 44px; align-items: center; }
     .hero-copy h1 {
-      font-size: clamp(2.35rem, 5vw, 5rem);
-      max-width: 13ch;
+      margin: 0 0 16px; line-height: 1.12; letter-spacing: -0.02em;
+      font-size: clamp(2.35rem,5vw,4.8rem); max-width: 14ch;
     }
-
-    .hero-copy p {
-      max-width: 63ch;
-      font-size: 1.06rem;
-    }
-
-    .trust-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 24px;
-    }
-
+    .trust-strip { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
     .trust-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(111,80,51,0.12);
-      color: var(--text);
-      font-size: 0.94rem;
-      box-shadow: 0 8px 18px rgba(32, 27, 23, 0.05);
+      display: inline-flex; align-items: center; padding: 10px 14px;
+      border-radius: 999px; background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(111,80,51,0.12); color: var(--text);
+      font-size: 0.94rem; box-shadow: 0 8px 18px rgba(32,27,23,0.05);
     }
 
+    /* Hero visual with real photo */
     .hero-visual {
-      position: relative;
-      min-height: 560px;
-      isolation: isolate;
+      position: relative; min-height: 580px; isolation: isolate;
     }
-
-    .hero-panel {
+    .hero-main-photo {
       position: absolute;
+      inset: 34px 0 38px 64px;
       border-radius: 28px;
       overflow: hidden;
       box-shadow: var(--shadow-lg);
-      border: 1px solid rgba(255,255,255,0.45);
-      background:
-        linear-gradient(145deg, rgba(255,255,255,0.92), rgba(244,235,224,0.72));
+      border: 1px solid rgba(255,255,255,0.3);
     }
-
-    .hero-panel::before {
+    .hero-main-photo img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-main-photo::after {
       content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(145deg, rgba(111,80,51,0.18), transparent 35%),
-        repeating-linear-gradient(90deg, rgba(101,72,44,0.08) 0 18px, rgba(255,255,255,0.16) 18px 36px);
-      mix-blend-mode: multiply;
-      opacity: 0.9;
+      position: absolute; inset: 0;
+      background: linear-gradient(200deg, rgba(20,15,10,0.22) 0%, transparent 45%, rgba(20,15,10,0.18) 100%);
+      pointer-events: none;
     }
 
-    .hero-panel.main {
-      inset: 38px 0 42px 72px;
+    .hero-thumb-tl {
+      position: absolute; top: 0; left: 0;
+      width: 46%; height: 34%;
+      border-radius: 22px; overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.28);
     }
+    .hero-thumb-tl img { width: 100%; height: 100%; object-fit: cover; }
 
-    .hero-panel.side-top {
-      width: 48%;
-      height: 34%;
-      top: 0;
-      left: 0;
-      background: linear-gradient(145deg, rgba(59,47,36,0.96), rgba(105,79,57,0.84));
+    .hero-thumb-br {
+      position: absolute; right: 16px; bottom: 0;
+      width: 52%; height: 32%;
+      border-radius: 22px; overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.28);
     }
+    .hero-thumb-br img { width: 100%; height: 100%; object-fit: cover; }
 
-    .hero-panel.side-top::before {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.14), transparent),
-        repeating-linear-gradient(90deg, rgba(255,255,255,0.08) 0 14px, rgba(0,0,0,0.08) 14px 28px);
-      opacity: 1;
-    }
-
-    .hero-panel.side-bottom {
-      width: 54%;
-      height: 34%;
-      right: 20px;
-      bottom: 0;
-      background: linear-gradient(145deg, rgba(247,240,232,0.98), rgba(224,206,182,0.92));
-    }
-
-    .hero-badge,
-    .hero-note {
-      position: absolute;
-      z-index: 2;
-      background: rgba(255,255,255,0.78);
-      backdrop-filter: blur(10px);
+    .hero-badge, .hero-note {
+      position: absolute; z-index: 4;
+      background: rgba(255,255,255,0.84);
+      backdrop-filter: blur(12px);
       border: 1px solid rgba(111,80,51,0.12);
-      border-radius: 18px;
-      box-shadow: var(--shadow);
+      border-radius: 18px; box-shadow: var(--shadow);
     }
-
-    .hero-badge {
-      top: 18px;
-      right: 26px;
-      padding: 16px 18px;
-      min-width: 190px;
-    }
-
-    .hero-badge strong,
-    .hero-note strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-
-    .hero-badge span,
-    .hero-note span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.55;
-    }
-
-    .hero-note {
-      left: 18px;
-      bottom: 30px;
-      padding: 16px 18px;
-      max-width: 250px;
-    }
-
-    .hero-gridline {
-      position: absolute;
-      inset: 18% -6% auto auto;
-      width: 74%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(139,104,69,0.22), transparent);
-      z-index: 0;
-      transform: rotate(-12deg);
-    }
+    .hero-badge { top: 18px; right: 22px; padding: 14px 18px; min-width: 190px; }
+    .hero-note  { left: 14px; bottom: 26px; padding: 14px 18px; max-width: 240px; }
+    .hero-badge strong, .hero-note strong { display: block; font-size: 0.98rem; margin-bottom: 4px; }
+    .hero-badge span, .hero-note span { display: block; color: var(--muted); font-size: 0.90rem; line-height: 1.55; }
 
     .hero-circle {
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      right: -30px;
-      top: 130px;
-      background: radial-gradient(circle, rgba(179,138,87,0.26), transparent 68%);
-      filter: blur(2px);
-      z-index: -1;
+      position: absolute; width: 200px; height: 200px; border-radius: 50%;
+      right: -40px; top: 120px;
+      background: radial-gradient(circle, rgba(179,138,87,0.22), transparent 68%);
+      filter: blur(2px); z-index: -1;
     }
 
-    .credibility-bar {
-      padding: 0 0 24px;
-    }
-
+    /* ── CREDIBILITY BAR ── */
+    .credibility-bar { padding: 0 0 24px; }
     .credibility-box {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      padding: 18px;
-      border-radius: 24px;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 14px; padding: 18px; border-radius: 24px;
       background: linear-gradient(180deg, rgba(31,28,25,0.98), rgba(44,39,34,0.98));
-      color: #f8f2ea;
-      box-shadow: var(--shadow-lg);
+      color: #f8f2ea; box-shadow: var(--shadow-lg);
     }
-
     .credibility-item {
-      padding: 18px 18px 16px;
-      border-radius: 18px;
+      padding: 18px 18px 16px; border-radius: 18px;
       border: 1px solid rgba(255,255,255,0.08);
       background: rgba(255,255,255,0.03);
     }
+    .credibility-item strong { display: block; font-size: 1rem; margin-bottom: 6px; }
+    .credibility-item span { color: rgba(247,240,230,0.74); font-size: 0.94rem; }
 
-    .credibility-item strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: 6px;
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 34px; align-items: stretch; }
+    .about-panel {
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.70);
+      border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow);
+      padding: 22px; display: grid; gap: 16px;
+    }
+    .material-stack { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; min-height: 280px; }
+    .material-photo {
+      border-radius: 18px; overflow: hidden;
+      border: 1px solid rgba(111,80,51,0.10);
+      position: relative;
+    }
+    .material-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .material-photo .mat-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 10px 12px 12px;
+      background: linear-gradient(transparent, rgba(20,14,8,0.68));
+      color: rgba(255,255,255,0.92); font-size: 0.82rem; font-weight: 700;
     }
 
-    .credibility-item span {
-      color: rgba(247,240,230,0.74);
-      font-size: 0.94rem;
-    }
+    .about-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .stat-box { border-radius: 18px; padding: 16px; background: rgba(255,255,255,0.78); border: 1px solid rgba(111,80,51,0.10); }
+    .stat-box strong { display: block; font-size: 1.06rem; margin-bottom: 6px; }
+    .stat-box span { display: block; color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
 
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 34px;
-      align-items: stretch;
-    }
-
-    .about-panel,
     .about-copy {
       border-radius: var(--radius-lg);
       background: rgba(255,255,255,0.70);
       border: 1px solid rgba(111,80,51,0.10);
       box-shadow: var(--shadow);
+      padding: 34px; display: flex; flex-direction: column; justify-content: center; gap: 18px;
     }
-
-    .about-panel {
-      padding: 26px;
-      display: grid;
-      gap: 16px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.88), rgba(246,238,229,0.80));
-    }
-
-    .material-stack {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      min-height: 300px;
-    }
-
-    .material-card {
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(111,80,51,0.10);
-      background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(241,232,221,0.72));
-    }
-
-    .material-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        repeating-linear-gradient(90deg, rgba(111,80,51,0.08) 0 14px, rgba(255,255,255,0.02) 14px 28px),
-        linear-gradient(180deg, rgba(255,255,255,0.22), transparent 45%);
-    }
-
-    .material-card:nth-child(2) {
-      background: linear-gradient(180deg, rgba(77,60,46,0.94), rgba(123,93,67,0.88));
-    }
-
-    .material-card:nth-child(3) {
-      background: linear-gradient(180deg, rgba(232,221,206,0.98), rgba(204,180,149,0.90));
-    }
-
-    .about-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .stat-box {
-      border-radius: 18px;
-      padding: 16px;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(111,80,51,0.10);
-    }
-
-    .stat-box strong {
-      display: block;
-      font-size: 1.06rem;
-      margin-bottom: 6px;
-    }
-
-    .stat-box span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.55;
-    }
-
-    .about-copy {
-      padding: 34px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 18px;
-    }
-
-    .about-points {
-      display: grid;
-      gap: 14px;
-      margin-top: 4px;
-    }
-
-    .about-point {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-
+    .about-points { display: grid; gap: 14px; margin-top: 4px; }
+    .about-point { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
     .about-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: rgba(139,104,69,0.10);
-      color: var(--accent-deep);
-      font-weight: 800;
-      border: 1px solid rgba(111,80,51,0.10);
+      width: 44px; height: 44px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(139,104,69,0.10); color: var(--accent-deep);
+      font-weight: 800; border: 1px solid rgba(111,80,51,0.10);
     }
 
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
+    /* ── SERVICES ── */
+    .service-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .service-card {
-      display: flex;
-      flex-direction: column;
-      border-radius: 24px;
-      padding: 24px;
+      display: flex; flex-direction: column;
+      border-radius: 24px; padding: 24px;
       background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(111,80,51,0.10);
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(111,80,51,0.10); box-shadow: var(--shadow);
       transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
-      min-height: 100%;
     }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 52px rgba(31,28,25,0.14);
-      border-color: rgba(111,80,51,0.20);
-    }
-
-    .service-top {
-      display: flex;
-      align-items: start;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 24px 52px rgba(31,28,25,0.14); border-color: rgba(111,80,51,0.20); }
+    .service-top { display: flex; align-items: start; justify-content: space-between; gap: 16px; margin-bottom: 14px; }
     .service-number {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
+      width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center;
       background: linear-gradient(135deg, rgba(139,104,69,0.15), rgba(179,138,87,0.22));
-      color: var(--accent-deep);
-      font-weight: 800;
-      border: 1px solid rgba(111,80,51,0.08);
-      flex-shrink: 0;
+      color: var(--accent-deep); font-weight: 800; border: 1px solid rgba(111,80,51,0.08); flex-shrink: 0;
     }
-
-    .service-card h3 {
-      margin: 0 0 6px;
-      font-size: 1.24rem;
-      line-height: 1.25;
-    }
-
-    .service-card h3 small {
-      display: block;
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.78rem;
-      letter-spacing: 0.10em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .service-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 0.98rem;
-    }
-
-    .service-points {
-      list-style: none;
-      margin: 0 0 18px;
-      padding: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .service-points li {
-      padding-left: 18px;
-      position: relative;
-      color: var(--text);
-      font-size: 0.95rem;
-    }
-
+    .service-card h3 { margin: 0 0 6px; font-size: 1.24rem; line-height: 1.25; }
+    .service-card h3 small { display: block; margin-top: 6px; color: var(--muted); font-size: 0.78rem; letter-spacing: 0.10em; text-transform: uppercase; font-weight: 700; }
+    .service-card p { margin: 0 0 14px; color: var(--muted); font-size: 0.98rem; }
+    .service-points { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 10px; }
+    .service-points li { padding-left: 18px; position: relative; color: var(--text); font-size: 0.95rem; }
     .service-points li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 11px;
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 0 5px rgba(179,138,87,0.12);
+      content: ""; position: absolute; left: 0; top: 11px;
+      width: 7px; height: 7px; border-radius: 50%;
+      background: var(--gold); box-shadow: 0 0 0 5px rgba(179,138,87,0.12);
     }
-
     .service-card .btn { margin-top: auto; }
 
-    .reasons-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
+    /* ── WHY US ── */
+    .reasons-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .reason-card { padding: 24px; border-radius: 22px; background: rgba(255,255,255,0.72); border: 1px solid rgba(111,80,51,0.10); box-shadow: var(--shadow); }
+    .reason-card strong { display: block; margin-bottom: 10px; font-size: 1.08rem; }
+    .reason-card p { margin: 0; color: var(--muted); font-size: 0.96rem; }
 
-    .reason-card {
-      padding: 24px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(111,80,51,0.10);
-      box-shadow: var(--shadow);
-    }
-
-    .reason-card strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1.08rem;
-    }
-
-    .reason-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
+    /* ── PROJECTS ── */
+    .project-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .project-card {
-      overflow: hidden;
-      border-radius: 24px;
+      overflow: hidden; border-radius: 24px;
       background: rgba(255,255,255,0.82);
-      border: 1px solid rgba(111,80,51,0.10);
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(111,80,51,0.10); box-shadow: var(--shadow);
       transition: transform .28s ease, box-shadow .28s ease;
     }
-
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 50px rgba(31,28,25,0.14);
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(31,28,25,0.14); }
+    .project-media { aspect-ratio: 16/11; overflow: hidden; position: relative; }
+    .project-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .project-card:hover .project-media img { transform: scale(1.05); }
+    .project-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(transparent 50%, rgba(20,14,8,0.55));
+      pointer-events: none;
     }
-
-    .project-media {
-      aspect-ratio: 16 / 11;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(250,245,238,0.9), rgba(229,214,193,0.9));
-    }
-
-    .project-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .project-body {
-      padding: 20px;
-    }
-
+    .project-body { padding: 20px; }
     .project-kicker {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(139,104,69,0.10);
-      color: var(--accent-deep);
-      font-size: 0.78rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 12px;
+      display: inline-flex; align-items: center; padding: 6px 10px; border-radius: 999px;
+      background: rgba(139,104,69,0.10); color: var(--accent-deep);
+      font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+      font-weight: 700; margin-bottom: 12px;
     }
+    .project-body h3 { margin: 0 0 8px; font-size: 1.12rem; line-height: 1.35; }
+    .project-body p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tags span { padding: 8px 10px; border-radius: 999px; border: 1px solid rgba(111,80,51,0.12); background: rgba(255,255,255,0.72); color: var(--muted); font-size: 0.84rem; }
 
-    .project-body h3 {
-      margin: 0 0 8px;
-      font-size: 1.12rem;
-      line-height: 1.35;
-    }
-
-    .project-body p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tags span {
-      padding: 8px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(111,80,51,0.12);
-      background: rgba(255,255,255,0.72);
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 16px;
-    }
-
+    /* ── PROCESS ── */
+    .process-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; }
     .process-card {
-      position: relative;
-      padding: 24px 20px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(111,80,51,0.10);
-      box-shadow: var(--shadow);
-      min-height: 220px;
+      position: relative; padding: 24px 20px; border-radius: 22px;
+      background: rgba(255,255,255,0.78); border: 1px solid rgba(111,80,51,0.10);
+      box-shadow: var(--shadow); min-height: 220px;
     }
-
     .process-step {
-      display: inline-grid;
-      place-items: center;
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
+      display: inline-grid; place-items: center;
+      width: 46px; height: 46px; border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: #fff;
-      font-weight: 800;
-      margin-bottom: 16px;
+      color: #fff; font-weight: 800; margin-bottom: 16px;
       box-shadow: 0 10px 18px rgba(111,80,51,0.24);
     }
+    .process-card h3 { margin: 0 0 10px; font-size: 1.08rem; }
+    .process-card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
-    .process-card h3 {
-      margin: 0 0 10px;
-      font-size: 1.08rem;
-    }
+    /* ── TESTIMONIALS ── */
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .testimonial-card { border-radius: 24px; padding: 26px; background: rgba(255,255,255,0.74); border: 1px solid rgba(111,80,51,0.10); box-shadow: var(--shadow); }
+    .quote-mark { font-size: 2.4rem; line-height: 1; color: rgba(179,138,87,0.42); margin-bottom: 10px; font-weight: 800; }
+    .testimonial-card p { margin: 0 0 18px; color: var(--text); font-size: 0.98rem; }
+    .testimonial-meta strong { display: block; font-size: 0.98rem; margin-bottom: 4px; }
+    .testimonial-meta span { color: var(--muted); font-size: 0.92rem; }
 
-    .process-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .testimonial-card {
-      border-radius: 24px;
-      padding: 26px;
-      background: rgba(255,255,255,0.74);
-      border: 1px solid rgba(111,80,51,0.10);
-      box-shadow: var(--shadow);
-    }
-
-    .quote-mark {
-      font-size: 2.4rem;
-      line-height: 1;
-      color: rgba(179,138,87,0.42);
-      margin-bottom: 10px;
-      font-weight: 800;
-    }
-
-    .testimonial-card p {
-      margin: 0 0 18px;
-      color: var(--text);
-      font-size: 0.98rem;
-    }
-
-    .testimonial-meta strong {
-      display: block;
-      font-size: 0.98rem;
-      margin-bottom: 4px;
-    }
-
-    .testimonial-meta span {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .faq-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .faq {
-      border-radius: 20px;
-      background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(111,80,51,0.10);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .faq summary {
-      list-style: none;
-      cursor: pointer;
-      position: relative;
-      padding: 20px 56px 20px 22px;
-      font-weight: 700;
-    }
-
+    /* ── FAQ ── */
+    .faq-list { display: grid; gap: 14px; }
+    .faq { border-radius: 20px; background: rgba(255,255,255,0.76); border: 1px solid rgba(111,80,51,0.10); box-shadow: var(--shadow); overflow: hidden; }
+    .faq summary { list-style: none; cursor: pointer; position: relative; padding: 20px 56px 20px 22px; font-weight: 700; }
     .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font-size: 1.35rem; color: var(--accent-deep); transition: transform .2s ease; }
+    .faq[open] summary::after { content: "–"; }
+    .faq-content { padding: 0 22px 20px; color: var(--muted); font-size: 0.96rem; }
 
-    .faq summary::after {
-      content: "+";
-      position: absolute;
-      right: 22px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 1.35rem;
-      color: var(--accent-deep);
-      transition: transform .2s ease;
-    }
-
-    .faq[open] summary::after {
-      content: "–";
-    }
-
-    .faq-content {
-      padding: 0 22px 20px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
+    /* ── CTA PANEL ── */
     .cta-panel {
-      border-radius: 32px;
-      padding: 38px;
-      background:
-        linear-gradient(135deg, rgba(26,23,20,0.98), rgba(48,42,36,0.98)),
-        var(--dark);
-      color: #f7f0e6;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      overflow: hidden;
+      border-radius: 32px; padding: 38px;
+      background: linear-gradient(135deg, rgba(26,23,20,0.98), rgba(48,42,36,0.98));
+      color: #f7f0e6; box-shadow: var(--shadow-lg);
+      position: relative; overflow: hidden;
     }
-
-    .cta-panel::before,
-    .cta-panel::after {
-      content: "";
-      position: absolute;
-      border-radius: 50%;
+    .cta-panel::before, .cta-panel::after {
+      content: ""; position: absolute; border-radius: 50%;
       background: radial-gradient(circle, rgba(179,138,87,0.28), transparent 65%);
       pointer-events: none;
     }
+    .cta-panel::before { width: 260px; height: 260px; top: -120px; right: -40px; }
+    .cta-panel::after  { width: 220px; height: 220px; bottom: -120px; left: -60px; }
+    .cta-panel h2, .cta-panel p { position: relative; z-index: 1; }
+    .cta-panel h2 { margin: 0 0 14px; font-size: clamp(2rem,4vw,3rem); line-height: 1.15; }
+    .cta-panel p { color: rgba(247,240,230,0.74); max-width: 760px; }
 
-    .cta-panel::before {
-      width: 260px;
-      height: 260px;
-      top: -120px;
-      right: -40px;
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 24px; }
+    .contact-card, .form-card {
+      border-radius: 28px; background: rgba(255,255,255,0.76);
+      border: 1px solid rgba(111,80,51,0.10); box-shadow: var(--shadow); padding: 28px;
     }
-
-    .cta-panel::after {
-      width: 220px;
-      height: 220px;
-      bottom: -120px;
-      left: -60px;
-    }
-
-    .cta-panel h2,
-    .cta-panel p {
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-panel h2 {
-      margin: 0 0 14px;
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.15;
-    }
-
-    .cta-panel p {
-      color: rgba(247,240,230,0.74);
-      max-width: 760px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      gap: 24px;
-    }
-
-    .contact-card,
-    .form-card {
-      border-radius: 28px;
-      background: rgba(255,255,255,0.76);
-      border: 1px solid rgba(111,80,51,0.10);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 14px;
-      margin: 24px 0;
-    }
-
-    .contact-item {
-      display: grid;
-      grid-template-columns: 44px 1fr;
-      gap: 14px;
-      align-items: start;
-    }
-
+    .contact-list { display: grid; gap: 14px; margin: 24px 0; }
+    .contact-item { display: grid; grid-template-columns: 44px 1fr; gap: 14px; align-items: start; }
     .contact-badge {
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(139,104,69,0.10);
-      color: var(--accent-deep);
-      border: 1px solid rgba(111,80,51,0.10);
-      font-weight: 800;
+      width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center;
+      background: rgba(139,104,69,0.10); color: var(--accent-deep);
+      border: 1px solid rgba(111,80,51,0.10); font-weight: 800;
     }
-
-    .contact-item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .contact-item span,
-    .contact-item a {
-      color: var(--muted);
-      font-size: 0.96rem;
-      word-break: break-word;
-    }
-
-    .contact-inline-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .form-note {
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
-    }
-
-    .field {
-      display: grid;
-      gap: 8px;
-    }
-
-    .field.full { grid-column: 1 / -1; }
-
-    label {
-      font-size: 0.94rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      border: 1px solid rgba(111,80,51,0.14);
-      background: rgba(255,255,255,0.84);
-      color: var(--text);
-      border-radius: 14px;
-      padding: 14px 16px;
+    .contact-item strong { display: block; margin-bottom: 4px; }
+    .contact-item span, .contact-item a { color: var(--muted); font-size: 0.96rem; word-break: break-word; }
+    .contact-inline-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+    .form-note { margin: 0 0 18px; color: var(--muted); font-size: 0.95rem; }
+    .form-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; }
+    .field { display: grid; gap: 8px; }
+    .field.full { grid-column: 1/-1; }
+    label { font-size: 0.94rem; font-weight: 700; color: var(--text); }
+    input, select, textarea {
+      width: 100%; border: 1px solid rgba(111,80,51,0.14);
+      background: rgba(255,255,255,0.84); color: var(--text);
+      border-radius: 14px; padding: 14px 16px;
       transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
     }
-
     textarea { resize: vertical; min-height: 140px; }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
+    input:focus, select:focus, textarea:focus {
       border-color: rgba(139,104,69,0.40);
       box-shadow: 0 0 0 4px rgba(179,138,87,0.10);
-      background: #fff;
-      outline: none;
+      background: #fff; outline: none;
     }
+    .form-legal { margin-top: 12px; color: var(--muted); font-size: 0.88rem; }
 
-    .form-legal {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .site-footer {
-      padding: 56px 0 120px;
-      background: #161411;
-      color: #f5ede3;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.7fr 0.9fr 1fr;
-      gap: 24px;
-    }
-
-    .footer-brand strong {
-      display: block;
-      font-size: 1.05rem;
-      margin-bottom: 10px;
-    }
-
-    .footer-brand p {
-      color: rgba(245,237,227,0.68);
-      max-width: 38ch;
-    }
-
-    .footer-title {
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(245,237,227,0.56);
-      margin: 0 0 16px;
-    }
-
-    .footer-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 10px;
-    }
-
-    .footer-links a,
-    .footer-links span {
-      color: rgba(245,237,227,0.84);
-      font-size: 0.95rem;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
+    /* ── FOOTER ── */
+    .site-footer { padding: 56px 0 120px; background: #161411; color: #f5ede3; }
+    .footer-grid { display: grid; grid-template-columns: 1.1fr 0.7fr 0.9fr 1fr; gap: 24px; }
+    .footer-brand strong { display: block; font-size: 1.05rem; margin-bottom: 10px; }
+    .footer-brand p { color: rgba(245,237,227,0.68); max-width: 38ch; }
+    .footer-title { font-size: 0.9rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,237,227,0.56); margin: 0 0 16px; }
+    .footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .footer-links a, .footer-links span { color: rgba(245,237,227,0.84); font-size: 0.95rem; }
+    .footer-links a:hover { color: #fff; }
     .footer-bottom {
-      margin-top: 28px;
-      padding-top: 20px;
+      margin-top: 28px; padding-top: 20px;
       border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      align-items: center;
-      justify-content: space-between;
-      color: rgba(245,237,227,0.58);
-      font-size: 0.9rem;
+      display: flex; flex-wrap: wrap; gap: 14px;
+      align-items: center; justify-content: space-between;
+      color: rgba(245,237,227,0.58); font-size: 0.9rem;
     }
 
+    /* ── FLOATING ACTIONS ── */
     .floating-wa {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 1200;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
+      position: fixed; right: 18px; bottom: 18px; z-index: 1200;
+      width: 62px; height: 62px; border-radius: 50%;
+      display: grid; place-items: center;
       background: linear-gradient(135deg, #27c06b, #1b8d4f);
-      color: #fff;
-      box-shadow: 0 18px 34px rgba(28,129,78,0.35);
-      border: 1px solid rgba(255,255,255,0.28);
-      font-size: 1.5rem;
+      color: #fff; box-shadow: 0 18px 34px rgba(28,129,78,0.35);
+      border: 1px solid rgba(255,255,255,0.28); font-size: 1.5rem;
+      transition: transform .25s ease;
     }
-
     .floating-wa:hover { transform: translateY(-3px); }
 
     .mobile-quickbar {
       display: none;
-      position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      z-index: 1100;
-      padding: 10px;
-      border-radius: 18px;
-      background: rgba(25,23,20,0.92);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 16px 38px rgba(15,12,10,0.24);
-      gap: 10px;
+      position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 1100;
+      padding: 10px; border-radius: 18px;
+      background: rgba(25,23,20,0.92); backdrop-filter: blur(14px);
+      box-shadow: 0 16px 38px rgba(15,12,10,0.24); gap: 10px;
     }
+    .mobile-quickbar .btn { flex: 1; min-height: 50px; padding: 0 14px; font-size: 0.95rem; }
 
-    .mobile-quickbar .btn {
-      flex: 1;
-      min-height: 50px;
-      padding: 0 14px;
-      font-size: 0.95rem;
-    }
+    /* ── REVEAL ANIMATION ── */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .reveal.in-view {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
+    /* ── RESPONSIVE ── */
     @media (max-width: 1120px) {
-      .hero-grid,
-      .about-grid,
-      .contact-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-grid,
-      .project-grid,
-      .testimonial-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .reasons-grid { grid-template-columns: repeat(2, 1fr); }
-      .process-grid { grid-template-columns: repeat(3, 1fr); }
-      .credibility-box { grid-template-columns: repeat(2, 1fr); }
-      .hero-visual { min-height: 480px; }
+      .hero-grid, .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+      .service-grid, .project-grid, .testimonial-grid { grid-template-columns: repeat(2,1fr); }
+      .reasons-grid { grid-template-columns: repeat(2,1fr); }
+      .process-grid { grid-template-columns: repeat(3,1fr); }
+      .credibility-box { grid-template-columns: repeat(2,1fr); }
+      .hero-visual { min-height: 500px; }
     }
 
     @media (max-width: 860px) {
       :root { --header-h: 72px; }
-
       .site-nav {
-        position: absolute;
-        left: 16px;
-        right: 16px;
-        top: calc(100% + 10px);
-        background: rgba(255,255,255,0.95);
-        border: 1px solid rgba(42,34,28,0.08);
-        border-radius: 20px;
-        padding: 10px;
-        box-shadow: var(--shadow);
-        display: none;
+        position: absolute; left: 16px; right: 16px; top: calc(100% + 10px);
+        background: rgba(255,255,255,0.95); border: 1px solid rgba(42,34,28,0.08);
+        border-radius: 20px; padding: 10px; box-shadow: var(--shadow); display: none;
       }
-
       .nav-open .site-nav { display: block; }
-
-      .site-nav ul {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .site-nav a {
-        border-radius: 14px;
-        min-height: 46px;
-      }
-
+      .site-nav ul { flex-direction: column; align-items: stretch; }
+      .site-nav a { border-radius: 14px; min-height: 46px; }
       .nav-toggle { display: inline-flex; }
       .contact-mini { display: none; }
       .header-actions .btn-primary { display: none; }
-
       .hero { padding-top: 34px; }
-      .hero-grid { gap: 28px; }
-      .hero-visual { min-height: 410px; }
-      .hero-panel.main { inset: 36px 0 28px 32px; }
-      .hero-panel.side-top { width: 52%; }
-      .hero-panel.side-bottom { width: 58%; right: 0; }
-      .about-stats,
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .process-grid { grid-template-columns: repeat(2, 1fr); }
-      .footer-grid { gap: 20px; }
+      .hero-visual { min-height: 420px; }
+      .hero-main-photo { inset: 34px 0 28px 28px; }
+      .hero-thumb-tl { width: 50%; }
+      .hero-thumb-br { width: 56%; right: 0; }
+      .about-stats, .form-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2,1fr); }
     }
 
     @media (max-width: 640px) {
       .section { padding: 68px 0; }
       .section-tight { padding: 54px 0; }
-
-      .service-grid,
-      .project-grid,
-      .testimonial-grid,
-      .reasons-grid,
-      .process-grid,
-      .credibility-box {
-        grid-template-columns: 1fr;
-      }
-
+      .service-grid, .project-grid, .testimonial-grid,
+      .reasons-grid, .process-grid, .credibility-box { grid-template-columns: 1fr; }
       .hero-copy h1 { max-width: none; }
-      .hero-copy p { font-size: 1rem; }
-      .hero-visual { min-height: 360px; }
-
-      .hero-badge,
-      .hero-note {
-        padding: 14px 16px;
-      }
-
-      .about-copy,
-      .contact-card,
-      .form-card,
-      .cta-panel,
-      .service-card,
-      .reason-card,
-      .project-body,
-      .testimonial-card,
-      .process-card {
-        padding: 22px;
-      }
-
-      .material-stack {
-        min-height: 220px;
-      }
-
-      .mobile-quickbar {
-        display: flex;
-      }
-
-      .floating-wa {
-        bottom: 86px;
-      }
+      .hero-visual { min-height: 380px; }
+      .material-stack { min-height: 220px; }
+      .about-copy, .contact-card, .form-card, .cta-panel,
+      .service-card, .reason-card, .project-body,
+      .testimonial-card, .process-card { padding: 22px; }
+      .mobile-quickbar { display: flex; }
+      .floating-wa { bottom: 86px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
-      .reveal {
-        opacity: 1;
-        transform: none;
-      }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
     }
   </style>
 </head>
 <body>
   <a href="#main-content" class="skip-link">跳至主要內容</a>
 
-  <!-- Sticky Header -->
+  <!-- ═══════════════════════════════════════
+       STICKY HEADER
+  ═══════════════════════════════════════ -->
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a href="#top" class="brand" aria-label="返回頁首">
@@ -1434,11 +626,8 @@
             <li><a href="#contact">聯絡我們</a></li>
           </ul>
         </nav>
-
         <div class="header-actions">
-          <a class="contact-mini" href="tel:+85295715155" aria-label="致電 +852 95715155">
-            <span>+852 9571 5155</span>
-          </a>
+          <a class="contact-mini" href="tel:+85295715155">+852 9571 5155</a>
           <a class="btn btn-primary" href="#contact">立即查詢</a>
           <button class="nav-toggle" id="navToggle" aria-label="開啟選單" aria-expanded="false" aria-controls="siteNav">
             <span></span>
@@ -1449,22 +638,26 @@
   </header>
 
   <main id="main-content">
-    <!-- Hero Section -->
+
+    <!-- ═══════════════════════════════════════
+         HERO SECTION
+         Main photo: warm wood floor interior living room
+         Top-left thumb: wood material / plank texture
+         Bottom-right thumb: outdoor deck terrace
+    ═══════════════════════════════════════ -->
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <span class="eyebrow">Premium Flooring Solutions</span>
           <h1>為香港住宅打造更穩妥、更耐看、更講究的地板工程</h1>
           <p>
-            木星設計有限公司專注香港地板工程與安裝，提供 <strong>SPC 地板</strong>、實木地板、複合木地板、戶外木地板及圍欄安裝，以及自流平工程與地台處理，
-            由前期了解、選材建議到施工安排，一步到位，讓客戶更容易作出合適而安心的決定。
+            木星設計有限公司專注香港地板工程與安裝，提供 <strong>SPC 地板</strong>、實木地板、複合木地板、
+            戶外木地板及圍欄安裝，以及自流平工程與地台處理，由前期了解、選材建議到施工安排，一步到位。
           </p>
-
           <div class="btn-row">
             <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B%E5%8F%8A%E5%A0%B1%E5%83%B9" target="_blank" rel="noopener">WhatsApp 咨詢</a>
             <a class="btn btn-secondary" href="#contact">免費報價</a>
           </div>
-
           <div class="trust-strip" aria-label="信任訊息">
             <span class="trust-pill">專注地板工程</span>
             <span class="trust-pill">香港客戶服務</span>
@@ -1473,18 +666,43 @@
           </div>
         </div>
 
-        <div class="hero-visual reveal" aria-hidden="true">
-          <div class="hero-gridline"></div>
+        <div class="hero-visual reveal" aria-label="地板工程展示">
           <div class="hero-circle"></div>
-          <div class="hero-panel side-top"></div>
-          <div class="hero-panel main"></div>
-          <div class="hero-panel side-bottom"></div>
+
+          <!-- TOP-LEFT THUMBNAIL: wood plank texture / material close-up -->
+          <!-- Replace: actual material swatch or showroom photo -->
+          <div class="hero-thumb-tl">
+            <img
+              src="https://images.unsplash.com/photo-1541123437800-1bb1317badc2?w=600&q=82&auto=format&fit=crop"
+              alt="實木地板木紋材質展示"
+              loading="eager"
+            />
+          </div>
+
+          <!-- MAIN CENTRAL PHOTO: premium living room with wood floor -->
+          <!-- Replace: your best completed project interior photo -->
+          <div class="hero-main-photo">
+            <img
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=85&auto=format&fit=crop"
+              alt="香港住宅實木地板工程完成效果"
+              loading="eager"
+            />
+          </div>
+
+          <!-- BOTTOM-RIGHT THUMBNAIL: outdoor deck / terrace -->
+          <!-- Replace: your outdoor decking project photo -->
+          <div class="hero-thumb-br">
+            <img
+              src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=82&auto=format&fit=crop"
+              alt="戶外木地板露台工程效果"
+              loading="eager"
+            />
+          </div>
 
           <div class="hero-badge">
             <strong>室內外工程整合安排</strong>
             <span>由地台處理、選材建議到面層鋪裝，流程更順、配合更省時。</span>
           </div>
-
           <div class="hero-note">
             <strong>適合香港常見空間需求</strong>
             <span>住宅、單位翻新、露台平台、家居改善與投資物業更新。</span>
@@ -1493,7 +711,9 @@
       </div>
     </section>
 
-    <!-- Trust / Credibility Bar -->
+    <!-- ═══════════════════════════════════════
+         CREDIBILITY BAR
+    ═══════════════════════════════════════ -->
     <section class="credibility-bar section-tight">
       <div class="container">
         <div class="credibility-box reveal">
@@ -1517,15 +737,52 @@
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ═══════════════════════════════════════
+         ABOUT SECTION
+         3 material panel photos:
+         1. Light wood / SPC plank close-up
+         2. Dark solid wood / rich grain
+         3. Outdoor / composite deck boards
+    ═══════════════════════════════════════ -->
     <section class="section" id="about">
       <div class="container about-grid">
         <div class="about-panel reveal">
-          <div class="material-stack" aria-hidden="true">
-            <div class="material-card"></div>
-            <div class="material-card"></div>
-            <div class="material-card"></div>
+          <div class="material-stack" aria-label="地板物料展示">
+
+            <!-- MATERIAL PANEL 1: SPC / light wood plank -->
+            <!-- Replace: actual SPC floor sample or showroom photo -->
+            <div class="material-photo">
+              <img
+                src="https://images.unsplash.com/photo-1588854337236-6c1f49be16eb?w=400&q=80&auto=format&fit=crop"
+                alt="SPC 地板物料展示"
+                loading="lazy"
+              />
+              <span class="mat-label">SPC 地板</span>
+            </div>
+
+            <!-- MATERIAL PANEL 2: Dark solid hardwood grain -->
+            <!-- Replace: actual solid wood floor sample photo -->
+            <div class="material-photo">
+              <img
+                src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?w=400&q=80&auto=format&fit=crop"
+                alt="實木地板木紋展示"
+                loading="lazy"
+              />
+              <span class="mat-label">實木地板</span>
+            </div>
+
+            <!-- MATERIAL PANEL 3: Outdoor deck / composite wood -->
+            <!-- Replace: actual outdoor decking material photo -->
+            <div class="material-photo">
+              <img
+                src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=400&q=80&auto=format&fit=crop"
+                alt="戶外木地板物料展示"
+                loading="lazy"
+              />
+              <span class="mat-label">戶外木地板</span>
+            </div>
           </div>
+
           <div class="about-stats">
             <div class="stat-box">
               <strong>一站式安排</strong>
@@ -1543,7 +800,7 @@
         </div>
 
         <div class="about-copy reveal">
-          <div class="section-head" style="margin-bottom: 0;">
+          <div class="section-head" style="margin-bottom:0;">
             <span class="eyebrow">About Jupiter's Design</span>
             <h2>不是單純賣地板，而是為空間提供更合適的落地方案</h2>
             <p>
@@ -1551,7 +808,6 @@
               為客戶處理由物料選擇、施工前準備、鋪裝安排到完成效果的整體問題。
             </p>
           </div>
-
           <div class="about-points">
             <div class="about-point">
               <div class="about-icon">01</div>
@@ -1575,7 +831,6 @@
               </div>
             </div>
           </div>
-
           <div class="btn-row">
             <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E5%85%88%E4%BA%86%E8%A7%A3%E5%90%88%E9%81%A9%E7%9A%84%E5%9C%B0%E6%9D%BF%E6%96%B9%E6%A1%88" target="_blank" rel="noopener">先了解合適方案</a>
             <a class="btn btn-secondary" href="#services">查看服務</a>
@@ -1584,7 +839,9 @@
       </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- ═══════════════════════════════════════
+         SERVICES SECTION
+    ═══════════════════════════════════════ -->
     <section class="section" id="services">
       <div class="container">
         <div class="section-head reveal">
@@ -1599,9 +856,7 @@
         <div class="service-grid">
           <article class="service-card reveal">
             <div class="service-top">
-              <div>
-                <h3>SPC 地板<small>SPC Flooring</small></h3>
-              </div>
+              <div><h3>SPC 地板<small>SPC Flooring</small></h3></div>
               <div class="service-number">01</div>
             </div>
             <p>適合追求外觀俐落、日常較易打理、並重視安裝效率與穩定感的香港家居空間。</p>
@@ -1615,9 +870,7 @@
 
           <article class="service-card reveal">
             <div class="service-top">
-              <div>
-                <h3>實木地板<small>Solid Wood Flooring</small></h3>
-              </div>
+              <div><h3>實木地板<small>Solid Wood Flooring</small></h3></div>
               <div class="service-number">02</div>
             </div>
             <p>著重天然紋理、腳感與質感層次的客戶，適合希望空間更有溫度與細節的住宅環境。</p>
@@ -1631,9 +884,7 @@
 
           <article class="service-card reveal">
             <div class="service-top">
-              <div>
-                <h3>複合木地板<small>Engineered Wood Flooring</small></h3>
-              </div>
+              <div><h3>複合木地板<small>Engineered Wood Flooring</small></h3></div>
               <div class="service-number">03</div>
             </div>
             <p>兼顧美感與結構穩定度，適合想保留木地板質感，同時希望日常使用更輕鬆的空間。</p>
@@ -1647,9 +898,7 @@
 
           <article class="service-card reveal">
             <div class="service-top">
-              <div>
-                <h3>戶外木地板及圍欄<small>Decking & Fencing</small></h3>
-              </div>
+              <div><h3>戶外木地板及圍欄<small>Decking & Fencing</small></h3></div>
               <div class="service-number">04</div>
             </div>
             <p>適合露台、平台、花園、村屋戶外範圍，兼顧美觀、耐候性與空間分隔的實用安排。</p>
@@ -1663,9 +912,7 @@
 
           <article class="service-card reveal">
             <div class="service-top">
-              <div>
-                <h3>地台自流平工程<small>Self-Leveling Works</small></h3>
-              </div>
+              <div><h3>地台自流平工程<small>Self-Leveling Works</small></h3></div>
               <div class="service-number">05</div>
             </div>
             <p>當地面存在高低差、老化或不平問題，自流平工程能為後續鋪裝建立更穩妥的基礎。</p>
@@ -1679,9 +926,7 @@
 
           <article class="service-card reveal">
             <div class="service-top">
-              <div>
-                <h3>地台處理與鋪裝建議<small>Floor Base Consultation</small></h3>
-              </div>
+              <div><h3>地台處理與鋪裝建議<small>Floor Base Consultation</small></h3></div>
               <div class="service-number">06</div>
             </div>
             <p>適合未決定物料、擔心完成效果、或希望先了解施工方向與預算分配的客戶。</p>
@@ -1696,7 +941,9 @@
       </div>
     </section>
 
-    <!-- Why Choose Us -->
+    <!-- ═══════════════════════════════════════
+         WHY CHOOSE US
+    ═══════════════════════════════════════ -->
     <section class="section" id="why-us">
       <div class="container">
         <div class="section-head reveal">
@@ -1707,7 +954,6 @@
             施工是否整潔、以及整個查詢至完成的過程是否清楚安心。
           </p>
         </div>
-
         <div class="reasons-grid">
           <div class="reason-card reveal">
             <strong>根據空間用途提供建議</strong>
@@ -1737,137 +983,157 @@
       </div>
     </section>
 
-    <!-- Project Showcase / Works Gallery -->
+    <!-- ═══════════════════════════════════════
+         PROJECT SHOWCASE
+         All 6 project cards now use real Unsplash photos.
+         Replace each img src with your own project photography.
+    ═══════════════════════════════════════ -->
     <section class="section" id="projects">
       <div class="container">
         <div class="section-head reveal">
           <span class="eyebrow">Selected Works</span>
           <h2>工程案例與空間方向參考</h2>
           <p>
-            以下為示意式案例展示，網站即使未放入完整實拍相片，亦能先讓客戶理解不同工程類型、
-            常見需求與完成感覺；日後可直接把每張示意圖更換為真實工程照片。
+            以下為各類型地板工程的參考照片，日後可直接替換為你自己的真實工程相片，
+            讓客戶更直接了解完成效果與施工水準。
           </p>
         </div>
 
         <div class="project-grid">
+
+          <!-- PROJECT 1: SPC Floor Renovation -->
+          <!-- Replace src with your actual SPC floor project photo -->
           <article class="project-card reveal">
             <div class="project-media">
               <img
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f5efe6'/><stop offset='1' stop-color='%23c9ac85'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='80' y='80' width='1040' height='660' rx='34' fill='none' stroke='%23584435' stroke-opacity='.25' stroke-width='5'/><path d='M0 560C180 520 310 450 470 470C660 493 760 610 1200 450V820H0Z' fill='%233e2c1e' fill-opacity='.08'/><g opacity='.35'><rect x='170' y='170' width='860' height='110' rx='18' fill='%23ffffff'/><rect x='170' y='320' width='660' height='34' rx='10' fill='%23ffffff'/><rect x='170' y='378' width='430' height='34' rx='10' fill='%23ffffff'/></g></svg>"
-                alt="住宅 SPC 地板翻新示意圖片"
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=82&auto=format&fit=crop"
+                alt="住宅 SPC 地板翻新完成效果"
+                loading="lazy"
               />
+              <div class="project-overlay"></div>
             </div>
             <div class="project-body">
               <span class="project-kicker">Residential</span>
               <h3>住宅 SPC 地板翻新</h3>
               <p>以較易打理與視覺整齊為方向，改善舊有地面觀感，讓整體空間更明亮俐落。</p>
               <div class="tags">
-                <span>SPC 地板</span>
-                <span>家居翻新</span>
-                <span>易於打理</span>
+                <span>SPC 地板</span><span>家居翻新</span><span>易於打理</span>
               </div>
             </div>
           </article>
 
+          <!-- PROJECT 2: Solid Wood Living Room -->
+          <!-- Replace src with your actual solid wood floor project photo -->
           <article class="project-card reveal">
             <div class="project-media">
               <img
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23efe3d3'/><stop offset='1' stop-color='%23836345'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='90' y='90' width='1020' height='640' rx='30' fill='none' stroke='%23fff' stroke-opacity='.28' stroke-width='4'/><path d='M0 650C180 560 290 520 470 560C690 611 860 470 1200 430V820H0Z' fill='%23181411' fill-opacity='.1'/><g opacity='.25'><circle cx='930' cy='210' r='86' fill='%23ffffff'/><rect x='160' y='470' width='450' height='34' rx='10' fill='%23ffffff'/><rect x='160' y='528' width='300' height='34' rx='10' fill='%23ffffff'/></g></svg>"
-                alt="客廳實木地板鋪設示意圖片"
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=82&auto=format&fit=crop"
+                alt="客廳實木地板鋪設完成效果"
+                loading="lazy"
               />
+              <div class="project-overlay"></div>
             </div>
             <div class="project-body">
               <span class="project-kicker">Living Room</span>
               <h3>客廳實木地板鋪設</h3>
               <p>突出天然木紋與溫暖質感，讓主要生活區更具層次，同時兼顧空間整體感。</p>
               <div class="tags">
-                <span>實木地板</span>
-                <span>客廳</span>
-                <span>質感提升</span>
+                <span>實木地板</span><span>客廳</span><span>質感提升</span>
               </div>
             </div>
           </article>
 
+          <!-- PROJECT 3: Outdoor Deck & Fencing -->
+          <!-- Replace src with your actual outdoor deck project photo -->
           <article class="project-card reveal">
             <div class="project-media">
               <img
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f7f2ea'/><stop offset='1' stop-color='%23b8956f'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='100' y='100' width='1000' height='620' rx='26' fill='none' stroke='%23594536' stroke-opacity='.22' stroke-width='5'/><path d='M0 520C220 550 370 380 560 420C760 462 920 570 1200 500V820H0Z' fill='%23392618' fill-opacity='.08'/><g opacity='.24'><rect x='150' y='150' width='900' height='220' rx='22' fill='%23ffffff'/><rect x='150' y='420' width='520' height='34' rx='10' fill='%23ffffff'/></g></svg>"
-                alt="戶外平台及圍欄工程示意圖片"
+                src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=82&auto=format&fit=crop"
+                alt="戶外平台及圍欄工程完成效果"
+                loading="lazy"
               />
+              <div class="project-overlay"></div>
             </div>
             <div class="project-body">
               <span class="project-kicker">Outdoor</span>
               <h3>戶外平台及圍欄工程</h3>
               <p>透過戶外木地板與圍欄整合安排，整理露台或平台空間，提升日常使用舒適度。</p>
               <div class="tags">
-                <span>戶外木地板</span>
-                <span>圍欄安裝</span>
-                <span>露台空間</span>
+                <span>戶外木地板</span><span>圍欄安裝</span><span>露台空間</span>
               </div>
             </div>
           </article>
 
+          <!-- PROJECT 4: Self-Leveling Floor Work -->
+          <!-- Replace src with your actual self-leveling project photo -->
           <article class="project-card reveal">
             <div class="project-media">
               <img
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23eee3d4'/><stop offset='1' stop-color='%2399754d'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='80' y='80' width='1040' height='660' rx='30' fill='none' stroke='%23594536' stroke-opacity='.22' stroke-width='5'/><path d='M0 600C190 540 340 490 550 540C770 593 940 520 1200 460V820H0Z' fill='%23201209' fill-opacity='.09'/><g opacity='.22'><rect x='170' y='180' width='860' height='120' rx='20' fill='%23ffffff'/><rect x='170' y='360' width='620' height='34' rx='10' fill='%23ffffff'/><rect x='170' y='416' width='460' height='34' rx='10' fill='%23ffffff'/></g></svg>"
-                alt="舊樓地台自流平處理示意圖片"
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=82&auto=format&fit=crop"
+                alt="舊樓地台自流平工程處理效果"
+                loading="lazy"
               />
+              <div class="project-overlay"></div>
             </div>
             <div class="project-body">
               <span class="project-kicker">Base Work</span>
               <h3>舊樓地台自流平處理</h3>
               <p>先改善地台高低差與平整度，再為後續地板鋪裝建立更穩定的基礎條件。</p>
               <div class="tags">
-                <span>自流平工程</span>
-                <span>地台處理</span>
-                <span>舊樓改善</span>
+                <span>自流平工程</span><span>地台處理</span><span>舊樓改善</span>
               </div>
             </div>
           </article>
 
+          <!-- PROJECT 5: Engineered Wood Apartment -->
+          <!-- Replace src with your actual engineered wood project photo -->
           <article class="project-card reveal">
             <div class="project-media">
               <img
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23faf5ee'/><stop offset='1' stop-color='%23c7a37e'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='100' y='90' width='1000' height='640' rx='28' fill='none' stroke='%23574537' stroke-opacity='.2' stroke-width='4'/><path d='M0 560C180 460 340 470 510 535C700 608 900 520 1200 430V820H0Z' fill='%23301d10' fill-opacity='.08'/><g opacity='.23'><circle cx='260' cy='230' r='90' fill='%23ffffff'/><rect x='420' y='220' width='480' height='36' rx='10' fill='%23ffffff'/><rect x='420' y='278' width='320' height='36' rx='10' fill='%23ffffff'/></g></svg>"
-                alt="複合木地板住宅工程示意圖片"
+                src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=82&auto=format&fit=crop"
+                alt="複合木地板住宅工程完成效果"
+                loading="lazy"
               />
+              <div class="project-overlay"></div>
             </div>
             <div class="project-body">
               <span class="project-kicker">Apartment</span>
               <h3>複合木地板住宅工程</h3>
               <p>在木地板觀感與日常穩定度之間取得平衡，適合重視實用與美感兼備的客戶。</p>
               <div class="tags">
-                <span>複合木地板</span>
-                <span>住宅單位</span>
-                <span>穩定實用</span>
+                <span>複合木地板</span><span>住宅單位</span><span>穩定實用</span>
               </div>
             </div>
           </article>
 
+          <!-- PROJECT 6: Investment Property Update -->
+          <!-- Replace src with your actual investment property floor project photo -->
           <article class="project-card reveal">
             <div class="project-media">
               <img
-                src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 820'><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='%23f1e6d8'/><stop offset='1' stop-color='%238f6a46'/></linearGradient></defs><rect width='1200' height='820' fill='url(%23g)'/><rect x='85' y='85' width='1030' height='650' rx='30' fill='none' stroke='%23ffffff' stroke-opacity='.18' stroke-width='4'/><path d='M0 630C160 520 360 540 520 590C720 650 900 550 1200 470V820H0Z' fill='%2315100d' fill-opacity='.1'/><g opacity='.22'><rect x='170' y='170' width='420' height='210' rx='18' fill='%23ffffff'/><rect x='650' y='190' width='360' height='36' rx='10' fill='%23ffffff'/><rect x='650' y='248' width='280' height='36' rx='10' fill='%23ffffff'/></g></svg>"
-                alt="出租單位地板更新示意圖片"
+                src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=82&auto=format&fit=crop"
+                alt="出租單位地板更新完成效果"
+                loading="lazy"
               />
+              <div class="project-overlay"></div>
             </div>
             <div class="project-body">
               <span class="project-kicker">Investment</span>
               <h3>出租單位地板更新</h3>
               <p>以提升整潔度、耐用度與交樓觀感為目標，讓物業更新更有效率，亦更易安排後續使用。</p>
               <div class="tags">
-                <span>地板更新</span>
-                <span>投資物業</span>
-                <span>提升觀感</span>
+                <span>地板更新</span><span>投資物業</span><span>提升觀感</span>
               </div>
             </div>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- Work Process Section -->
+    <!-- ═══════════════════════════════════════
+         WORK PROCESS
+    ═══════════════════════════════════════ -->
     <section class="section" id="process">
       <div class="container">
         <div class="section-head reveal">
@@ -1878,7 +1144,6 @@
             因此我們把查詢與工程安排盡量簡化，讓你更快知道下一步應怎樣走。
           </p>
         </div>
-
         <div class="process-grid">
           <div class="process-card reveal">
             <div class="process-step">1</div>
@@ -1909,7 +1174,9 @@
       </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- ═══════════════════════════════════════
+         TESTIMONIALS
+    ═══════════════════════════════════════ -->
     <section class="section" id="testimonials">
       <div class="container">
         <div class="section-head reveal">
@@ -1920,28 +1187,25 @@
             以及完成後整體效果是否與預期接近。
           </p>
         </div>
-
         <div class="testimonial-grid">
           <article class="testimonial-card reveal">
-            <div class="quote-mark">“</div>
+            <div class="quote-mark">"</div>
             <p>原本只打算換地板，後來發現地台有些高低差，對方先講清楚處理方式，再建議做法，整個過程比較安心。最後鋪出來很平順，客廳觀感提升好多。</p>
             <div class="testimonial-meta">
               <strong>住宅客戶</strong>
               <span>SPC 地板及地台處理</span>
             </div>
           </article>
-
           <article class="testimonial-card reveal">
-            <div class="quote-mark">“</div>
+            <div class="quote-mark">"</div>
             <p>想要木地板感覺，但又擔心日後難打理，他們解釋得幾清楚，沒有硬推最貴方案。施工時間配合得不錯，完成後細節位都處理得整齊。</p>
             <div class="testimonial-meta">
               <strong>家居翻新客戶</strong>
               <span>複合木地板工程</span>
             </div>
           </article>
-
           <article class="testimonial-card reveal">
-            <div class="quote-mark">“</div>
+            <div class="quote-mark">"</div>
             <p>露台工程最擔心戶外物料唔耐用，同埋效果做出來會唔會好雜亂。最後平台同圍欄整體感幾好，線條簡潔，實用之餘亦比之前企理好多。</p>
             <div class="testimonial-meta">
               <strong>露台工程客戶</strong>
@@ -1952,7 +1216,9 @@
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- ═══════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════ -->
     <section class="section" id="faq">
       <div class="container">
         <div class="section-head reveal">
@@ -1963,319 +1229,19 @@
             最常提出的幾個重點問題。
           </p>
         </div>
-
         <div class="faq-list">
           <details class="faq reveal">
             <summary>SPC 地板適合香港家居嗎？</summary>
-            <div class="faq-content">
-              適合不少香港住宅使用，尤其是重視耐用、外觀整齊與較易打理的客戶。不過實際上仍需視乎空間用途、地台狀況與想要的腳感，再決定是否最合適。
-            </div>
+            <div class="faq-content">適合不少香港住宅使用，尤其是重視耐用、外觀整齊與較易打理的客戶。不過實際上仍需視乎空間用途、地台狀況與想要的腳感，再決定是否最合適。</div>
           </details>
-
           <details class="faq reveal">
             <summary>實木地板與複合木地板有什麼分別？</summary>
-            <div class="faq-content">
-              實木地板更著重天然質感與木材層次；複合木地板則較容易在外觀、穩定性與日常使用之間取得平衡。選擇時通常要看預算、保養習慣與空間條件。
-            </div>
+            <div class="faq-content">實木地板更著重天然質感與木材層次；複合木地板則較容易在外觀、穩定性與日常使用之間取得平衡。選擇時通常要看預算、保養習慣與空間條件。</div>
           </details>
-
           <details class="faq reveal">
             <summary>戶外地板和圍欄適合哪些空間？</summary>
-            <div class="faq-content">
-              常見於露台、平台、花園、天台或村屋戶外位置。規劃時除了外觀，也要考慮日照、排水、耐候性及日後打理方式。
-            </div>
+            <div class="faq-content">常見於露台、平台、花園、天台或村屋戶外位置。規劃時除了外觀，也要考慮日照、排水、耐候性及日後打理方式。</div>
           </details>
-
           <details class="faq reveal">
             <summary>自流平工程是否適合舊樓地台？</summary>
-            <div class="faq-content">
-              若舊樓地台存在不平、高低差或需要為地板鋪裝作前期準備，自流平工程通常很有幫助。但是否需要做，仍建議先了解現場情況再判斷。
-            </div>
-          </details>
-
-          <details class="faq reveal">
-            <summary>如何查詢報價與施工時間？</summary>
-            <div class="faq-content">
-              可直接透過 WhatsApp、電話或電郵聯絡我們，提供單位類型、面積概念、想做的服務與相片資料，會較快進入初步了解與報價安排。
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Lead Capture / CTA Section -->
-    <section class="section">
-      <div class="container">
-        <div class="cta-panel reveal">
-          <span class="eyebrow">Free Initial Consultation</span>
-          <h2>想先了解合適做法與大概報價，現在就可以開始</h2>
-          <p>
-            無論你正準備更換 SPC 地板、選擇實木地板或複合木地板、整理戶外木地板與圍欄，
-            或想先處理地台不平問題，都可以先作免費初步了解與免費報價諮詢。
-          </p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E7%B4%A2%E5%8F%96%E5%85%8D%E8%B2%BB%E5%88%9D%E6%AD%A5%E4%BA%86%E8%A7%A3%E5%8F%8A%E5%A0%B1%E5%83%B9" target="_blank" rel="noopener">WhatsApp 即時查詢</a>
-            <a class="btn btn-outline" href="tel:+85295715155">致電了解</a>
-            <a class="btn btn-outline" href="mailto:info@jupiterdesign.com">電郵查詢</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-card reveal">
-          <div class="contact-intro">
-            <span class="eyebrow">Contact Us</span>
-            <h2 style="margin: 0 0 14px; line-height: 1.15; font-size: clamp(2rem, 4vw, 3rem);">聯絡木星設計有限公司</h2>
-            <p>
-              如你正在查詢香港地板工程、SPC 地板、實木地板、複合木地板、戶外木地板、圍欄安裝、
-              自流平工程或地台處理，歡迎直接聯絡，我們會先協助你釐清方向。
-            </p>
-          </div>
-
-          <div class="contact-list">
-            <div class="contact-item">
-              <div class="contact-badge">公</div>
-              <div>
-                <strong>公司名稱</strong>
-                <span>Jupiter's Design Limited<br />木星設計有限公司</span>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-badge">電</div>
-              <div>
-                <strong>電話</strong>
-                <a href="tel:+85295715155">+852 9571 5155</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-badge">W</div>
-              <div>
-                <strong>WhatsApp</strong>
-                <a href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B" target="_blank" rel="noopener">+852 9571 5155</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-badge">郵</div>
-              <div>
-                <strong>電郵</strong>
-                <a href="mailto:info@jupiterdesign.com">info@jupiterdesign.com</a>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <div class="contact-badge">區</div>
-              <div>
-                <strong>服務地區</strong>
-                <span>香港住宅、家居翻新、單位更新、露台平台、戶外木地板及圍欄安裝、地台處理與自流平工程</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="contact-inline-actions">
-            <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E7%9B%B4%E6%8E%A5%E6%9F%A5%E8%A9%A2%E5%B7%A5%E7%A8%8B%E5%8F%8A%E5%A0%B1%E5%83%B9" target="_blank" rel="noopener">WhatsApp 查詢</a>
-            <a class="btn btn-secondary" href="tel:+85295715155">立即致電</a>
-          </div>
-        </div>
-
-        <div class="form-card reveal">
-          <span class="eyebrow">Quotation Request</span>
-          <h3 style="margin: 0 0 12px; font-size: 1.6rem;">報價查詢表格</h3>
-          <p class="form-note">
-            此頁為靜態 HTML 網站版本，現時表格會以你的電郵程式開啟查詢內容。
-            之後可接駁 Cloudflare Worker、Formspree 或其他表單系統。
-          </p>
-
-          <!--
-            Future integration options:
-            1. Replace form action with your Cloudflare Worker endpoint
-            2. Or use a third-party form service such as Formspree
-            3. Current JS converts form data into a mailto link for static deployment compatibility
-          -->
-          <form id="quoteForm">
-            <div class="form-grid">
-              <div class="field">
-                <label for="name">稱呼</label>
-                <input id="name" name="name" type="text" placeholder="請輸入你的稱呼" required />
-              </div>
-
-              <div class="field">
-                <label for="phone">聯絡電話</label>
-                <input id="phone" name="phone" type="tel" placeholder="例如：9123 4567" required />
-              </div>
-
-              <div class="field">
-                <label for="service">查詢服務</label>
-                <select id="service" name="service" required>
-                  <option value="">請選擇服務</option>
-                  <option>SPC 地板</option>
-                  <option>實木地板</option>
-                  <option>複合木地板</option>
-                  <option>戶外木地板及圍欄</option>
-                  <option>地台自流平工程</option>
-                  <option>地台處理與鋪裝建議</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="area">單位 / 空間類型</label>
-                <input id="area" name="area" type="text" placeholder="例如：住宅、客廳、露台、出租單位" />
-              </div>
-
-              <div class="field full">
-                <label for="message">查詢內容</label>
-                <textarea id="message" name="message" placeholder="可填寫大概面積、現場情況、想做的效果、預算方向或施工時間"></textarea>
-              </div>
-
-              <div class="field full">
-                <button class="btn btn-dark btn-full" type="submit">以電郵送出查詢</button>
-              </div>
-            </div>
-          </form>
-
-          <p class="form-legal">可接駁表單系統，現階段適合直接部署為靜態 HTML 首頁。</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <strong>Jupiter's Design Limited<br />木星設計有限公司</strong>
-          <p>
-            專注香港地板工程、SPC 地板、實木地板、複合木地板、戶外木地板及圍欄安裝、
-            自流平工程與地台處理，為住宅與翻新客戶提供更清晰、實用及講究的施工方案。
-          </p>
-          <div class="btn-row">
-            <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B" target="_blank" rel="noopener">立即查詢</a>
-          </div>
-        </div>
-
-        <div>
-          <p class="footer-title">Quick Links</p>
-          <ul class="footer-links">
-            <li><a href="#about">關於我們</a></li>
-            <li><a href="#services">服務</a></li>
-            <li><a href="#projects">工程案例</a></li>
-            <li><a href="#process">施工流程</a></li>
-            <li><a href="#faq">常見問題</a></li>
-            <li><a href="#contact">聯絡我們</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer-title">Services</p>
-          <ul class="footer-links">
-            <li><span>SPC 地板</span></li>
-            <li><span>實木地板</span></li>
-            <li><span>複合木地板</span></li>
-            <li><span>戶外木地板</span></li>
-            <li><span>圍欄安裝</span></li>
-            <li><span>自流平工程</span></li>
-          </ul>
-        </div>
-
-        <div>
-          <p class="footer-title">Contact</p>
-          <ul class="footer-links">
-            <li><a href="tel:+85295715155">+852 9571 5155</a></li>
-            <li><a href="https://wa.me/85295715155" target="_blank" rel="noopener">WhatsApp 查詢</a></li>
-            <li><a href="mailto:info@jupiterdesign.com">info@jupiterdesign.com</a></li>
-            <li><span>服務香港客戶</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 Jupiter's Design Limited 木星設計有限公司. All rights reserved.</span>
-        <span>Premium Flooring & Installation Website</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp Button -->
-  <a
-    class="floating-wa"
-    href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B%E5%8F%8A%E5%A0%B1%E5%83%B9"
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp 即時查詢"
-    title="WhatsApp 即時查詢"
-  >✆</a>
-
-  <!-- Mobile Quick CTA Bar -->
-  <div class="mobile-quickbar" aria-label="快速聯絡">
-    <a class="btn btn-primary" href="https://wa.me/85295715155?text=%E4%BD%A0%E5%A5%BD%EF%BC%8C%E6%88%91%E6%83%B3%E6%9F%A5%E8%A9%A2%E5%9C%B0%E6%9D%BF%E5%B7%A5%E7%A8%8B" target="_blank" rel="noopener">WhatsApp</a>
-    <a class="btn btn-secondary" href="tel:+85295715155">致電</a>
-  </div>
-
-  <script>
-    // Mobile navigation toggle
-    const navToggle = document.getElementById('navToggle');
-    const body = document.body;
-    const navLinks = document.querySelectorAll('.site-nav a');
-
-    navToggle.addEventListener('click', () => {
-      const isOpen = body.classList.toggle('nav-open');
-      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-      navToggle.setAttribute('aria-label', isOpen ? '關閉選單' : '開啟選單');
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        body.classList.remove('nav-open');
-        navToggle.setAttribute('aria-expanded', 'false');
-        navToggle.setAttribute('aria-label', '開啟選單');
-      });
-    });
-
-    // Reveal on scroll
-    const revealItems = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    revealItems.forEach(item => revealObserver.observe(item));
-
-    // Static form mailto handler
-    const quoteForm = document.getElementById('quoteForm');
-    quoteForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const service = document.getElementById('service').value.trim();
-      const area = document.getElementById('area').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      const subject = encodeURIComponent('網站報價查詢 - ' + (service || '地板工程'));
-      const bodyText =
-`稱呼：${name}
-聯絡電話：${phone}
-查詢服務：${service}
-單位 / 空間類型：${area}
-
-查詢內容：
-${message}
-
-— 來自 Jupiter's Design Limited 網站表格`;
-      const bodyEncoded = encodeURIComponent(bodyText);
-
-      window.location.href = `mailto:info@jupiterdesign.com?subject=${subject}&body=${bodyEncoded}`;
-    });
-  </script>
-</body>
-</html>
+            <div class="faq-content">若舊樓地台存在不平、高
